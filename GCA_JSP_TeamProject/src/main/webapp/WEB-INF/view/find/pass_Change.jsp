@@ -1,10 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>find::id_Find_Result</title>
-    <link rel="stylesheet" href="/css/find/id_Find_Result.css">
+    <title>find::pass_change</title>
+    <link rel="stylesheet" href="/css/find/pass_Change.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
@@ -76,32 +77,35 @@
         <main>
             <section>
                 <form action="#">
-                    <h2>아이디 찾기 결과</h2>
+                    <h2>비밀번호 변경</h2>
                     <table>
                         <tbody>
-                            <tr>
-                                <td>이름</td>
-                                <td>홍길동</td>
-                            </tr>
                             <tr>
                                 <td>아이디</td>
                                 <td>honggildong</td>
                             </tr>
                             <tr>
-                                <td>이메일</td>
-                                <td>honggildong@gmail.com</td>
+                                <td>새 비밀번호</td>
+                                <td>
+                                    <input type="pass" name="pass1" placeholder="새 비밀번호 입력">
+                                </td>
                             </tr>
                             <tr>
-                                <td>가입일</td>
-                                <td>2022-11-16 10:20</td>
+                                <td>새 비밀번호 확인</td>
+                                <td>
+                                    <input type="pass" name="pass2" placeholder="새 비밀번호 입력">
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </form>
-                <p>고객님의 정보와 일치하는 아이디 입니다.</p>
+                <p>
+                    비밀번호를 변경해 주세요. <br>
+                    영문, 숫자, 특수문자를 사용하여 8자 이상 입력해 주세요.
+                </p>
                 <div>
-                    <a href="#">로그인</a>
-                    <a href="#">비밀번호 찾기</a>
+                    <a href="#">취소</a>
+                    <a href="#">다음</a>
                 </div>
             </section>
         </main>

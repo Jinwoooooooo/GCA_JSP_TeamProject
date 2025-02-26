@@ -1,12 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>찾아오시는길</title>
-    <link rel="stylesheet" href="/css/intro/contact.css">
+    <title>find::id_Find_Result</title>
+    <link rel="stylesheet" href="/css/find/id_Find_Result.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -73,49 +74,39 @@
                 </ul>
             </div>
         </header>
-
         <main>
-            <div class="main_container">
-                <div class="sub_top_container">
-                    <img src="/images/sub_top_tit1.png" alt="인트로">
+            <section>
+                <form action="#">
+                    <h2>아이디 찾기 결과</h2>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>이름</td>
+                                <td>홍길동</td>
+                            </tr>
+                            <tr>
+                                <td>아이디</td>
+                                <td>honggildong</td>
+                            </tr>
+                            <tr>
+                                <td>이메일</td>
+                                <td>honggildong@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td>가입일</td>
+                                <td>2022-11-16 10:20</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+                <p>고객님의 정보와 일치하는 아이디 입니다.</p>
+                <div>
+                    <a href="#">로그인</a>
+                    <a href="#">비밀번호 찾기</a>
                 </div>
-                <section>
-                    <aside>
-                        <div>
-                            <img src="/images/sub_aside_cate1_tit.png" alt="팜스토리소개">
-                        </div>
-                        <div>
-                            <img src="/images/sub_cate1_lnb1.png" alt="인사말" onclick="location.href='/html/intro/greeting.html'" class="aside_link">
-                            <img src="/images/sub_cate1_lnb2_ov.png" alt="찾아오시는길" onclick="location.href='/html/intro/contact.html'" class="aside_link">
-                        </div>
-                    </aside>
-                    <article>
-                        <div class="nav_bar">
-                            <nav>
-                                <img src="/images/sub_nav_tit_cate1_tit2.png" alt="찾아오시는길">
-                            </nav>
-                            <div>
-                                <p>HOME > 팜스토리소개 > <span style="color: #91ba23; font-weight: 700;">찾아오시는길</span></p>
-                            </div>
-                        </div>
-                        <div class="sub_page">
-                            <div class="sub_page_p">
-                                <p>
-                                    <span style="color: #91ba23; font-weight: 700;">팜스토리</span><br>
-                                    주소: 경기도 이천시 잘한다구 신난다동 123<br>
-                                    전화: 01-234-5678
-                                </p>
-                                <p>
-                                    <span style="color: #91ba23; font-weight: 700;">찾아오시는길</span><br>
-                                </p>
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.0597793341053!2d129.07202137637717!3d35.18006257275311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356893545e9bb879%3A0xb3fe515128fe55dd!2z67aA7IKw6rSR7Jet7IucIOyXsOygnOq1rCDspJHslZnrjIDroZwgMTAwMQ!5e0!3m2!1sko!2skr!4v1739175569540!5m2!1sko!2skr" width="760" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
-                        </div>
-                    </article>
-                </section>
-            </div> 
+            </section>
         </main>
-
+        
         <footer>
             <div class="footer_container">
                 <div class="footer_img">
@@ -136,7 +127,5 @@
                 </div>
             </div>
         </footer>
-        
-    </div>
 </body>
 </html>

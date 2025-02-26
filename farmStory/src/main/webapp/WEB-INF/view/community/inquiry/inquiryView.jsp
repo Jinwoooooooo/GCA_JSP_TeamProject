@@ -86,20 +86,20 @@
                             <img src="/farmStory/images/sub_aside_cate5_tit.png" alt="커뮤니티">
                         </div>
                         <div>
-                            <img src="/farmStory/images/sub_cate5_lnb1_ov.png" alt="공지사항">
+                            <img src="/farmStory/images/sub_cate5_lnb1.png" alt="공지사항">
                             <img src="/farmStory/images/sub_cate5_lnb2.png" alt="오늘의식단">
                             <img src="/farmStory/images/sub_cate5_lnb3.png" alt="나도요리사">
-                            <img src="/farmStory/images/sub_cate5_lnb4.png" alt="1:1고객문의">
+                            <img src="/farmStory/images/sub_cate5_lnb4_ov.png" alt="1:1고객문의">
                             <img src="/farmStory/images/sub_cate5_lnb5.png" alt="자주묻는질문">
                         </div>
                     </aside>
                     <article>
                         <div class="nav_bar">
                             <nav>
-                                <img src="/farmStory/images/sub_nav_tit_cate5_tit1.png" alt="공지사항">
+                                <img src="/farmStory/images/sub_nav_tit_cate5_tit4.png" alt="1:1고객문의">
                             </nav>
                             <div>
-                                <p>HOME > 커뮤니티 > <span style="color: #91ba23; font-weight: 700;">공지사항</span></p>
+                                <p>HOME > 커뮤니티 > <span style="color: #91ba23; font-weight: 700;">1:1고객문의</span></p>
                             </div>
                         </div>
                         <div class="sub_page">

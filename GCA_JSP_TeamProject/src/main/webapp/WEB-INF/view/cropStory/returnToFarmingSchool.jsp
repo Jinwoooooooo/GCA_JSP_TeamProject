@@ -1,30 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>상품목록</title>
-    <link rel="stylesheet" href="/css/event/eventCalender.css">
+    <title>귀농학교</title>
+    <link rel="stylesheet" href="/css/cropStory/returnToFarmingSchool.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
-    <script src="/js/eventCalendar.js"></script>
 </head>
 <body>
     <div id="wrapper">
         <header>
             <div>
                 <div class="top">
-                    <div>
-                        <a href="/index.html">HOME |</a>
+                    <p>
+                        <a href="#">HOME |</a>
                         <a href="#">로그인 |</a>
                         <a href="#">회원가입 |</a>
                         <a href="#">나의정보 |</a>
                         <a href="#">로그아웃 |</a>
                         <a href="#">관리자 |</a>
                         <a href="#">고객센터</a>
-                    </div>
+                    </p>
                 </div>
             </div>
             
@@ -79,28 +78,38 @@
         <main>
             <div class="main_container">
                 <div class="sub_top_container">
-                    <img src="/images/sub_top_tit4.png" alt="이벤트">
+                    <img src="/images/sub_top_tit3.png" alt="인트로">
                 </div>
                 <section>
                     <aside>
                         <div>
-                            <img src="/images/sub_aside_cate4_tit.png" alt="이벤트">
+                            <img src="/images/sub_aside_cate3_tit.png" alt="텃밭가꾸기">
                         </div>
                         <div>
-                            <img src="/images/sub_cate4_lnb1_ov.png" alt="이벤트">
+                            <a href="#">
+                                <img src="/images/sub_cate3_lnb1.png" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="/images/sub_cate3_lnb2.png" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="/images/sub_cate3_lnb3_ov.png" alt="">
+                            </a>
                         </div>
                     </aside>
                     <article>
                         <div class="nav_bar">
                             <nav>
-                                <img src="/images/sub_nav_tit_cate4_tit1.png" alt="이벤트">
+                                <img src="/images/sub_nav_tit_cate3_tit3.png" alt="귀농학교">
                             </nav>
                             <div>
-                                <p>HOME > 이벤트 > <span style="color: #91ba23; font-weight: 700;">이벤트</span></p>
+                                <p>HOME > 농작물이야기 > <span style="color: #91ba23; font-weight: 700;">귀농학교</span></p>
                             </div>
                         </div>
                         <div class="sub_page">
-                            <div id='calendar'></div>
+                            <div class="sub_page_p">
+                                게시판 글목록/글쓰기/글보기/글수정 화면 출력(커뮤니티 참고)
+                            </div>
                         </div>
                     </article>
                 </section>

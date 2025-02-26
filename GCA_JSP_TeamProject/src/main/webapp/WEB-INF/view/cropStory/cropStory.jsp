@@ -1,10 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>귀농학교</title>
-    <link rel="stylesheet" href="/css/cropStory/returnToFarmingSchool.css">
+    <title>농작물이야기</title>
+    <link rel="stylesheet" href="/css/cropStory/cropStory.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
@@ -82,27 +83,27 @@
                 <section>
                     <aside>
                         <div>
-                            <img src="/images/sub_aside_cate3_tit.png" alt="텃밭가꾸기">
+                            <img src="/images/sub_aside_cate3_tit.png" alt="농작물이야기">
                         </div>
                         <div>
                             <a href="#">
-                                <img src="/images/sub_cate3_lnb1.png" alt="">
+                                <img src="/images/sub_cate3_lnb1_ov.png" alt="">
                             </a>
                             <a href="#">
                                 <img src="/images/sub_cate3_lnb2.png" alt="">
                             </a>
                             <a href="#">
-                                <img src="/images/sub_cate3_lnb3_ov.png" alt="">
+                                <img src="/images/sub_cate3_lnb3.png" alt="">
                             </a>
                         </div>
                     </aside>
                     <article>
                         <div class="nav_bar">
                             <nav>
-                                <img src="/images/sub_nav_tit_cate3_tit3.png" alt="귀농학교">
+                                <img src="/images/sub_nav_tit_cate3_tit1.png" alt="농작물이야기">
                             </nav>
                             <div>
-                                <p>HOME > 농작물이야기 > <span style="color: #91ba23; font-weight: 700;">귀농학교</span></p>
+                                <p>HOME > 농작물이야기 > <span style="color: #91ba23; font-weight: 700;">농작물이야기</span></p>
                             </div>
                         </div>
                         <div class="sub_page">

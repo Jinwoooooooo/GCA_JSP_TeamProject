@@ -1,10 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>adminProduct</title>
-    <link rel="stylesheet" href="/css/adminProductManagement/adminProduct.css">
+    <link rel="stylesheet" href="/css/adminOrderManagement/OrderList.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
@@ -62,34 +63,39 @@
             </aside>
 
             <section>
-                <nav>상품목록</nav>
+                <nav>주문목록</nav>
                 <article class="art1">
                     <table>
                             <tr class="table_hd">
-                                <td class="img"><input type="checkbox"></td>
-                                <th>사진</th>
-                                <th>상품번호</th>
+                                <td class="check"><input type="checkbox"></td>
+                                <th>주문번호</th>
                                 <th>상품명</th>
-                                <th>구분</th>
-                                <th>가격</th>
-                                <th>재고</th>
-                                <th>등록일</th>
+                                <th>판매가격</th>
+                                <th>수량</th>
+                                <th>배송비</th>
+                                <th>합계</th>
+                                <th>주문자</th>
+                                <th>주문일</th>
+                                <th>확인</th>
                             </tr>
                             <tr class="table_bd1">
-                                <td class="img"><input type="checkbox"></td>
-                                <td><img src="/images/market_item1.jpg" ></td>
-                                <td>1011</td>
+                                <td class="check"><input type="checkbox"></td>
+                                <td>1001</td>
                                 <td>사과 500g</td>
-                                <td>과일</td>
                                 <td>4,000원</td>
-                                <td>100</td>
-                                <td>2023-01-01</td>
+                                <td>2</td>
+                                <td>3,000원</td>
+                                <td>11,000원</td>
+                                <td>김유신</td>
+                                <td>2023-01-01 <br>
+                                    13:06:14
+                                </td>
+                                <td>[상세확인]</td>
                             </tr>
                     </table>
                     
                     <div class="main_a">
                         <a href="#">선택삭제</a>
-                        <a href="#"><p>상품등록</p></a>
                     </div>
                     <div class="main_a2"><a href="#">< [1] [2] [3] [4] [5] ></a></div>
                 </article>

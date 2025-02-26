@@ -1,10 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>주문내역</title>
-    <link rel="stylesheet" href="/css/myInfo/orderdetails.css">
+    <title>찾아오시는길</title>
+    <link rel="stylesheet" href="/css/intro/contact.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
@@ -77,74 +78,45 @@
         <main>
             <div class="main_container">
                 <div class="sub_top_container">
-                    <img src="/images/myinfo/myinfo_top_tit.png" alt="나의정보">
+                    <img src="/images/sub_top_tit1.png" alt="인트로">
                 </div>
                 <section>
                     <aside>
                         <div>
-                            <img src="/images/myinfo/myinfo_menu_tit.png" alt="나의정보">
+                            <img src="/images/sub_aside_cate1_tit.png" alt="팜스토리소개">
                         </div>
                         <div>
-                            <img src="/images/myinfo/myinfo_menu1.png" alt="장바구니">
-                            <img src="/images/myinfo/myinfo_menu2_ov.png" alt="주문내역">
-                            <img src="/images/myinfo/myinfo_menu3.png" alt="정보수정">
+                            <img src="/images/sub_cate1_lnb1.png" alt="인사말" onclick="location.href='/html/intro/greeting.html'" class="aside_link">
+                            <img src="/images/sub_cate1_lnb2_ov.png" alt="찾아오시는길" onclick="location.href='/html/intro/contact.html'" class="aside_link">
                         </div>
                     </aside>
                     <article>
                         <div class="nav_bar">
                             <nav>
-                                <img src="/images/myinfo/myinfo_nav_tit2.png" alt="주문내역">
+                                <img src="/images/sub_nav_tit_cate1_tit2.png" alt="찾아오시는길">
                             </nav>
                             <div>
-                                <p>HOME > 주문내역 > <span style="color: #91ba23; font-weight: 700;">주문내역</span></p>
+                                <p>HOME > 팜스토리소개 > <span style="color: #91ba23; font-weight: 700;">찾아오시는길</span></p>
                             </div>
                         </div>
-                        <div class="sub_page2">
-                            <table>
-                                <tr>
-                                    <th>주문번호</th>
-                                    <th>이미지</th>
-                                    <th>상품명</th>
-                                    <th>판매가격</th>
-                                    <th>수량</th>
-                                    <th>합계</th>
-                                    <th>주문자</th>
-                                    <th>주문일</th>
-                                    <th>확인<span style="color: #777; font-weight: normal;"></span></th>
-
-                                </tr>
-                                <tr class="tr_d">
-                                    <td colspan="9">
-                                        <p>상품 구매 내역이 없습니다.</p>
-                                    </td>
-                                </tr>
-
-                                <tr class="tr_d">
-                                <td>1001</td>
-                                <td>
-                                    <a href="#"><img src="/images/market_item1.jpg" alt="사과" class="apple"></a>
-                                </td>
-                                <td>사과<br>500g</td>
-                                <td>4,000<br>원</td>
-                                <td>2</td>
-                                <td>11,000<br>원</td>
-                                <td>김유신</td>
-                                <td>2023-01-01 13:06:14</td>
-                                <td>[상세확인]</td>
-                                </tr>
-                            </table>
-                            <div class="sub_page3">
-                               <a href="#" class="prev">이전</a>
-                               <a href="#" class="num no">1</a>
-                               <a href="#" class="num">2</a>
-                               <a href="#" class="num">3</a>
-                               <a href="#" class="next">다음</a>
+                        <div class="sub_page">
+                            <div class="sub_page_p">
+                                <p>
+                                    <span style="color: #91ba23; font-weight: 700;">팜스토리</span><br>
+                                    주소: 경기도 이천시 잘한다구 신난다동 123<br>
+                                    전화: 01-234-5678
+                                </p>
+                                <p>
+                                    <span style="color: #91ba23; font-weight: 700;">찾아오시는길</span><br>
+                                </p>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.0597793341053!2d129.07202137637717!3d35.18006257275311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356893545e9bb879%3A0xb3fe515128fe55dd!2z67aA7IKw6rSR7Jet7IucIOyXsOygnOq1rCDspJHslZnrjIDroZwgMTAwMQ!5e0!3m2!1sko!2skr!4v1739175569540!5m2!1sko!2skr" width="760" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
                     </article>
                 </section>
-            </div>
+            </div> 
         </main>
+
         <footer>
             <div class="footer_container">
                 <div class="footer_img">
@@ -165,6 +137,7 @@
                 </div>
             </div>
         </footer>
+        
     </div>
 </body>
 </html>

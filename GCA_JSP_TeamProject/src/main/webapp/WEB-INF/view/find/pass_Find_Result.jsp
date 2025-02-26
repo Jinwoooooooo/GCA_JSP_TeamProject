@@ -1,10 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>find::pass_change</title>
-    <link rel="stylesheet" href="/css/find/pass_Change.css">
+    <title>find::pass_Find_Result</title>
+    <link rel="stylesheet" href="/css/find/pass_Find_Result.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
@@ -74,33 +75,35 @@
             </div>
         </header>
         <main>
-            <section>
+            <section class="id_find">             
                 <form action="#">
-                    <h2>비밀번호 변경</h2>
+                    <h2>비밀번호 찾기</h2>
                     <table>
                         <tbody>
                             <tr>
                                 <td>아이디</td>
-                                <td>honggildong</td>
+                                <td><input type="text" name="uid" placeholder="아이디 입력"></td>
                             </tr>
                             <tr>
-                                <td>새 비밀번호</td>
+                                <td>이메일</td>
                                 <td>
-                                    <input type="pass" name="pass1" placeholder="새 비밀번호 입력">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>새 비밀번호 확인</td>
-                                <td>
-                                    <input type="pass" name="pass2" placeholder="새 비밀번호 입력">
+                                    <div>
+                                        <input type="email" name="email" placeholder="이메일 입력"/>
+                                        <button>인증번호 받기</button>
+                                    </div>
+                                    <div>
+                                        <input type="text" name="auth_code" placeholder="인증번호 입력">
+                                        <button>확인</button>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </form>
                 <p>
-                    비밀번호를 변경해 주세요. <br>
-                    영문, 숫자, 특수문자를 사용하여 8자 이상 입력해 주세요.
+                    비밀번호를 찾고자 하는 아이디와 이메일을 입력해 주세요. <br>
+                    회원가입시 입력한 아이디와 이메일 주소가 같아야, 인증번호를 받을 수 있습니다. <br>
+                    인증번호를 입력 후 확인 버튼을 누르세요.
                 </p>
                 <div>
                     <a href="#">취소</a>
@@ -108,7 +111,7 @@
                 </div>
             </section>
         </main>
-        
+
         <footer>
             <div class="footer_container">
                 <div class="footer_img">

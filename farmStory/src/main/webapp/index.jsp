@@ -17,8 +17,8 @@
                 <div class="top">
                     <div>
                         <a href="/index.html">HOME |</a>
-                        <a href="/html/user/login.html">로그인 |</a>
-                        <a href="/html/user/signUp.html">회원가입 |</a>
+                        <a href="/farmStory/view/user/login.do">로그인 |</a>
+                        <a href="/farmStory/view/user/register.do">회원가입 |</a>
                         <a href="#">나의정보 |</a>
                         <a href="#">로그아웃 |</a>
                         <a href="/html/adminMain/adminMain.html">관리자 |</a>

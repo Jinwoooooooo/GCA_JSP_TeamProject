@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>농작물이야기</title>
-    <link rel="stylesheet" href="/farmStory/css/cropStory/cropStory.css">
+    <title>글보기</title>
+    <link rel="stylesheet" href="/farmStory/css/community/viewText.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
@@ -15,15 +15,15 @@
         <header>
             <div>
                 <div class="top">
-                    <p>
-                        <a href="#">HOME |</a>
+                    <div>
+                        <a href="/index.html">HOME |</a>
                         <a href="#">로그인 |</a>
                         <a href="#">회원가입 |</a>
                         <a href="#">나의정보 |</a>
                         <a href="#">로그아웃 |</a>
                         <a href="#">관리자 |</a>
                         <a href="#">고객센터</a>
-                    </p>
+                    </div>
                 </div>
             </div>
             
@@ -78,62 +78,97 @@
         <main>
             <div class="main_container">
                 <div class="sub_top_container">
-                    <img src="/farmStory/images/sub_top_tit3.png" alt="인트로">
+                    <img src="/farmStory/images/sub_top_tit5.png" alt="커뮤니티">
                 </div>
                 <section>
                     <aside>
                         <div>
-                            <img src="/farmStory/images/sub_aside_cate3_tit.png" alt="농작물이야기">
+                            <img src="/farmStory/images/sub_aside_cate5_tit.png" alt="커뮤니티">
                         </div>
                         <div>
-                            <a href="#">
-                                <img src="/farmStory/images/sub_cate3_lnb1_ov.png" alt="">
-                            </a>
-                            <a href="#">
-                                <img src="/farmStory/images/sub_cate3_lnb2.png" alt="">
-                            </a>
-                            <a href="#">
-                                <img src="/farmStory/images/sub_cate3_lnb3.png" alt="">
-                            </a>
+                            <img src="/farmStory/images/sub_cate5_lnb1.png" alt="공지사항">
+                            <img src="/farmStory/images/sub_cate5_lnb2.png" alt="오늘의식단">
+                            <img src="/farmStory/images/sub_cate5_lnb3_ov.png" alt="나도요리사">
+                            <img src="/farmStory/images/sub_cate5_lnb4.png" alt="1:1고객문의">
+                            <img src="/farmStory/images/sub_cate5_lnb5.png" alt="자주묻는질문">
                         </div>
                     </aside>
                     <article>
                         <div class="nav_bar">
                             <nav>
-                                <img src="/farmStory/images/sub_nav_tit_cate3_tit1.png" alt="농작물이야기">
+                                <img src="/farmStory/images/sub_nav_tit_cate5_tit3.png" alt="나도요리사">
                             </nav>
                             <div>
-                                <p>HOME > 농작물이야기 > <span style="color: #91ba23; font-weight: 700;">농작물이야기</span></p>
+                                <p>HOME > 커뮤니티 > <span style="color: #91ba23; font-weight: 700;">나도요리사</span></p>
                             </div>
                         </div>
-                         <div class="sub_page">
-                            <h1>글수정</h1>
+                        <div class="sub_page">
+                            <h1>글보기</h1>
                             <form action="#">
                                 <table>
                                     <tr>
                                         <td>제목</td>
                                         <td>
-                                            <input type="text" name="title" placeholder="제목을 입력하세요." class="title" required>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>내용</td>
-                                        <td>
-                                            <textarea name="content" maxlength="1000" class="content" required></textarea>
+                                            <input type="text" name="title" value="제목입니다." class="title" readonly>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>파일</td>
                                         <td>
-                                            <p>최대 2개 파일 첨부 가능, 각 파일당 최대 10MB까지 가능</p>
-                                            <input type="file" name="file1" class="file1 file">
-                                            <input type="file" name="file2" class="file2 file">
+                                            <p>2021년 상반기 매출현황.xls (7회) <a href="#">다운로드</a></p>
+                                            <p>교육 운영 관리자료.hwp (7회) <a href="#">다운로드</a></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>내용</td>
+                                        <td>
+                                            <textarea name="content" maxlength="1000" class="content" readonly></textarea>
                                         </td>
                                     </tr>
                                 </table>
-                                <div class="btnContainer">
-                                    <button class="btn btnCancel">취소</button>
-                                    <button class="btn btnSubmit" type="submit">수정완료</button>
+                                <div class="btnContainer1">
+                                    <button class="btn2">삭제</button>
+                                    <button class="btn2">수정</button>
+                                    <button class="btn2">목록</button>
+                                </div>
+                            </form>
+                            <form action="#">
+                                <div class="commentList">
+                                    <h3 class="comment_sub_title">댓글목록</h3>
+                                    <div class="commentContainer">
+                                        <p class="date_author">2024-05-20 홍길동이</p>
+                                        <p class="comment">댓글 샘플입니다.</p>
+                                        <div class="remove_edit">
+                                            <a href="#">삭제</a>
+                                            <a href="#">수정</a>
+                                        </div>
+                                    </div>
+                                    <div class="commentContainer">
+                                        <p class="date_author">2024-05-20 홍길동이</p>
+                                        <p class="comment">댓글 샘플입니다.</p>
+                                        <div class="remove_edit">
+                                            <a href="#">삭제</a>
+                                            <a href="#">수정</a>
+                                        </div>
+                                    </div>
+                                    <div class="commentContainer">
+                                        <p class="date_author">2024-05-20 홍길동이</p>
+                                        <p class="comment">댓글 샘플입니다.</p>
+                                        <div class="remove_edit">
+                                            <a href="#">삭제</a>
+                                            <a href="#">수정</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="writeComment">
+                                    <h3 class="comment_sub_title">댓글쓰기</h3>
+                                    <div>
+                                        <textarea name="comment" maxlength="100"></textarea>
+                                        <div class="btnContainer2">
+                                            <button class="btn btnCancel">취소</button>
+                                            <button class="btn btnSubmit" type="submit">작성완료</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </form>
                         </div>

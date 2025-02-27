@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>user::sginUp</title>
-    <link rel="stylesheet" href="/css/user/signUp.css">
+    <link rel="stylesheet" href="/farmStory/css/user/signUp.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
@@ -29,10 +29,10 @@
             <div>
                 <article>
                     <a href="#" class="logo">
-                        <img src="/images/logo.png" alt="팜스토리 로고">
+                        <img src="/farmStory/images/logo.png" alt="팜스토리 로고">
                     </a>
                     <a href="#" class="freeShipping">
-                        <img src="/images/head_txt_img.png" alt="팜스토리 로고">
+                        <img src="/farmStory/images/head_txt_img.png" alt="팜스토리 로고">
                     </a>
                 </article>
             </div>
@@ -41,33 +41,33 @@
                 <ul>
                     <li>
                         <a href="#">
-                            <img src="/images/head_menu_line.png" alt="라인">
-                            <img src="/images/head_menu1.png" alt="팜스토리소개">
+                            <img src="/farmStory/images/head_menu_line.png" alt="라인">
+                            <img src="/farmStory/images/head_menu1.png" alt="팜스토리소개">
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="/images/head_menu_badge.png" alt="30%" class="head_badge">
-                            <img src="/images/head_menu_line.png" alt="라인">
-                            <img src="/images/head_menu2.png" alt="장보기">
+                            <img src="/farmStory/images/head_menu_badge.png" alt="30%" class="head_badge">
+                            <img src="/farmStory/images/head_menu_line.png" alt="라인">
+                            <img src="/farmStory/images/head_menu2.png" alt="장보기">
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="/images/head_menu_line.png" alt="라인">
-                            <img src="/images/head_menu3.png" alt="농작물이야기">
+                            <img src="/farmStory/images/head_menu_line.png" alt="라인">
+                            <img src="/farmStory/images/head_menu3.png" alt="농작물이야기">
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="/images/head_menu_line.png" alt="라인">
-                            <img src="/images/head_menu4.png" alt="이벤트">
+                            <img src="/farmStory/images/head_menu_line.png" alt="라인">
+                            <img src="/farmStory/images/head_menu4.png" alt="이벤트">
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="/images/head_menu_line.png" alt="라인">
-                            <img src="/images/head_menu5.png" alt="커뮤니티">
+                            <img src="/farmStory/images/head_menu_line.png" alt="라인">
+                            <img src="/farmStory/images/head_menu5.png" alt="커뮤니티">
                         </a>
                     </li>
                 </ul>
@@ -81,7 +81,7 @@
                         <tbody>
                             <tr>
                                 <td>아이디</td>
-                                <td><input type="text" name="uid" placeholder="아이디 입력"><button><img src="/images/user/chk_id.gif" alt="중복 확인"></button></td>
+                                <td><input type="text" name="uid" placeholder="아이디 입력"><button><img src="/farmStory/images/user/chk_id.gif" alt="중복 확인"></button></td>
                             </tr>
                             <tr>
                                 <td>비밀번호</td>
@@ -104,13 +104,13 @@
                                 <td>별명</td>
                                 <td>
                                 <p class="nickInfo">공백없는 한글, 영문, 숫자 입력</p>    
-                                <input type="text" name="nick" placeholder="별명 입력"><button><img src="/images/user/chk_id.gif" alt="중복 확인"></button>
+                                <input type="text" name="nick" placeholder="별명 입력"><button><img src="/farmStory/images/user/chk_id.gif" alt="중복 확인"></button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>이메일</td>
                                 <td>         
-                                <input type="email" name="emali" placeholder="이메일 입력"><button><img src="/images/user/chk_auth.gif" alt="인증번호 받기"></button>
+                                <input type="email" name="emali" placeholder="이메일 입력"><button><img src="/farmStory/images/user/chk_auth.gif" alt="인증번호 받기"></button>
                                 </td>
                             </tr>
                             <tr>
@@ -122,7 +122,7 @@
                             <tr>
                                 <td>주소</td>
                                 <td>
-                                    <input type="text" name="post" placeholder="우편번호"><button><img src="/images/user/chk_post.gif" alt="우편번호"></button><br>
+                                    <input type="text" name="post" placeholder="우편번호"><button><img src="/farmStory/images/user/chk_post.gif" alt="우편번호"></button><br>
                                     <input type="text" name="addr1" placeholder="주소 검색"><br>
                                     <input type="text" name="addr2" placeholder="상세주소 입력">
                                 </td>
@@ -140,7 +140,7 @@
         <footer>
             <div class="footer_container">
                 <div class="footer_img">
-                    <img src="/images/footer_logo.png" alt="팜스토리 로고">
+                    <img src="/farmStory/images/footer_logo.png" alt="팜스토리 로고">
                 </div>
                 <div class="footer_p">
                     <p>

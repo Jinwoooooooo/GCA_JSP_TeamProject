@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>인사말</title>
-    <link rel="stylesheet" href="/farmStory/css/intro/greeting.css">
+    <title>글수정</title>
+    <link rel="stylesheet" href="/farmStory/css/community/qna.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
             <div>
                 <div class="top">
                     <div>
-                        <a href="#">HOME |</a>
+                        <a href="/index.jsp">HOME |</a>
                         <a href="#">로그인 |</a>
                         <a href="#">회원가입 |</a>
                         <a href="#">나의정보 |</a>
@@ -78,48 +78,60 @@
         <main>
             <div class="main_container">
                 <div class="sub_top_container">
-                    <img src="/farmStory/images/sub_top_tit1.png" alt="인트로">
+                    <img src="/farmStory/images/sub_top_tit5.png" alt="커뮤니티">
                 </div>
                 <section>
                     <aside>
                         <div>
-                            <img src="/farmStory/images/sub_aside_cate1_tit.png" alt="팜스토리소개">
+                            <img src="/farmStory/images/sub_aside_cate5_tit.png" alt="커뮤니티">
                         </div>
                         <div>
-                            <img src="/farmStory/images/sub_cate1_lnb1_ov.png" alt="인사말" onclick="location.href='/html/intro/greeting.html'" class="aside_link">
-                            <img src="/farmStory/images/sub_cate1_lnb2.png" alt="찾아오시는길" onclick="location.href='/html/intro/contact.html'" class="aside_link">
+                            <img src="/farmStory/images/sub_cate5_lnb1.png" alt="공지사항">
+                            <img src="/farmStory/images/sub_cate5_lnb2.png" alt="오늘의식단">
+                            <img src="/farmStory/images/sub_cate5_lnb3_ov.png" alt="나도요리사">
+                            <img src="/farmStory/images/sub_cate5_lnb4.png" alt="1:1고객문의">
+                            <img src="/farmStory/images/sub_cate5_lnb5.png" alt="자주묻는질문">
                         </div>
                     </aside>
                     <article>
                         <div class="nav_bar">
                             <nav>
-                                <img src="/farmStory/images/sub_nav_tit_cate1_tit1.png" alt="인사말">
+                                <img src="/farmStory/images/sub_nav_tit_cate5_tit3.png" alt="나도요리사">
                             </nav>
                             <div>
-                                <p>HOME > 팜스토리소개 > <span style="color: #91ba23; font-weight: 700;">인사말</span></p>
+                                <p>HOME > 커뮤니티 > <span style="color: #91ba23; font-weight: 700;">나도요리사</span></p>
                             </div>
                         </div>
                         <div class="sub_page">
-                            <img src="/farmStory/images/sub_page1_article_txt.png" alt="건강한 먹거리를...">
-                            <div class="sub_page_p">
-                                <p>
-                                    항상 저희 팜스토리를 성원해 주시고 관심을 가져주시는 모든 분들께 감사의 인사를 드리며<br>
-                                    가정에 건강과 행복이 가득하시길 기원합니다.
-                                </p>
-                                <p>
-                                    팜스토리는 신선하고 안전한 먹거리로 건강한 삶 만들기에 기여합니다.<br>
-                                    보다 좋은 농산품을 공급하기 위해 화학비료를 쓰지 않는 건강한 흙에서 유기농업으로 정성을 다해 지은 농사를 통해 믿고 먹을 수 있는 먹거리 제<br>
-                                    공에 앞장서겠습니다.
-                                </p>
-                                <p>
-                                    <span style="color: #91ba23; font-weight: 700;">친환경 농장</span><br>
-                                    팜스토리는 경기도 이천에 위치한 10만평 규모의 유기농 재배단지입니다.
-                                </p>
-                                <p>
-                                    <span style="color: #91ba23; font-weight: 700;">친환경 캠페인</span><br>
-                                    팜스토리는 2차 포장재 사용을 줄임으로써 친환경적인 포장과, 친환경적인 소비문화 정착을 위해 노력합니다.
-                                </p>
-                            </div>
+                            <h1>글수정</h1>
+                            <form action="#">
+                                <table>
+                                    <tr>
+                                        <td>제목</td>
+                                        <td>
+                                            <input type="text" name="title" placeholder="제목을 입력하세요." class="title" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>내용</td>
+                                        <td>
+                                            <textarea name="content" maxlength="1000" class="content" required></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>파일</td>
+                                        <td>
+                                            <p>최대 2개 파일 첨부 가능, 각 파일당 최대 10MB까지 가능</p>
+                                            <input type="file" name="file1" class="file1 file">
+                                            <input type="file" name="file2" class="file2 file">
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div class="btnContainer">
+                                    <button class="btn btnCancel">취소</button>
+                                    <button class="btn btnSubmit" type="submit">수정완료</button>
+                                </div>
+                            </form>
                         </div>
                     </article>
                 </section>

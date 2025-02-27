@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>농작물이야기</title>
-    <link rel="stylesheet" href="/farmStory/css/cropStory/cropStory.css">
+    <title>글쓰기</title>
+    <link rel="stylesheet" href="/css/community/write.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
@@ -15,25 +15,25 @@
         <header>
             <div>
                 <div class="top">
-                    <p>
-                        <a href="#">HOME |</a>
+                    <div>
+                        <a href="/index.html">HOME |</a>
                         <a href="#">로그인 |</a>
                         <a href="#">회원가입 |</a>
                         <a href="#">나의정보 |</a>
                         <a href="#">로그아웃 |</a>
                         <a href="#">관리자 |</a>
                         <a href="#">고객센터</a>
-                    </p>
+                    </div>
                 </div>
             </div>
             
             <div>
                 <article>
                     <a href="#" class="logo">
-                        <img src="/farmStory/images/logo.png" alt="팜스토리 로고">
+                        <img src="/images/logo.png" alt="팜스토리 로고">
                     </a>
                     <a href="#" class="freeShipping">
-                        <img src="/farmStory/images/head_txt_img.png" alt="팜스토리 로고">
+                        <img src="/images/head_txt_img.png" alt="팜스토리 로고">
                     </a>
                 </article>
             </div>
@@ -42,33 +42,33 @@
                 <ul>
                     <li>
                         <a href="#">
-                            <img src="/farmStory/images/head_menu_line.png" alt="라인">
-                            <img src="/farmStory/images/head_menu1.png" alt="팜스토리소개">
+                            <img src="/images/head_menu_line.png" alt="라인">
+                            <img src="/images/head_menu1.png" alt="팜스토리소개">
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="/farmStory/images/head_menu_badge.png" alt="30%" class="head_badge">
-                            <img src="/farmStory/images/head_menu_line.png" alt="라인">
-                            <img src="/farmStory/images/head_menu2.png" alt="장보기">
+                            <img src="/images/head_menu_badge.png" alt="30%" class="head_badge">
+                            <img src="/images/head_menu_line.png" alt="라인">
+                            <img src="/images/head_menu2.png" alt="장보기">
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="/farmStory/images/head_menu_line.png" alt="라인">
-                            <img src="/farmStory/images/head_menu3.png" alt="농작물이야기">
+                            <img src="/images/head_menu_line.png" alt="라인">
+                            <img src="/images/head_menu3.png" alt="농작물이야기">
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="/farmStory/images/head_menu_line.png" alt="라인">
-                            <img src="/farmStory/images/head_menu4.png" alt="이벤트">
+                            <img src="/images/head_menu_line.png" alt="라인">
+                            <img src="/images/head_menu4.png" alt="이벤트">
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="/farmStory/images/head_menu_line.png" alt="라인">
-                            <img src="/farmStory/images/head_menu5.png" alt="커뮤니티">
+                            <img src="/images/head_menu_line.png" alt="라인">
+                            <img src="/images/head_menu5.png" alt="커뮤니티">
                         </a>
                     </li>
                 </ul>
@@ -78,36 +78,32 @@
         <main>
             <div class="main_container">
                 <div class="sub_top_container">
-                    <img src="/farmStory/images/sub_top_tit3.png" alt="인트로">
+                    <img src="/images/sub_top_tit5.png" alt="커뮤니티">
                 </div>
                 <section>
                     <aside>
                         <div>
-                            <img src="/farmStory/images/sub_aside_cate3_tit.png" alt="농작물이야기">
+                            <img src="/images/sub_aside_cate5_tit.png" alt="커뮤니티">
                         </div>
                         <div>
-                            <a href="#">
-                                <img src="/farmStory/images/sub_cate3_lnb1_ov.png" alt="">
-                            </a>
-                            <a href="#">
-                                <img src="/farmStory/images/sub_cate3_lnb2.png" alt="">
-                            </a>
-                            <a href="#">
-                                <img src="/farmStory/images/sub_cate3_lnb3.png" alt="">
-                            </a>
+                            <img src="/images/sub_cate5_lnb1.png" alt="공지사항">
+                            <img src="/images/sub_cate5_lnb2_ov.png" alt="오늘의식단">
+                            <img src="/images/sub_cate5_lnb3.png" alt="나도요리사">
+                            <img src="/images/sub_cate5_lnb4.png" alt="1:1고객문의">
+                            <img src="/images/sub_cate5_lnb5.png" alt="자주묻는질문">
                         </div>
                     </aside>
                     <article>
                         <div class="nav_bar">
                             <nav>
-                                <img src="/farmStory/images/sub_nav_tit_cate3_tit1.png" alt="농작물이야기">
+                                <img src="/images/sub_nav_tit_cate5_tit2.png" alt="오늘의식단">
                             </nav>
                             <div>
-                                <p>HOME > 농작물이야기 > <span style="color: #91ba23; font-weight: 700;">농작물이야기</span></p>
+                                <p>HOME > 커뮤니티 > <span style="color: #91ba23; font-weight: 700;">오늘의식단</span></p>
                             </div>
                         </div>
-                         <div class="sub_page">
-                            <h1>글수정</h1>
+                        <div class="sub_page">
+                            <h1>글쓰기</h1>
                             <form action="#">
                                 <table>
                                     <tr>
@@ -133,7 +129,7 @@
                                 </table>
                                 <div class="btnContainer">
                                     <button class="btn btnCancel">취소</button>
-                                    <button class="btn btnSubmit" type="submit">수정완료</button>
+                                    <button class="btn btnSubmit" type="submit">작성완료</button>
                                 </div>
                             </form>
                         </div>
@@ -145,7 +141,7 @@
         <footer>
             <div class="footer_container">
                 <div class="footer_img">
-                    <img src="/farmStory/images/footer_logo.png" alt="팜스토리 로고">
+                    <img src="/images/footer_logo.png" alt="팜스토리 로고">
                 </div>
                 <div class="footer_p">
                     <p>

@@ -42,6 +42,11 @@ header .top > p {
     margin-top: 10px;
 }
 
+header .top > div {
+    float: right;
+    margin-top: 10px;
+}
+
 header article {
     position: relative;
 }

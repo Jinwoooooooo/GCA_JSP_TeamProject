@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>인사말</title>
-    <link rel="stylesheet" href="/css/intro/greeting.css">
+    <link rel="stylesheet" href="/farmStory/css/intro/greeting.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
@@ -30,10 +30,10 @@
             <div>
                 <article>
                     <a href="#" class="logo">
-                        <img src="/images/logo.png" alt="팜스토리 로고">
+                        <img src="/farmStory/images/logo.png" alt="팜스토리 로고">
                     </a>
                     <a href="#" class="freeShipping">
-                        <img src="/images/head_txt_img.png" alt="팜스토리 로고">
+                        <img src="/farmStory/images/head_txt_img.png" alt="팜스토리 로고">
                     </a>
                 </article>
             </div>
@@ -42,33 +42,33 @@
                 <ul>
                     <li>
                         <a href="#">
-                            <img src="/images/head_menu_line.png" alt="라인">
-                            <img src="/images/head_menu1.png" alt="팜스토리소개">
+                            <img src="/farmStory/images/head_menu_line.png" alt="라인">
+                            <img src="/farmStory/images/head_menu1.png" alt="팜스토리소개">
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="/images/head_menu_badge.png" alt="30%" class="head_badge">
-                            <img src="/images/head_menu_line.png" alt="라인">
-                            <img src="/images/head_menu2.png" alt="장보기">
+                            <img src="/farmStory/images/head_menu_badge.png" alt="30%" class="head_badge">
+                            <img src="/farmStory/images/head_menu_line.png" alt="라인">
+                            <img src="/farmStory/images/head_menu2.png" alt="장보기">
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="/images/head_menu_line.png" alt="라인">
-                            <img src="/images/head_menu3.png" alt="농작물이야기">
+                            <img src="/farmStory/images/head_menu_line.png" alt="라인">
+                            <img src="/farmStory/images/head_menu3.png" alt="농작물이야기">
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="/images/head_menu_line.png" alt="라인">
-                            <img src="/images/head_menu4.png" alt="이벤트">
+                            <img src="/farmStory/images/head_menu_line.png" alt="라인">
+                            <img src="/farmStory/images/head_menu4.png" alt="이벤트">
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="/images/head_menu_line.png" alt="라인">
-                            <img src="/images/head_menu5.png" alt="커뮤니티">
+                            <img src="/farmStory/images/head_menu_line.png" alt="라인">
+                            <img src="/farmStory/images/head_menu5.png" alt="커뮤니티">
                         </a>
                     </li>
                 </ul>
@@ -78,29 +78,29 @@
         <main>
             <div class="main_container">
                 <div class="sub_top_container">
-                    <img src="/images/sub_top_tit1.png" alt="인트로">
+                    <img src="/farmStory/images/sub_top_tit1.png" alt="인트로">
                 </div>
                 <section>
                     <aside>
                         <div>
-                            <img src="/images/sub_aside_cate1_tit.png" alt="팜스토리소개">
+                            <img src="/farmStory/images/sub_aside_cate1_tit.png" alt="팜스토리소개">
                         </div>
                         <div>
-                            <img src="/images/sub_cate1_lnb1_ov.png" alt="인사말" onclick="location.href='/html/intro/greeting.html'" class="aside_link">
-                            <img src="/images/sub_cate1_lnb2.png" alt="찾아오시는길" onclick="location.href='/html/intro/contact.html'" class="aside_link">
+                            <img src="/farmStory/images/sub_cate1_lnb1_ov.png" alt="인사말" onclick="location.href='/html/intro/greeting.html'" class="aside_link">
+                            <img src="/farmStory/images/sub_cate1_lnb2.png" alt="찾아오시는길" onclick="location.href='/html/intro/contact.html'" class="aside_link">
                         </div>
                     </aside>
                     <article>
                         <div class="nav_bar">
                             <nav>
-                                <img src="/images/sub_nav_tit_cate1_tit1.png" alt="인사말">
+                                <img src="/farmStory/images/sub_nav_tit_cate1_tit1.png" alt="인사말">
                             </nav>
                             <div>
                                 <p>HOME > 팜스토리소개 > <span style="color: #91ba23; font-weight: 700;">인사말</span></p>
                             </div>
                         </div>
                         <div class="sub_page">
-                            <img src="/images/sub_page1_article_txt.png" alt="건강한 먹거리를...">
+                            <img src="/farmStory/images/sub_page1_article_txt.png" alt="건강한 먹거리를...">
                             <div class="sub_page_p">
                                 <p>
                                     항상 저희 팜스토리를 성원해 주시고 관심을 가져주시는 모든 분들께 감사의 인사를 드리며<br>
@@ -129,7 +129,7 @@
         <footer>
             <div class="footer_container">
                 <div class="footer_img">
-                    <img src="/images/footer_logo.png" alt="팜스토리 로고">
+                    <img src="/farmStory/images/footer_logo.png" alt="팜스토리 로고">
                 </div>
                 <div class="footer_p">
                     <p>

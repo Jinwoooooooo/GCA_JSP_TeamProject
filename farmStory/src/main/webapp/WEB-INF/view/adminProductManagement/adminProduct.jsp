@@ -33,6 +33,7 @@
                             </li>
                         </ul>
                     </div>
+
                     <div>
                         <p>주문관리</p>
                         <ul>
@@ -42,12 +43,13 @@
                             </li>
                         </ul>
                     </div>
+
                     <div>
                         <p>회원관리</p>
                         <ul>
                             <li>
                                 <span>L</span>
-                                <a href="#">회원목록</a>
+                                <a href="/farmStory/memberList/list.do">회원목록</a>
                             </li>
                         </ul>
                     </div>

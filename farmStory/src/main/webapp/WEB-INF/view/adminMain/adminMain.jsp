@@ -50,7 +50,7 @@
                         <ul>
                             <li>
                                 <span>L</span>
-                                <a href="#">회원목록</a>
+                                <a href="/farmStory/memberList/list.do">회원목록</a>
                             </li>
                         </ul>
                     </div>

@@ -25,14 +25,15 @@
                         <ul>
                             <li>
                                 <span>L</span>
-                                <a href="/html/adminProductManagement/adminProduct.html" class="list_it">상품목록</a>
+                                <a href="/farmStory/adminMain/adminProList.do" class="list_it">상품목록</a>
                             </li>
                             <li>
                                 <span>L</span>
-                                <a href="#">상품등록</a>
+                                <a href="/farmStory/adminPro/register.do">상품등록</a>
                             </li>
                         </ul>
                     </div>
+
                     <div>
                         <p>주문관리</p>
                         <ul>
@@ -42,12 +43,13 @@
                             </li>
                         </ul>
                     </div>
+
                     <div>
                         <p>회원관리</p>
                         <ul>
                             <li>
                                 <span>L</span>
-                                <a href="#">회원목록</a>
+                                <a href="/farmStory/memberList/list.do">회원목록</a>
                             </li>
                         </ul>
                     </div>

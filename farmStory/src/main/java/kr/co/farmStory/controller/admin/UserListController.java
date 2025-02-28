@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/adminMain/list.do")
+@WebServlet("/memberList/list.do")
 public class UserListController extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
@@ -19,7 +19,7 @@ public class UserListController extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/adminMain/adminMain.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/adminMemberManagement/MemberList.jsp");
 		dispatcher.forward(req, resp);
 	}
 	

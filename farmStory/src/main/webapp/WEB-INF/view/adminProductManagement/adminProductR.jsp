@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>adminProductR</title>
+    <title>상품등록</title>
     <link rel="stylesheet" href="/farmStory/css/adminProductManagement/adminProductR.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -19,38 +19,40 @@
                 <p class="heading_p">주요기능</p>
             </div>
             <div class="list">
-                <div>
-                    <p>상품관리</p>
-                    <ul>
-                        <li>
-                            <span>L</span>
-                            <a href="/farmStory/adminMain/adminProList.do" class="list_it">상품목록</a>
-                        </li>
-                        <li>
-                            <span>L</span>
-                            <a href="#">상품등록</a>
-                        </li>
-                    </ul>
+                    <div>
+                        <p>상품관리</p>
+                        <ul>
+                            <li>
+                                <span>L</span>
+                                <a href="/farmStory/adminMain/adminProList.do" class="list_it">상품목록</a>
+                            </li>
+                            <li>
+                                <span>L</span>
+                                <a href="/farmStory/adminPro/register.do">상품등록</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <p>주문관리</p>
+                        <ul>
+                            <li>
+                                <span>L</span>
+                                <a href="#">주문목록</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <p>회원관리</p>
+                        <ul>
+                            <li>
+                                <span>L</span>
+                                <a href="/farmStory/memberList/list.do">회원목록</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div>
-                    <p>주문관리</p>
-                    <ul>
-                        <li>
-                            <span>L</span>
-                            <a href="#">주문목록</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <p>회원관리</p>
-                    <ul>
-                        <li>
-                            <span>L</span>
-                            <a href="#">회원목록</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
         </aside>
 
         <section>

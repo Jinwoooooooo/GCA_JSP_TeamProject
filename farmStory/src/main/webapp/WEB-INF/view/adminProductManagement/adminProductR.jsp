@@ -12,15 +12,7 @@
 </head>
 <body>
     <div id="wrapper">
-        <header>
-            <a href="#"><img src="/images/admin/admin_logo.jpg" alt="hd_logo" class="hd_logo"></a>
-            <ul>
-                <li>HOME&nbsp;|&nbsp;</li>
-                <li>로그아웃&nbsp;|&nbsp;</li>
-                <li>고객센터</li>
-            </ul>
-        </header>
-        
+       <%@ include file="/WEB-INF/view/admin/_header.jsp" %>
         <main>
            <aside>
             <div class="heading">
@@ -127,10 +119,7 @@
 
         </main>
 
-        <footer>
-            <p>Copyright(C)Farmstory All rights reserved. FARMSTORY ADMINISTRATOR Version 1.0.1</p>
-        </footer>
-
+        <%@ include file="/WEB-INF/view/admin/_footer.jsp" %>
     </div>
 </body>
 </html>

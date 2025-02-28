@@ -9,7 +9,7 @@ public class UserDTO {
 	private String email;
 	private String hp;
 	private String role;
-	private String point;
+	private int point;
 	private String zip;
 	private String addr1;
 	private String addr2;
@@ -59,10 +59,10 @@ public class UserDTO {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	public String getPoint() {
+	public int getPoint() {
 		return point;
 	}
-	public void setPoint(String point) {
+	public void setPoint(int point) {
 		this.point = point;
 	}
 	public String getZip() {

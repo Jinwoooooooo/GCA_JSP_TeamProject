@@ -1,17 +1,27 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <header>
     <div>
         <div class="top">
+            <c:if test="${empty sessionScope.sessUser}">
             <div>
                 <a href="/farmStory/index.jsp">HOME |</a>
                 <a href="/farmStory/view/user/login.do">로그인 |</a>
                 <a href="/farmStory/view/user/register.do">회원가입 |</a>
                 <a href="#">나의정보 |</a>
-                <a href="#">로그아웃 |</a>
                 <a href="/html/adminMain/adminMain.html">관리자 |</a>
                 <a href="#">고객센터</a>
             </div>
+            </c:if>
+            <c:if test="${not empty sessionScope.sessUser}">
+            <div>
+                <a href="/farmStory/index.jsp">HOME |</a>
+                <a href="/farmStory/view/user/logout.do">로그아웃 |</a>
+                <a href="#">나의정보 |</a>
+                <a href="/html/adminMain/adminMain.html">관리자 |</a>
+                <a href="#">고객센터</a>
+            </div>
+            </c:if>
         </div>
     </div>
     

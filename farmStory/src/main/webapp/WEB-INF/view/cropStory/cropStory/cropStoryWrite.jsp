@@ -24,13 +24,13 @@
                             <img src="/farmStory/images/sub_aside_cate3_tit.png" alt="농작물이야기">
                         </div>
                         <div>
-                            <a href="/farmStory/view/cropStory/cropStory.do">
+                            <a href="/farmStory/view/cropStory/cropStory/cropStoryList.do">
                                 <img src="/farmStory/images/sub_cate3_lnb1_ov.png" alt="농작물이야기">
                             </a>
-                            <a href="/farmStory/view/cropStory/gardening.do">
+                            <a href="/farmStory/view/cropStory/gardening/gardeningList.do">
                                 <img src="/farmStory/images/sub_cate3_lnb2.png" alt="텃밭가꾸기">
                             </a>
-                            <a href="/farmStory/view/cropStory/returnToFarmingSchool.do">
+                            <a href="/farmStory/view/cropStory/farmingSchool/farmingSchoolList.do">
                                 <img src="/farmStory/images/sub_cate3_lnb3.png" alt="귀농학교">
                             </a>
                         </div>
@@ -45,9 +45,35 @@
                             </div>
                         </div>
                         <div class="sub_page">
-                            <div class="sub_page_p">
-                                게시판 글목록/글쓰기/글보기/글수정 화면 출력(커뮤니티 참고)
-                            </div>
+                            <h1>글쓰기</h1>
+                            <form action="#">
+                                <table>
+                                    <tr>
+                                        <td>제목</td>
+                                        <td>
+                                            <input type="text" name="title" placeholder="제목을 입력하세요." class="title" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>내용</td>
+                                        <td>
+                                            <textarea name="content" maxlength="1000" class="content" required></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>파일</td>
+                                        <td>
+                                            <p>최대 2개 파일 첨부 가능, 각 파일당 최대 10MB까지 가능</p>
+                                            <input type="file" name="file1" class="file1 file">
+                                            <input type="file" name="file2" class="file2 file">
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div class="btnContainer">
+                                    <button class="btn btnCancel">취소</button>
+                                    <button class="btn btnSubmit" type="submit">작성완료</button>
+                                </div>
+                            </form>
                         </div>
                     </article>
                 </section>

@@ -4,41 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>글수정</title>
-    <link rel="stylesheet" href="/farmStory/css/community/qna.css">
+    <title>농작물이야기</title>
+    <link rel="stylesheet" href="/farmStory/css/cropStory/cropStory.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+	<%@ include file="/../../header.jsp" %>
 </head>
 <body>
     <div id="wrapper">
-        <%@ include file="/../../header.jsp" %>
-
         <main>
             <div class="main_container">
                 <div class="sub_top_container">
-                    <img src="/farmStory/images/sub_top_tit5.png" alt="커뮤니티">
+                    <img src="/farmStory/images/sub_top_tit3.png" alt="인트로">
                 </div>
                 <section>
                     <aside>
                         <div>
-                            <img src="/farmStory/images/sub_aside_cate5_tit.png" alt="커뮤니티">
+                            <img src="/farmStory/images/sub_aside_cate3_tit.png" alt="농작물이야기">
                         </div>
                         <div>
-                            <img src="/farmStory/images/sub_cate5_lnb1_ov.png" alt="공지사항">
-                            <img src="/farmStory/images/sub_cate5_lnb2.png" alt="오늘의식단">
-                            <img src="/farmStory/images/sub_cate5_lnb3.png" alt="나도요리사">
-                            <img src="/farmStory/images/sub_cate5_lnb4.png" alt="1:1고객문의">
-                            <img src="/farmStory/images/sub_cate5_lnb5.png" alt="자주묻는질문">
+                            <a href="/farmStory/view/cropStory/cropStory/cropStoryList.do">
+                                <img src="/farmStory/images/sub_cate3_lnb1_ov.png" alt="농작물이야기">
+                            </a>
+                            <a href="/farmStory/view/cropStory/gardening/gardeningList.do">
+                                <img src="/farmStory/images/sub_cate3_lnb2.png" alt="텃밭가꾸기">
+                            </a>
+                            <a href="/farmStory/view/cropStory/farmingSchool/farmingSchoolList.do">
+                                <img src="/farmStory/images/sub_cate3_lnb3.png" alt="귀농학교">
+                            </a>
                         </div>
                     </aside>
                     <article>
                         <div class="nav_bar">
                             <nav>
-                                <img src="/farmStory/images/sub_nav_tit_cate5_tit.png" alt="공지사항">
+                                <img src="/farmStory/images/sub_nav_tit_cate3_tit1.png" alt="농작물이야기">
                             </nav>
                             <div>
-                                <p>HOME > 커뮤니티 > <span style="color: #91ba23; font-weight: 700;">공지사항</span></p>
+                                <p>HOME > 농작물이야기 > <span style="color: #91ba23; font-weight: 700;">농작물이야기</span></p>
                             </div>
                         </div>
                         <div class="sub_page">
@@ -77,26 +80,7 @@
             </div> 
         </main>
 
-        <footer>
-            <div class="footer_container">
-                <div class="footer_img">
-                    <img src="/farmStory/images/footer_logo.png" alt="팜스토리 로고">
-                </div>
-                <div class="footer_p">
-                    <p>
-                        (주)팜스토리 / 사업자등록번호 123-45-67890 / 통신판매업신고 제 2013-부산진구-123호 / 벤처기업확인 서울지방중소기업청 제 012345678-9-01234호<br>
-                        등록번호 팜스토리01234 (2013.04.01) / 발행인 : 홍길동<br>
-                        대표 : 홍길동 / 이메일 : honggildong@gmail.com / 전화 : 01) 234-5678 / 부산광역시 부산진구 부전동 123
-                    </p>
-                    <p>
-                        copyrightⓒ 홍길동 All rights reserved.
-                    </p>
-                    <p>
-                        farmstory ver1.0.1
-                    </p>
-                </div>
-            </div>
-        </footer>
+        <%@ include file="/../../footer.jsp" %>
         
     </div>
 </body>

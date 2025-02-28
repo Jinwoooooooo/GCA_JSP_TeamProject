@@ -9,15 +9,15 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-		
+		<%@ include file="/../../header.jsp" %>
     </head>
     <body>
         <div id="wrapper">
-            <%@ include file="/../../header.jsp" %>
+
             <main>
                 <div class="main_container">
                     <div class="sub_top_container">
-                        <img src="/farmStory/images/sub_top_tit5.png" alt="커뮤니티">
+                        <img src="/farmStory/images/sub_top_tit5.png" alt="인트로">
                     </div>
                     <section>
                         <aside>
@@ -38,13 +38,14 @@
                                     <img src="/farmStory/images/sub_cate5_lnb4.png" alt="1:1고객문의">
                                 </a>
                                 <a href="/farmStory/view/community/qna/qnaList.do">
-                                <img src="/farmStory/images/sub_aside_cate5_tit.png" alt="자주묻는질문">
+                                    <img src="/farmStory/images/sub_cate5_lnb5.png" alt="자주묻는질문">
+                                </a>
                             </div>
                         </aside>
                         <article>
                             <div class="nav_bar">
                                 <nav>
-                                    <img src="/farmStory/images/sub_nav_tit_cate5_tit2.png" alt="오늘의식단">
+                                    <img src="/farmStory/images/sub_nav_tit_cate5_tit2.png" alt="농작물이야기">
                                 </nav>
                                 <div>
                                     <p>HOME > 커뮤니티 > <span style="color: #91ba23; font-weight: 700;">오늘의식단</span></p>

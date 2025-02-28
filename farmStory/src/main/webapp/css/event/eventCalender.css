@@ -4,6 +4,10 @@
     font: normal 12px "Noto Sans KR";
 }
 
+.fc-h-event, .fc-event-title {
+	    text-align: center; /* 가운데 정렬합니다. */
+}
+
 ul, ol {
     list-style: none;
 }
@@ -239,3 +243,4 @@ footer {
     float: right;
     color: #888888;
 }
+

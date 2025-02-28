@@ -37,12 +37,12 @@ header > div > * {
     margin: 0 auto;
 }
 
-header .top > p {
+header .top > div {
     float: right;
     margin-top: 10px;
 }
 
-header .top > div {
+header .top > p {
     float: right;
     margin-top: 10px;
 }
@@ -188,6 +188,7 @@ header > div:nth-child(3) > ul > li > a > img {
     font-size: 12px;
     margin-left: 12px;
 }
+
 
 .main_container > section {
     position: relative;
@@ -388,6 +389,8 @@ header > div:nth-child(3) > ul > li > a > img {
 .sub_page_p > p:nth-child(2) {
     margin-bottom: 2px;
 }
+
+
 
 footer {
     display: inline-block;

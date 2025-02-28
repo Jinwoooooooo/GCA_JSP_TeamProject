@@ -31,13 +31,16 @@ public enum UserService {
 		return dao.selectUser(dto); 
 	}
 	
+	public List<UserDTO> findAllUser() { 
+		return dao.selectAllUser(); 
+	}
+	
 	/*
 	 * public UserDTO findUser(String uid) { return dao.selectUser(uid); }
 	 */
 	  
 	  
 	/*
-	 * public List<UserDTO> findAllUser() { return dao.selectAllUser(); }
 	 * 
 	 * public void modifyUser(UserDTO dto) { dao.updateUser(dto); }
 	 * 

@@ -1,5 +1,8 @@
 package kr.co.farmStory.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -108,5 +111,40 @@ public class UserDAO extends DBHelper {
 			logger.error(e.getMessage());
 		}
 		return userDTO;
+	}
+	
+	public List<UserDTO> selectAllUser() {
+		
+		List<UserDTO> users = new ArrayList<>();
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(SQL.SELECT_ALL_USER);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				UserDTO dto = new UserDTO();
+				dto.setUid(rs.getString(1));
+				dto.setPass(rs.getString(2));
+				dto.setName(rs.getString(3));
+				dto.setNick(rs.getString(4));
+				dto.setEmail(rs.getString(5));
+				dto.setHp(rs.getString(6));
+				dto.setRole(rs.getString(7));
+				dto.setPoint(rs.getInt(8));
+				dto.setZip(rs.getString(9));
+				dto.setAddr1(rs.getString(10));
+				dto.setAddr2(rs.getString(11));
+				dto.setRegip(rs.getString(12));
+				dto.setRegDate(rs.getString(13));
+				dto.setLeaveDate(rs.getString(14));
+				users.add(dto);
+			}
+			closeAll();
+			
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return users;
 	}
 }

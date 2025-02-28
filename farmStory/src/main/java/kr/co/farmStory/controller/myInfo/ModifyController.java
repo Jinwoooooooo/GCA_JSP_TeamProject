@@ -1,4 +1,4 @@
-package kr.co.farmStory.controller.community.inquiry;
+package kr.co.farmStory.controller.myInfo;
 
 import java.io.IOException;
 
@@ -9,23 +9,20 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/inquiry/inquiryList.do")
-public class InquiryListController extends HttpServlet {
+@WebServlet("/myInfo/modifyInfo.do")
+public class ModifyController extends HttpServlet {
 
-	private static final long serialVersionUID = 1L;
-
+	private static final long serialVersionUID = -8348817414728702534L;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/community/inquiry/inquiryList.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/myInfo/modifyInfo.jsp");
 		dispatcher.forward(req, resp);
-	
-	
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
 	}
 	
 }

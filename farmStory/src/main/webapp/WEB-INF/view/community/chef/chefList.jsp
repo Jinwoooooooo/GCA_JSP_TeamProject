@@ -33,7 +33,7 @@
                                 <a href="/farmStory/view/community/chef/chefList.do">
                                     <img src="/farmStory/images/sub_cate5_lnb3_ov.png" alt="나도요리사">
                                 </a>
-                                <a href="/farmStory/view/community/inquiry/inquiryList.do">
+                                <a href="/farmStory/inquiry/inquiryList.do">
                                     <img src="/farmStory/images/sub_cate5_lnb4.png" alt="1:1고객문의">
                                 </a>
                                 <a href="/farmStory/view/community/qna/qnaList.do">

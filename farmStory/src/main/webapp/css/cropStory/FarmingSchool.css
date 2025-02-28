@@ -39,13 +39,10 @@ header > div > * {
 }
 
 header .top > div {
+	position: relative;
     float: right;
     margin-top: 10px;
-}
-
-header .top > p {
-    float: right;
-    margin-top: 10px;
+    z-index: 5;
 }
 
 header article {
@@ -92,12 +89,6 @@ header > div:nth-child(3) > ul > li > a > img {
     position: absolute;
     left: 295px;
     top: -13px;
-}
-
-.main_container {
-    width: 980px;
-    height: auto;
-    margin: 0 auto;
 }
 
 .sub_top_container {

@@ -56,7 +56,7 @@ public enum UserService {
 		
 		//Gmail 기본정보
 		String sender = "jinwooya55@gmail.com";
-		String title = "JBOARD 인증코드입니다.";
+		String title = "farmStory 인증코드입니다.";
 		String content = "<h1>인증코드: " + code + "</h1>";
 		String appPassword = "cieo pffd ahqd aivb";
 		
@@ -79,7 +79,7 @@ public enum UserService {
 		Message message = new MimeMessage(gmailSession);
 		
 		try {
-			message.setFrom(new InternetAddress(sender, "JBOARD 관리자", "UTF-8"));
+			message.setFrom(new InternetAddress(sender, "farmStory", "UTF-8"));
 			message.addRecipient(Message.RecipientType.TO, new InternetAddress(receiver));
 			message.setSubject(title);
 			message.setContent(content, "text/html;charset=UTF-8");

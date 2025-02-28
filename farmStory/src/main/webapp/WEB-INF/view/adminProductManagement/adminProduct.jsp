@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,16 +71,20 @@
                                 <th>재고</th>
                                 <th>등록일</th>
                             </tr>
+                            
                             <tr class="table_bd1">
                                 <td class="img"><input type="checkbox"></td>
                                 <td><img src="/farmStory/images/market_item1.jpg" ></td>
-                                <td>1011</td>
-                                <td>사과 500g</td>
-                                <td>과일</td>
-                                <td>4,000원</td>
-                                <td>100</td>
-                                <td>2023-01-01</td>
+                            <c:forEach var="dto" items="${dtos}">
+                                <td>${dto.pid}</td>
+                                <td>${dto.pName}</td>
+                                <td>${dto.types}</td>
+                                <td>${dto.price}</td>
+                                <td>${dto.stock}</td>
+                                <td>${dto.pDate}</td>
+                            </c:forEach>
                             </tr>
+                           
                     </table>
                     
                     <div class="main_a">

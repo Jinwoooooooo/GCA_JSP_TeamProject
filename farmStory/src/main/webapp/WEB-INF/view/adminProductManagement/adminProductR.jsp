@@ -58,8 +58,12 @@
         <section>
             <nav class="heading2">상품등록</nav>
             <article>
-                <form action="#">
+                <form action="/farmStory/adminPro/register.do" method="post">
                     <table>
+                     <tr class="table_tr">
+                            <td>상품코드</td>
+                            <td><input type="text" name="pid"></td>
+                        </tr>
                         <tr class="table_tr">
                             <td>상품명</td>
                             <td><input type="text" name="pName"></td>
@@ -68,9 +72,9 @@
                             <td>종류</td>
                             <td>
                             <select class="op" name="types">
-                            	<option value="type">과일</option>
-                            	<option value="type">야채</option>
-                            	<option value="type">곡류</option>
+                            	<option value="type1">과일</option>
+                            	<option value="type2">야채</option>
+                            	<option value="type3">곡류</option>
                             </select>
                             </td>
                         </tr>
@@ -86,19 +90,19 @@
                             <td>할인</td>
                             <td>
                             <select class="op" name="discount">
-                            	<option value="sale">10%</option>
-                            	<option value="sale">20%</option>
-                            	<option value="sale">30%</option>
+                            	<option value="1">10%</option>
+                            	<option value="2">20%</option>
+                            	<option value="3">30%</option>
                             </select>
                             </td>
                         </tr>
                         <tr class="table_tr">
                             <td><p>배송비</p></td>
                             <td class="radio">
-                                <label><input type="radio" name="charge">2,000원</label>
-                                <label><input type="radio" name="charge">3,000원</label>
-                                <label><input type="radio" name="charge">5,000원</label>
-                                <label><input type="radio" name="charge">무료</label>
+                                <label><input type="radio" name="charge" value="2">2,000원</label>
+                                <label><input type="radio" name="charge" value="3">3,000원</label>
+                                <label><input type="radio" name="charge" value="4">5,000원</label>
+                                <label><input type="radio" name="charge" value="0">무료</label>
                             </td>    
 
                         </tr>

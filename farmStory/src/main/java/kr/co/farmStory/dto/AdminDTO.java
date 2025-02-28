@@ -6,7 +6,7 @@ public class AdminDTO {
 	private String types;
 	private int price;
 	private int point;
-	private int discount;
+	private String discount;
 	private int charge;
 	private int stock;
 	private String pImage;
@@ -74,17 +74,12 @@ public class AdminDTO {
 		}
 	}
 	
-	public int getDiscount() {
+	public String getDiscount() {
 		return discount;
 	}
-	public void setDiscount(int discount) {
-		this.discount = discount;
-	}
 	
-	public void setDiscount(String Discount) {
-		if(Discount != null) {
-			this.discount = Integer.parseInt(Discount);
-		}
+	public void setDiscount(String discount) {
+		this.discount = discount;
 	}
 	
 	public int getCharge() {

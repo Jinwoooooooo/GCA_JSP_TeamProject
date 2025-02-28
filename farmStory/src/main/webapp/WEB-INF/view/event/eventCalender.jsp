@@ -10,11 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
-    <script src="/js/eventCalendar.js"></script>
-	<%@ include file="/../../header.jsp" %>
+    <script src="/farmStory/js/eventCalendar.js"></script>
 </head>
 <body>
     <div id="wrapper">
+	<%@ include file="/../../header.jsp" %>
         <main>
             <div class="main_container">
                 <div class="sub_top_container">

@@ -113,6 +113,7 @@ header > div:nth-child(3) > ul > li > a > img {
 }
 
 #user > .register > form {}
+
 #user > .register table {
     width: 100%;
     border-collapse: collapse;

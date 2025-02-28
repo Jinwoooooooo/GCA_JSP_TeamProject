@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import kr.co.farmStory.dto.UserDTO;
-import kr.co.farmStory.service.user.UserService;
+import kr.co.farmStory.service.UserService;
 
 @WebServlet("/view/user/register.do")
 public class RegisterController extends HttpServlet {

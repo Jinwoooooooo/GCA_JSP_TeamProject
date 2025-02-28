@@ -6,6 +6,7 @@
 }
 
 ul, ol {list-style: none;}
+.link {color: white;}
 a {text-align: none; color: #111;
 text-decoration: none;}
 input, textarea {outline: none;}
@@ -20,7 +21,7 @@ header {
     width: 980px;
     height: 60px;
     margin: 0 auto;
-    background-image: url(/images/admin/admin_bg.jpg);
+    background-image: url(/farmStory/images/admin/admin_bg.jpg);
 }
 
 .hd_logo {

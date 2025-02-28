@@ -11,6 +11,7 @@ ul, ol {
 a {
     text-decoration: none;
     color: #111;
+    cursor: pointer;
 }
 
 #wrapper {
@@ -102,7 +103,7 @@ header > div:nth-child(3) > ul > li > a > img {
 .sub_top_container {
     position: relative;
     height: 184px;
-    background-image: url(/images/sub_top_bg.jpg);
+    background-image: url(/farmStory/images/sub_top_bg.jpg);
 }
 
 .sub_top_container > img {
@@ -112,28 +113,12 @@ header > div:nth-child(3) > ul > li > a > img {
 }
 
 .main_container > section > aside {
-    background-image: url(/images/sub_aside_bg_line.png);
+    background-image: url(/farmStory/images/sub_aside_bg_line.png);
     background-repeat: no-repeat;
     background-position: right;
     width: 176px;
     height: 650px;
     float: left;
-}
-
-.main_container > section {
-    width: 100%;
-    height: 650px;
-}
-
-.main_container > section > aside > div:nth-child(1) {
-    padding: 16px;
-}
-
-.main_container > section > aside > div:nth-child(2) {
-    position: relative;
-    width: 100%;
-    height: 233px;
-    background-image: url(/images/sub_aside_bg_lnb.png);
 }
 
 .main_container > section > aside > div:nth-child(2) > a:nth-child(1) > img {
@@ -150,25 +135,6 @@ header > div:nth-child(3) > ul > li > a > img {
     top: 96px;
 }
 
-.main_container > section > article {
-    float: right;
-    width: 762px;
-    height: 650px;
-    margin-left: 40px;
-    position: relative;
-}
-
-.main_container > section > article > div {
-    margin-bottom: 35px;
-}
-
-.main_container > section > article > div > nav {
-    position: relative;
-    width: 762px;
-    height: 72px;
-    border-bottom: 1px solid #c2c2c2;
-}
-
 .main_container > section > article > .nav_bar > nav > img {
     position: absolute;
     top: 41px;
@@ -178,7 +144,7 @@ header > div:nth-child(3) > ul > li > a > img {
     position: absolute;
     top: 51px;
     right: 0px;
-    background-image: url(/images/sub_page_nav_ico.gif);
+    background-image: url(/farmStory/images/sub_page_nav_ico.gif);
     background-repeat: no-repeat;
     background-position: left;
 }
@@ -203,9 +169,9 @@ header > div:nth-child(3) > ul > li > a > img {
 
 .main_container > section > aside > div:nth-child(2) {
     position: relative;
-    width: 100%;
+    width: 99%;
     height: 233px;
-    background-image: url(/images/sub_aside_bg_lnb.png);
+    background-image: url(/farmStory/images/sub_aside_bg_lnb.png);
 
 }
 
@@ -368,7 +334,7 @@ header > div:nth-child(3) > ul > li > a > img {
     position: absolute;
     top: 51px;
     right: 0px;
-    background-image: url(/images/sub_page_nav_ico.gif);
+    background-image: url(/farmStory/images/sub_page_nav_ico.gif);
     background-repeat: no-repeat;
     background-position: left;
 }

@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import kr.co.farmStory.dto.UserDTO;
-import kr.co.farmStory.service.user.UserService;
+import kr.co.farmStory.service.UserService;
 
 @WebServlet("/view/user/login.do")
 public class LoginController extends HttpServlet {

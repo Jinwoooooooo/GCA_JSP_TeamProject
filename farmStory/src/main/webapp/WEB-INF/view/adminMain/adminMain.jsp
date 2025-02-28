@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>adminMain</title>
-    <link rel="stylesheet" href="/css/adminMain/adminMain.css">
+    <link rel="stylesheet" href="/farmStory/css/adminMain/adminMain.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
@@ -13,8 +13,7 @@
 </head>
 <body>
     <div id="wrapper">
-        <%@ include file="header.jsp" %>
-
+    <%@include file="./_header.jsp"%>
         <main>
             <aside>
                 <div class="heading">
@@ -27,11 +26,11 @@
                         <ul>
                             <li>
                                 <span>L</span>
-                                <a href="/html/adminProductManagement/adminProduct.html" class="list_it">상품목록</a>
+                                <a href="/farmStory/adminMain/adminProList.do" class="list_it">상품목록</a>
                             </li>
                             <li>
                                 <span>L</span>
-                                <a href="#">상품등록</a>
+                                <a href="/farmStory/adminMain/adminProList.do">상품등록</a>
                             </li>
                         </ul>
                     </div>
@@ -197,7 +196,7 @@
                 </article>
             </section>
         </main>
-        <%@ include file="footer.jsp"%>
+        <%@ include file="./_footer.jsp" %>
     </div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package kr.co.farmStory.dao.user;
+package kr.co.farmStory.dao;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import kr.co.farmStory.service.user.UserService;
+import kr.co.farmStory.service.UserService;
 
 @WebServlet("/view/user/check.do")
 public class CheckController extends HttpServlet {

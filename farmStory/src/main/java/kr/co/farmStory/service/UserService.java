@@ -1,4 +1,4 @@
-package kr.co.farmStory.service.user;
+package kr.co.farmStory.service;
 
 import java.util.List;
 import java.util.Properties;
@@ -12,7 +12,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import kr.co.farmStory.dao.user.UserDAO;
+import kr.co.farmStory.dao.UserDAO;
 import kr.co.farmStory.dto.UserDTO;
 
 public enum UserService {

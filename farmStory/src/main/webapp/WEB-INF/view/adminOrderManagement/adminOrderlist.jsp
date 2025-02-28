@@ -13,7 +13,7 @@
 </head>
 <body>
     <div id="wrapper">
-       <%@ include file="/WEB-INF/view/admin/_header.jsp" %>
+    <%@ include file="../adminMain/_header.jsp" %>
         <main>
             <aside>
                 <div class="heading">
@@ -94,7 +94,8 @@
             </section>
         </main>
         
-      <%@ include file="/WEB-INF/view/admin/_footer.jsp" %>
+      <%@ include file="../adminMain/_footer.jsp" %>
+      
     </div>
 </body>
 </html>

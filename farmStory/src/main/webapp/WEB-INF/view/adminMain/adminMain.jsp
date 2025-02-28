@@ -13,14 +13,7 @@
 </head>
 <body>
     <div id="wrapper">
-        <header>
-            <a href="#"><img src="/images/admin/admin_logo.jpg" alt="hd_logo" class="hd_logo"></a>
-            <ul>
-                <li>HOME&nbsp;|&nbsp;</li>
-                <li>로그아웃&nbsp;|&nbsp;</li>
-                <li>고객센터</li>
-            </ul>
-    </header>
+        <%@ include file="header.jsp" %>
 
         <main>
             <aside>
@@ -204,10 +197,7 @@
                 </article>
             </section>
         </main>
-        <footer>
-            <p>FARMSTORY ADMINISTRATOR Version 1.0.1</p>
-            <p>Copyrightⓒ 김철학(개발에반하다.) All rights reserved.</p>
-        </footer>
+        <%@ include file="footer.jsp"%>
     </div>
 </body>
 </html>

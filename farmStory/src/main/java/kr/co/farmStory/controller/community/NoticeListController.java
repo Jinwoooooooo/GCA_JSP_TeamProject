@@ -1,4 +1,4 @@
-package kr.co.farmStory.controller.community.notice;
+package kr.co.farmStory.controller.community;
 
 import java.io.IOException;
 

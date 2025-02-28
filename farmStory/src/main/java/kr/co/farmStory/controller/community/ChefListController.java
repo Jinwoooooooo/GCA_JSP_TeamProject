@@ -1,4 +1,4 @@
-package kr.co.farmStory.controller.community.notice;
+package kr.co.farmStory.controller.community;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/view/community/notice/chefList.do")
+@WebServlet("/view/community/chef/chefList.do")
 public class ChefListController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;

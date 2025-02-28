@@ -9,21 +9,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-		<script>
-			const result = ${result};
-			
-			if(result == 100) {
-				alert("아이디나 비밀번호가 다릅니다.\n다시 로그인 하세요.");
-			} else if(result == 101){
-				alert("로그아웃 되었습니다.");
-			} else if(result == 102){
-				alert("먼저 로그인 하세요.");
-			}
-		</script>
+	<script>
+		const result = ${result};
+		
+		if(result == 100) {
+			alert("아이디나 비밀번호가 다릅니다.\n다시 로그인 하세요.");
+		} else if(result == 101){
+			alert("로그아웃 되었습니다.");
+		} else if(result == 102){
+			alert("먼저 로그인 하세요.");
+		}
+	</script>
 </head>
 <body>
     <div id="wrapper">
-        <%@ include file="/../../header.jsp" %>
+	<%@ include file="/../../header.jsp" %>
         <main id="user">
             <section class="login">
                 <form action="#">
@@ -60,7 +60,7 @@
         </main>
 
   		<%@ include file="/../../footer.jsp" %>
-        
+ 
     </div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package kr.co.farmStory.controller.shopping;
+package kr.co.farmStory.controller.admin;
 
 import java.io.IOException;
 
@@ -9,28 +9,23 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/view/shopping/productList.do")
-public class ProductListController extends HttpServlet {
+
+@WebServlet("/adminMain/list.do")
+public class AdminMainList extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
-	
-	
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/shopping/productList.jsp");
+		
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/adminMain/adminMain.jsp");
 		dispatcher.forward(req, resp);
-	
-
 	}
-	
-
-	
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
 	}
-	
-	
+
 }

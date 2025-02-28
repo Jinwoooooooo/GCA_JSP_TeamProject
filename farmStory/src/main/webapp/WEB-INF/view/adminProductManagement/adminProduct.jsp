@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>adminProduct</title>
-    <link rel="stylesheet" href="/css/adminProductManagement/adminProduct.css">
+    <link rel="stylesheet" href="/farmStory/css/adminProductManagement/adminProduct.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
 <body>
     <div id="wrapper">
         <header>
-            <a href="#"><img src="/images/admin/admin_logo.jpg" alt="hd_logo" class="hd_logo"></a>
+            <a href="#"><img src="/farmStory/images/admin/admin_logo.jpg" alt="hd_logo" class="hd_logo"></a>
             <ul>
                 <li>HOME&nbsp;|&nbsp;</li>
                 <li>로그아웃&nbsp;|&nbsp;</li>
@@ -33,11 +33,11 @@
                         <ul>
                             <li>
                                 <span>L</span>
-                                <a href="/html/adminProductManagement/adminProduct.html" class="list_it">상품목록</a>
+                                <a href="/farmStory/adminMain/adminProList.do" class="list_it">상품목록</a>
                             </li>
                             <li>
                                 <span>L</span>
-                                <a href="#">상품등록</a>
+                                <a href="/farmStory/adminPro/register.do">상품등록</a>
                             </li>
                         </ul>
                     </div>
@@ -78,7 +78,7 @@
                             </tr>
                             <tr class="table_bd1">
                                 <td class="img"><input type="checkbox"></td>
-                                <td><img src="/images/market_item1.jpg" ></td>
+                                <td><img src="/farmStory/images/market_item1.jpg" ></td>
                                 <td>1011</td>
                                 <td>사과 500g</td>
                                 <td>과일</td>
@@ -90,7 +90,7 @@
                     
                     <div class="main_a">
                         <a href="#">선택삭제</a>
-                        <a href="#"><p>상품등록</p></a>
+                        <a href="/farmStory/adminPro/register.do"><p>상품등록</p></a>
                     </div>
                     <div class="main_a2"><a href="#">< [1] [2] [3] [4] [5] ></a></div>
                 </article>

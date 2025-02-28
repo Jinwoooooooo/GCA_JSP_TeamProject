@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/adminMain/list.do")
+@WebServlet("/memberList/list.do")
 public class UserListController extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;

@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	//4. 별명 유효성 검사(중복 체크 포함)
 	const btnCheckNick = document.getElementById("btnCheckNick");
 	const nickResult = document.getElementsByClassName("nickResult")[0];
-	
+ 
 	btnCheckNick.onclick = async function() {
 		
 		const value = formRegister.nick.value;

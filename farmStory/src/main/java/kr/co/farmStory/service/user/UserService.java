@@ -27,17 +27,23 @@ public enum UserService {
 		return dao.selectCountUser(type, value);
 	}
 	
+	public UserDTO findUser(UserDTO dto) { 
+		return dao.selectUser(dto); 
+	}
+	
 	/*
 	 * public UserDTO findUser(String uid) { return dao.selectUser(uid); }
-	 * 
-	 * public UserDTO findUser(UserDTO dto) { return dao.selectUser(dto); }
-	 * 
+	 */
+	  
+	  
+	/*
 	 * public List<UserDTO> findAllUser() { return dao.selectAllUser(); }
 	 * 
 	 * public void modifyUser(UserDTO dto) { dao.updateUser(dto); }
 	 * 
 	 * public void deleteUser(String uid) { dao.deleteUser(uid); }
 	 */
+	 
 	
 	//이메일 발송
 	public String sendEmailCode(String receiver) {

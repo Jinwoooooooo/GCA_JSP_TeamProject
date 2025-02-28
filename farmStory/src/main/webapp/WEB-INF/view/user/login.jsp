@@ -26,7 +26,7 @@
 	<%@ include file="/../../header.jsp" %>
         <main id="user">
             <section class="login">
-                <form action="#">
+                <form action="/farmStory/view/user/login.do" method="post">
                     <table>
                         <tbody>
                             <tr>

@@ -131,7 +131,7 @@ header > div:nth-child(3) > ul > li > a > img {
 
 .main_container > section > aside > div:nth-child(2) {
     position: relative;
-    width: 100%;
+    width: 99%;
     height: 233px;
     background-image: url(/images/sub_aside_bg_lnb.png);
 }

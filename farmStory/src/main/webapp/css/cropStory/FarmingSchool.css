@@ -91,6 +91,12 @@ header > div:nth-child(3) > ul > li > a > img {
     top: -13px;
 }
 
+.main_container {
+    width: 980px;
+    height: auto;
+    margin: 0 auto;
+}
+
 .sub_top_container {
     position: relative;
     height: 184px;

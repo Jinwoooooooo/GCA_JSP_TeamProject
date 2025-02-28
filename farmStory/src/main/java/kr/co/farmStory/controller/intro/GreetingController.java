@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/view/intro/greeting.do")
+@WebServlet("/intro/greeting.do")
 public class GreetingController extends HttpServlet {
 
 

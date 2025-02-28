@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(("/chef/chefView.do"))
+@WebServlet("/chef/chefView.do")
 public class ChefViewController extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;

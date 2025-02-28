@@ -24,8 +24,8 @@
                             <img src="/farmStory/images/sub_aside_cate1_tit.png" alt="팜스토리소개">
                         </div>
                         <div>
-                            <img src="/farmStory/images/sub_cate1_lnb1_ov.png" alt="인사말" onclick="location.href='/farmStory/view/intro/greeting.do'" class="aside_link">
-                            <img src="/farmStory/images/sub_cate1_lnb2.png" alt="찾아오시는길" onclick="location.href='/farmStory/view/intro/contact.do'" class="aside_link">
+                            <img src="/farmStory/images/sub_cate1_lnb1_ov.png" alt="인사말" onclick="location.href='/farmStory/intro/greeting.do'" class="aside_link">
+                            <img src="/farmStory/images/sub_cate1_lnb2.png" alt="찾아오시는길" onclick="location.href='/farmStory/intro/contact.do'" class="aside_link">
                         </div>
                     </aside>
                     <article>

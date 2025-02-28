@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/view/intro/contact.do")
+@WebServlet("/intro/contact.do")
 public class ContactController extends HttpServlet {
 
 

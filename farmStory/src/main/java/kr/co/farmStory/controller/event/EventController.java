@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/view/event/eventCalender.do")
+@WebServlet("/event/eventCalender.do")
 public class EventController extends HttpServlet {
 
 

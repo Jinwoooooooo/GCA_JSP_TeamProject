@@ -36,32 +36,32 @@
     <div>
         <ul>
             <li>
-                <a href="/farmStory/view/intro/greeting.do">
+                <a href="/farmStory/intro/greeting.do">
                     <img src="/farmStory/images/head_menu_line.png" alt="라인">
                     <img src="/farmStory/images/head_menu1.png" alt="팜스토리소개">
                 </a>
             </li>
             <li>
-                <a href="/farmStory/view/shopping/productList.do">
+                <a href="/farmStory/shopping/productList.do">
                     <img src="/farmStory/images/head_menu_badge.png" alt="30%" class="head_badge">
                     <img src="/farmStory/images/head_menu_line.png" alt="라인">
                     <img src="/farmStory/images/head_menu2.png" alt="장보기">
                 </a>
             </li>
             <li>
-                <a href="/farmStory/view/cropStory/cropStory/cropStoryList.do">
+                <a href="/farmStory/cropStory/cropStoryList.do">
                     <img src="/farmStory/images/head_menu_line.png" alt="라인">
                     <img src="/farmStory/images/head_menu3.png" alt="농작물이야기">
                 </a>
             </li>
             <li>
-                <a href="/farmStory/view/event/eventCalender.do">
+                <a href="/farmStory/event/eventCalender.do">
                     <img src="/farmStory/images/head_menu_line.png" alt="라인">
                     <img src="/farmStory/images/head_menu4.png" alt="이벤트">
                 </a>
             </li>
             <li>
-                <a href="/farmStory/view/community/notice/noticeList.do">
+                <a href="/farmStory/notice/noticeList.do">
                     <img src="/farmStory/images/head_menu_line.png" alt="라인">
                     <img src="/farmStory/images/head_menu5.png" alt="커뮤니티">
                 </a>

@@ -1,4 +1,4 @@
-package kr.co.farmStory.controller.cropStory;
+package kr.co.farmStory.controller.cropStory.farmingSchool;
 
 import java.io.IOException;
 
@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/view/cropStory/farmingSchool/farmingSchoolList.do")
-public class FarmingSchoolController extends HttpServlet {
+public class FarmingSchoolListController extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 	

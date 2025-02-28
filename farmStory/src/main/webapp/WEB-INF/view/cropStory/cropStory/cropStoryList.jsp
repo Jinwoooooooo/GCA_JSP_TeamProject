@@ -38,10 +38,10 @@
                     <article>
                         <div class="nav_bar">
                             <nav>
-                                <img src="/farmStory/images/sub_nav_tit_cate3_tit1.png" alt="농작물이야기">
+                                <img src="/farmStory/images/sub_nav_tit_cate3_tit3.png" alt="귀농학교">
                             </nav>
                             <div>
-                                <p>HOME > 농작물이야기 > <span style="color: #91ba23; font-weight: 700;">농작물이야기</span></p>
+                                <p>HOME > 농작물이야기 > <span style="color: #91ba23; font-weight: 700;">귀농학교</span></p>
                             </div>
                         </div>
                         <div class="sub_page">
@@ -71,13 +71,12 @@
                                             </tr>
                                         </table>
                                         <div>
-                                            
-                                            <input type="submit" value="이전">
-                                            <input type="submit" value="1">
-                                            <input type="submit" value="2">
-                                            <input type="submit" value="3">
-                                            <input type="submit" value="다음">
-                                            <input type="submit" value="글쓰기">
+                                            <a href="#">이전</a>
+                                            <a href="#">1</a>
+                                            <a href="#">2</a>
+                                            <a href="#">3</a>
+                                            <a href="#">다음</a>
+                                            <a href="/farmStory/view/cropStory/cropStory/cropStoryWrite.do">글쓰기</a>
                                             
                                         </div>
                                         
@@ -85,6 +84,7 @@
                                     
                                 </div>
                             </div>
+                        
                     </article>
                 </section>
             </div> 

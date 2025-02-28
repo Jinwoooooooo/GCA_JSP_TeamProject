@@ -37,6 +37,11 @@ header > div > * {
     margin: 0 auto;
 }
 
+header .top > div {
+    float: right;
+    margin-top: 10px;
+}
+
 header .top > p {
     float: right;
     margin-top: 10px;
@@ -301,35 +306,40 @@ header > div:nth-child(3) > ul > li > a > img {
 }
 
 .sub_page_section > section > div{
-    position: relative;
-    text-align: center;
+    display: flex;
+ 	justify-content: center;
+	align-items: center;
+  	gap: 10px;
 }
 
-.sub_page_section > section > div input{
+.sub_page_section > section > div a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 42px;
     height: 35px;
     border: 1px solid #d7d7d7;
 }
 
-.sub_page_section > section > div > input:nth-child(2){
+.sub_page_section > section > div > a:nth-child(2){
     width: 24px;
-    height: 33px;
+    height: 32px;
     background: #888888;
     border: 1px solid #6d6d6d;
     color: #d7d7d7;
 }
 
-.sub_page_section > section > div > input:nth-child(3){
+.sub_page_section > section > div > a:nth-child(3){
     width: 24px;
     height: 33px;
 }
 
-.sub_page_section > section > div > input:nth-child(4){
+.sub_page_section > section > div > a:nth-child(4){
     width: 24px;
     height: 33px;
 }
 
-.sub_page_section > section > div > input:nth-child(6){
+.sub_page_section > section > div > a:nth-child(6){
     position: absolute;
     right: 0px;
     width: 54px;

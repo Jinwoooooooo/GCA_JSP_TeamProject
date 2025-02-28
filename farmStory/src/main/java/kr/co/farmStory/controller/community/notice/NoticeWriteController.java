@@ -1,4 +1,4 @@
-package kr.co.farmStory.controller.user;
+package kr.co.farmStory.controller.community.notice;
 
 import java.io.IOException;
 
@@ -9,24 +9,23 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/view/user/login.do")
-public class LoginController extends HttpServlet {
+@WebServlet("/view/community/notice/noticeList.do")
+public class NoticeWriteController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	
-	
+
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/user/login.jsp");
-		dispatcher.forward(req, resp);
 		
-	}
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/community/notice/noticeList.jsp");
+		dispatcher.forward(req, resp);
 	
+	
+	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	}
-	
 	
 }

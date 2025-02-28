@@ -1,4 +1,4 @@
-package kr.co.farmStory.controller.community;
+package kr.co.farmStory.controller.cropStory.farmingSchool;
 
 import java.io.IOException;
 
@@ -9,23 +9,26 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/view/community/qna/qnaList.do")
-public class QnaListController4 extends HttpServlet {
+@WebServlet("/view/cropStory/farmingSchool/farmingSchoolWrite.do")
+public class FarmingSchoolWriteController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-
-
+	
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/community/qna/qnaList.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/cropStory/farmingSchool/farmingSchoolWrite.jsp");
 		dispatcher.forward(req, resp);
 	
 	
+	
 	}
+	
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	}
+	
 	
 }

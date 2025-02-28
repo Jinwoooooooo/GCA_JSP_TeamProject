@@ -127,7 +127,6 @@ header > div:nth-child(3) > ul > li > a > img {
 
 .main_container > section > aside > div:nth-child(1) {
     padding: 16px;
-
 }
 
 .main_container > section > aside > div:nth-child(2) {
@@ -135,7 +134,6 @@ header > div:nth-child(3) > ul > li > a > img {
     width: 100%;
     height: 233px;
     background-image: url(/images/sub_aside_bg_lnb.png);
-
 }
 
 .main_container > section > aside > div:nth-child(2) > a:nth-child(1) > img {
@@ -169,7 +167,6 @@ header > div:nth-child(3) > ul > li > a > img {
     width: 762px;
     height: 72px;
     border-bottom: 1px solid #c2c2c2;
-
 }
 
 .main_container > section > article > .nav_bar > nav > img {
@@ -191,6 +188,7 @@ header > div:nth-child(3) > ul > li > a > img {
     font-size: 12px;
     margin-left: 12px;
 }
+
 
 .main_container > section {
     position: relative;
@@ -308,35 +306,40 @@ header > div:nth-child(3) > ul > li > a > img {
 }
 
 .sub_page_section > section > div{
-    position: relative;
-    text-align: center;
+    display: flex;
+ 	justify-content: center;
+	align-items: center;
+  	gap: 10px;
 }
 
-.sub_page_section > section > div input{
+.sub_page_section > section > div a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 42px;
     height: 35px;
     border: 1px solid #d7d7d7;
 }
 
-.sub_page_section > section > div > input:nth-child(2){
+.sub_page_section > section > div > a:nth-child(2){
     width: 24px;
-    height: 33px;
+    height: 32px;
     background: #888888;
     border: 1px solid #6d6d6d;
     color: #d7d7d7;
 }
 
-.sub_page_section > section > div > input:nth-child(3){
+.sub_page_section > section > div > a:nth-child(3){
     width: 24px;
     height: 33px;
 }
 
-.sub_page_section > section > div > input:nth-child(4){
+.sub_page_section > section > div > a:nth-child(4){
     width: 24px;
     height: 33px;
 }
 
-.sub_page_section > section > div > input:nth-child(6){
+.sub_page_section > section > div > a:nth-child(6){
     position: absolute;
     right: 0px;
     width: 54px;
@@ -376,7 +379,6 @@ header > div:nth-child(3) > ul > li > a > img {
     margin-left: 12px;
 }
 
-
 .sub_page_p > p:nth-child(1) {
     color: #666666;
     font-size: 12px;
@@ -387,6 +389,8 @@ header > div:nth-child(3) > ul > li > a > img {
 .sub_page_p > p:nth-child(2) {
     margin-bottom: 2px;
 }
+
+
 
 footer {
     display: inline-block;

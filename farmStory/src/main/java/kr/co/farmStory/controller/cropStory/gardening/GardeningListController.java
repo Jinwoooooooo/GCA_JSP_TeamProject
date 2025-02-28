@@ -1,4 +1,4 @@
-package kr.co.farmStory.controller.community;
+package kr.co.farmStory.controller.cropStory.gardening;
 
 import java.io.IOException;
 
@@ -9,16 +9,15 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/view/community/inquiry/inquiryList.do")
-public class InquiryListController extends HttpServlet {
-
+@WebServlet("/view/cropStory/gardening/gardeningList.do")
+public class GardeningListController extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
-
-
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/community/inquiry/inquiryList.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/cropStory/gardening/gardeningList.jsp");
 		dispatcher.forward(req, resp);
 	
 	
@@ -26,6 +25,8 @@ public class InquiryListController extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		super.doPost(req, resp);
 	}
 	
 }

@@ -1,4 +1,4 @@
-package kr.co.farmStory.controller.community;
+package kr.co.farmStory.controller.community.todaymenu;
 
 import java.io.IOException;
 
@@ -9,8 +9,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/view/community/chef/chefList.do")
-public class ChefListController extends HttpServlet {
+@WebServlet("/view/community/todayMenu/todayMenuList.do")
+public class TodayMenuListController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
@@ -18,7 +18,7 @@ public class ChefListController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/community/chef/chefList.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/community/todayMenu/todayMenuList.jsp");
 		dispatcher.forward(req, resp);
 	
 	

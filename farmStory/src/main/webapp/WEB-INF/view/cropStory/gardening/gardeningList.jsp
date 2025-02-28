@@ -71,13 +71,12 @@
                                             </tr>
                                         </table>
                                         <div>
-                                            
-                                            <input type="submit" value="이전">
-                                            <input type="submit" value="1">
-                                            <input type="submit" value="2">
-                                            <input type="submit" value="3">
-                                            <input type="submit" value="다음">
-                                            <input type="submit" value="글쓰기">
+                                            <a href="#">이전</a>
+                                            <a href="#">1</a>
+                                            <a href="#">2</a>
+                                            <a href="#">3</a>
+                                            <a href="#">다음</a>
+                                            <a href="/farmStory/view/cropStory/gardening/gardeningWrite.do">글쓰기</a>
                                             
                                         </div>
                                         

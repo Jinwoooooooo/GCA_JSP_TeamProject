@@ -30,7 +30,7 @@
                             </li>
                             <li>
                                 <span>L</span>
-                                <a href="/farmStory/adminMain/adminProList.do">상품등록</a>
+                                <a href="/farmStory/adminPro/register.do">상품등록</a>
                             </li>
                         </ul>
                     </div>

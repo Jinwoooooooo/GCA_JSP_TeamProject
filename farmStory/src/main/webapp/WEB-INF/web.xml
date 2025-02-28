@@ -10,8 +10,10 @@
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
   
-  <session-config>
-	<session-timeout> 30 </session-timeout> <!-- 분 단위-->
-  </session-config>
+<!--   
+	<session-config>
+		<session-timeout> 30 </session-timeout> 분 단위
+  	</session-config> 
+-->
   
 </web-app>

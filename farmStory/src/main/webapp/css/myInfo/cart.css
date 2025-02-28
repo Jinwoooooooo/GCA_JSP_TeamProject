@@ -37,14 +37,11 @@ header > div > * {
     margin: 0 auto;
 }
 
-header .top {
-    position: relative;
-    overflow: auto;
-}
-
 header .top > div {
+	position: relative;
     float: right;
     margin-top: 10px;
+    z-index: 5;
 }
 
 header article {
@@ -102,7 +99,7 @@ header > div:nth-child(3) > ul > li > a > img {
 .sub_top_container {
     position: relative;
     height: 184px;
-    background-image: url(/images/sub_top_bg.jpg);
+    background-image: url(/farmStory/images/myinfo/myinfo_top_bg.jpg);
 }
 
 .sub_top_container > img {
@@ -112,7 +109,7 @@ header > div:nth-child(3) > ul > li > a > img {
 }
 
 .main_container > section > aside {
-    background-image: url(/images/sub_aside_bg_line.png);
+    background-image: url(/farmStory/images/sub_aside_bg_line.png);
     background-repeat: no-repeat;
     background-position: right;
     width: 176px;
@@ -133,18 +130,18 @@ header > div:nth-child(3) > ul > li > a > img {
     position: relative;
     width: 99%;
     height: 233px;
-    background-image: url(/images/sub_aside_bg_lnb.png);
+    background-image: url(/farmStory/images/sub_aside_bg_lnb.png);
 }
 
-.main_container > section > aside > div:nth-child(2) > img:nth-child(1) {
+.main_container > section > aside > div:nth-child(2) > a:nth-child(1) {
     position: absolute;
     top: 26px;
 }
-.main_container > section > aside > div:nth-child(2) > img:nth-child(2) {
+.main_container > section > aside > div:nth-child(2) > a:nth-child(2) {
     position: absolute;
     top: 61px;
 }
-.main_container > section > aside > div:nth-child(2) > img:nth-child(3) {
+.main_container > section > aside > div:nth-child(2) > a:nth-child(3) {
     position: absolute;
     top: 96px;
 }
@@ -177,7 +174,7 @@ header > div:nth-child(3) > ul > li > a > img {
     position: absolute;
     top: 51px;
     right: 0px;
-    background-image: url(/images/sub_page_nav_ico.gif);
+    background-image: url(/farmStory/images/sub_page_nav_ico.gif);
     background-repeat: no-repeat;
     background-position: left;
 }

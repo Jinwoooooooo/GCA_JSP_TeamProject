@@ -38,14 +38,11 @@ header > div > * {
     margin: 0 auto;
 }
 
-header .top > p {
-    float: right;
-    margin-top: 10px;
-}
-
 header .top > div {
+	position: relative;
     float: right;
     margin-top: 10px;
+    z-index: 5;
 }
 
 header article {

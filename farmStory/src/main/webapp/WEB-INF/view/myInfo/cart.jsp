@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>장바구니</title>
-    <link rel="stylesheet" href="/css/myInfo/cart.css">
+    <link rel="stylesheet" href="/farmStory/css/myInfo/cart.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
@@ -16,23 +16,29 @@
         <main>
             <div class="main_container">
                 <div class="sub_top_container">
-                    <img src="/images/myinfo/myinfo_top_tit.png" alt="나의정보">
+                    <img src="/farmStory/images/myinfo/myinfo_top_tit.png" alt="나의정보">
                 </div>
                 <section>
                     <aside>
                         <div>
-                            <img src="/images/myinfo/myinfo_menu_tit.png" alt="나의정보">
+                            <img src="/farmStory/images/myinfo/myinfo_menu_tit.png" alt="나의정보">
                         </div>
                         <div>
-                            <img src="/images/myinfo/myinfo_menu1_ov.png" alt="장바구니">
-                            <img src="/images/myinfo/myinfo_menu2.png" alt="주문내역">
-                            <img src="/images/myinfo/myinfo_menu3.png" alt="정보수정">
+                        	<a href="/farmStory/myInfo/myCart.do">
+                            	<img src="/farmStory/images/myinfo/myinfo_menu1_ov.png" alt="장바구니">
+                            </a>
+                            <a href="/farmStory/myInfo/myOrder.do">
+                            	<img src="/farmStory/images/myinfo/myinfo_menu2.png" alt="주문내역">
+                            </a>
+                            <a href="/farmStory/myInfo/modifyInfo.do">
+                            	<img src="/farmStory/images/myinfo/myinfo_menu3.png" alt="정보수정">
+                        	</a>
                         </div>
                     </aside>
                     <article>
                         <div class="nav_bar">
                             <nav>
-                                <img src="/images/myinfo/myinfo_nav_tit1.png" alt="장바구니">
+                                <img src="/farmStory/images/myinfo/myinfo_nav_tit1.png" alt="장바구니">
                             </nav>
                             <div>
                                 <p>HOME > 나의정보 > <span style="color: #91ba23; font-weight: 700;">장바구니</span></p>
@@ -68,7 +74,7 @@
                                         <input type="checkbox">
                                     </td>
                                     <td>
-                                        <a href="#"><img src="/images/market_item1.jpg" alt="사과" class="item_img"></a>
+                                        <a href="#"><img src="/farmStory/images/market_item1.jpg" alt="사과" class="item_img"></a>
                                     </td>
                                     <td>과일</td>
                                     <td>사과 500g</td>
@@ -83,7 +89,7 @@
                                         <input type="checkbox">
                                     </td>
                                     <td>
-                                        <a href="#"><img src="/images/market_item1.jpg" alt="사과" class="item_img"></a>
+                                        <a href="#"><img src="/farmStory/images/market_item1.jpg" alt="사과" class="item_img"></a>
                                     </td>
                                     <td>과일</td>
                                     <td>사과 500g</td>
@@ -98,7 +104,7 @@
                                         <input type="checkbox">
                                     </td>
                                     <td>
-                                        <a href="#"><img src="/images/market_item1.jpg" alt="사과" class="item_img"></a>
+                                        <a href="#"><img src="/farmStory/images/market_item1.jpg" alt="사과" class="item_img"></a>
                                     </td>
                                     <td>과일</td>
                                     <td>사과 500g</td>

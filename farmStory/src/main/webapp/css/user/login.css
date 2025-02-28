@@ -40,14 +40,11 @@ header > div > * {
     margin: 0 auto;
 }
 
-header .top {
-    position: relative;
-    overflow: auto;
-}
-
 header .top > div {
+	position: relative;
     float: right;
     margin-top: 10px;
+    z-index: 5;
 }
 
 header article {

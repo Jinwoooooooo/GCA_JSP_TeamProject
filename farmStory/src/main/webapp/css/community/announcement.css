@@ -39,13 +39,10 @@ header > div > * {
 }
 
 header .top > div {
+	position: relative;
     float: right;
     margin-top: 10px;
-}
-
-header .top > p {
-    float: right;
-    margin-top: 10px;
+    z-index: 5;
 }
 
 header article {

@@ -37,9 +37,11 @@ header > div > * {
     margin: 0 auto;
 }
 
-header .top > p {
+header .top > div {
+	position: relative;
     float: right;
     margin-top: 10px;
+    z-index: 5;
 }
 
 header article {
@@ -97,7 +99,7 @@ header > div:nth-child(3) > ul > li > a > img {
 .sub_top_container {
     position: relative;
     height: 184px;
-    background-image: url(/images/myinfo/myinfo_top_bg.jpg);
+    background-image: url(/farmStory/images/myinfo/myinfo_top_bg.jpg);
 }
 
 .sub_top_container > img {
@@ -107,7 +109,7 @@ header > div:nth-child(3) > ul > li > a > img {
 }
 
 .main_container > section > aside {
-    background-image: url(/images/sub_aside_bg_line.png);
+    background-image: url(/farmStory/images/sub_aside_bg_line.png);
     background-repeat: no-repeat;
     background-position: right;
     width: 176px;
@@ -126,29 +128,22 @@ header > div:nth-child(3) > ul > li > a > img {
 
 .main_container > section > aside > div:nth-child(2) {
     position: relative;
-    width: 100%;
+    width: 99%;
     height: 233px;
-    background-image: url(/images/sub_aside_bg_lnb.png);
+    background-image: url(/farmStory/images/sub_aside_bg_lnb.png);
     background-repeat: no-repeat;
     background-position: left;
 }
 
-.main_container > section >article > .nav_bar > div {
-    position: absolute;
-    top: 51px;
-    right: 0px;
-    background-image:url(/images/sub_page_nav_ico.gif);
-}
-
-.main_container > section > aside > div:nth-child(2) > img:nth-child(1) {
+.main_container > section > aside > div:nth-child(2) > a:nth-child(1) {
     position: absolute;
     top: 26px;
 }
-.main_container > section > aside > div:nth-child(2) > img:nth-child(2) {
+.main_container > section > aside > div:nth-child(2) > a:nth-child(2) {
     position: absolute;
     top: 61px;
 }
-.main_container > section > aside > div:nth-child(2) > img:nth-child(3) {
+.main_container > section > aside > div:nth-child(2) > a:nth-child(3) {
     position: absolute;
     top: 96px;
 }
@@ -179,9 +174,15 @@ header > div:nth-child(3) > ul > li > a > img {
     position: absolute;
     top: 51px;
     right: 0px;
-    background-image: url(/images/sub_page_nav_ico.gif);
+    background-image: url(/farmStory/images/sub_page_nav_ico.gif);
     background-repeat: no-repeat;
     background-position: left;
+}
+
+.main_container > section > article > .nav_bar > div > p {
+    color: #8c8c8c;
+    font-size: 12px;
+    margin-left: 12px;
 }
 
 /* table 스타일 */
@@ -238,11 +239,11 @@ table input {
 
 table button {
     width: 85px;
-    height: 27px;
+    height: 25px;
     background: #2E658A;
     color: #FFFFFF;
     border: none;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 
@@ -253,19 +254,13 @@ table button {
 }
 
 
-.delete-btn {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
 .button1 {
     width: 58px;
-    height: 27px;
-    background:#ed2f2f;
+    height: 25px;
+    background: crimson;
     color: #FFFFFF;
-    border-radius: 4px;
+    border-radius: 2px;
+    cursor: pointer;
 }
 
 input {

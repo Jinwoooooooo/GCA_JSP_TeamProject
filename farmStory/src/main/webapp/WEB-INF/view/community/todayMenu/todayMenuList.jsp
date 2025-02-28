@@ -9,72 +9,11 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+		<%@ include file="/../../header.jsp" %>
     </head>
     <body>
         <div id="wrapper">
-            <header>
-                <div>
-                    <div class="top">
-                        <p>
-                            <a href="#">HOME |</a>
-                            <a href="#">로그인 |</a>
-                            <a href="#">회원가입 |</a>
-                            <a href="#">나의정보 |</a>
-                            <a href="#">로그아웃 |</a>
-                            <a href="#">관리자 |</a>
-                            <a href="#">고객센터</a>
-                        </p>
-                    </div>
-                </div>
-                
-                <div>
-                    <article>
-                        <a href="#" class="logo">
-                            <img src="/farmStory/images/logo.png" alt="팜스토리 로고">
-                        </a>
-                        <a href="#" class="freeShipping">
-                            <img src="/farmStory/images/head_txt_img.png" alt="팜스토리 로고">
-                        </a>
-                    </article>
-                </div>
-    
-                <div>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <img src="/farmStory/images/head_menu_line.png" alt="라인">
-                                <img src="/farmStory/images/head_menu1.png" alt="팜스토리소개">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="/farmStory/images/head_menu_badge.png" alt="30%" class="head_badge">
-                                <img src="/farmStory/images/head_menu_line.png" alt="라인">
-                                <img src="/farmStory/images/head_menu2.png" alt="장보기">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="/farmStory/images/head_menu_line.png" alt="라인">
-                                <img src="/farmStory/images/head_menu3.png" alt="농작물이야기">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="/farmStory/images/head_menu_line.png" alt="라인">
-                                <img src="/farmStory/images/head_menu4.png" alt="이벤트">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="/farmStory/images/head_menu_line.png" alt="라인">
-                                <img src="/farmStory/images/head_menu5.png" alt="커뮤니티">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </header>
-    
+
             <main>
                 <div class="main_container">
                     <div class="sub_top_container">
@@ -86,30 +25,30 @@
                                 <img src="/farmStory/images/sub_aside_cate5_tit.png" alt="농작물이야기">
                             </div>
                             <div>
-                                <a href="#">
-                                    <img src="/farmStory/images/sub_cate5_lnb1_ov.png" alt="">
+                                <a href="/farmStory/view/community/notice/noticeList.do">
+                                    <img src="/farmStory/images/sub_cate5_lnb1.png" alt="공지사항">
                                 </a>
-                                <a href="#">
-                                    <img src="/farmStory/images/sub_cate5_lnb2.png" alt="">
+                                <a href="/farmStory/view/community/todayMenu/todayMenuList.do">
+                                    <img src="/farmStory/images/sub_cate5_lnb2_ov.png" alt="오늘의식단">
                                 </a>
-                                <a href="#">
-                                    <img src="/farmStory/images/sub_cate5_lnb3.png" alt="">
+                                <a href="/farmStory/view/community/chef/chefList.do">
+                                    <img src="/farmStory/images/sub_cate5_lnb3.png" alt="나도요리사">
                                 </a>
-                                <a href="#">
-                                    <img src="/farmStory/images/sub_cate5_lnb4.png" alt="">
+                                <a href="/farmStory/view/community/inquiry/inquiryList.do">
+                                    <img src="/farmStory/images/sub_cate5_lnb4.png" alt="1:1고객문의">
                                 </a>
-                                <a href="#">
-                                    <img src="/farmStory/images/sub_cate5_lnb5.png" alt="">
+                                <a href="/farmStory/view/community/qna/qnaList.do">
+                                    <img src="/farmStory/images/sub_cate5_lnb5.png" alt="자주묻는질문">
                                 </a>
                             </div>
                         </aside>
                         <article>
                             <div class="nav_bar">
                                 <nav>
-                                    <img src="/farmStory/images/sub_nav_tit_cate5_tit1.png" alt="농작물이야기">
+                                    <img src="/farmStory/images/sub_nav_tit_cate5_tit2.png" alt="농작물이야기">
                                 </nav>
                                 <div>
-                                    <p>HOME > 커뮤니티 > <span style="color: #91ba23; font-weight: 700;">공지사항</span></p>
+                                    <p>HOME > 커뮤니티 > <span style="color: #91ba23; font-weight: 700;">오늘의식단</span></p>
                                 </div>
                             </div>
                             <div class="sub_page">

@@ -9,11 +9,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-    	<%@ include file="/../../header.jsp" %>
     </head>
     <body>
         <div id="wrapper">
-            
+            <%@ include file="/../../header.jsp" %>
     
             <main>
                 <div class="main_container">
@@ -35,10 +34,10 @@
                                 <a href="/farmStory/view/community/chef/chefList.do">
                                     <img src="/farmStory/images/sub_cate5_lnb3.png" alt="나도요리사">
                                 </a>
-                                <a href="/farmStory/view/community/qna/qnaList.do">
+                                <a href="/farmStory/view/community/inquiry/inquiryList.do">
                                     <img src="/farmStory/images/sub_cate5_lnb4.png" alt="1:1고객문의">
                                 </a>
-                                <a href="/farmStory/view/community/inquiry/inquiryList.do">
+                                <a href="/farmStory/view/community/qna/qnaList.do">
                                     <img src="/farmStory/images/sub_cate5_lnb5.png" alt="자주묻는질문">
                                 </a>
                             </div>

@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/view/cropStory/gardening.do")
+@WebServlet("/view/cropStory/gardening/gardeningList.do")
 public class GardeningController extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
@@ -17,7 +17,7 @@ public class GardeningController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/cropStory/gardening.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/cropStory/gardening/gardeningList.jsp");
 		dispatcher.forward(req, resp);
 	
 	

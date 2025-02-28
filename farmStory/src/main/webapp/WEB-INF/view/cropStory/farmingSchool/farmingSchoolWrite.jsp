@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>농작물이야기</title>
-    <link rel="stylesheet" href="/farmStory/css/cropStory/cropStory.css">
+    <title>귀농학교</title>
+    <link rel="stylesheet" href="/farmStory/css/cropStory/FarmingSchool.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-	<%@ include file="/../../header.jsp" %>
 </head>
 <body>
     <div id="wrapper">
+        <%@ include file="/../../header.jsp" %>
         <main>
             <div class="main_container">
                 <div class="sub_top_container">
@@ -21,27 +21,27 @@
                 <section>
                     <aside>
                         <div>
-                            <img src="/farmStory/images/sub_aside_cate3_tit.png" alt="농작물이야기">
+                            <img src="/farmStory/images/sub_aside_cate3_tit.png" alt="텃밭가꾸기">
                         </div>
                         <div>
-                            <a href="/farmStory/view/cropStory/cropStory.do">
-                                <img src="/farmStory/images/sub_cate3_lnb1_ov.png" alt="농작물이야기">
+                            <a href="/farmStory/view/cropStory/cropStory/cropStoryList.do">
+                                <img src="/farmStory/images/sub_cate3_lnb1.png" alt="농작물이야기">
                             </a>
-                            <a href="/farmStory/view/cropStory/gardening.do">
+                            <a href="/farmStory/view/cropStory/gardening/gardeningList.do">
                                 <img src="/farmStory/images/sub_cate3_lnb2.png" alt="텃밭가꾸기">
                             </a>
-                            <a href="/farmStory/view/cropStory/returnToFarmingSchool.do">
-                                <img src="/farmStory/images/sub_cate3_lnb3.png" alt="귀농학교">
+                            <a href="/farmStory/view/cropStory/farmingSchool/farmingSchoolList.do">
+                                <img src="/farmStory/images/sub_cate3_lnb3_ov.png" alt="귀농학교">
                             </a>
                         </div>
                     </aside>
                     <article>
                         <div class="nav_bar">
                             <nav>
-                                <img src="/farmStory/images/sub_nav_tit_cate3_tit1.png" alt="농작물이야기">
+                                <img src="/farmStory/images/sub_nav_tit_cate3_tit3.png" alt="귀농학교">
                             </nav>
                             <div>
-                                <p>HOME > 농작물이야기 > <span style="color: #91ba23; font-weight: 700;">농작물이야기</span></p>
+                                <p>HOME > 농작물이야기 > <span style="color: #91ba23; font-weight: 700;">귀농학교</span></p>
                             </div>
                         </div>
                         <div class="sub_page">

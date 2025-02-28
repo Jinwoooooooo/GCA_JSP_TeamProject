@@ -43,7 +43,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/farmStory/view/cropStory/cropStory.do">
+                        <a href="/farmStory/view/cropStory/cropStory/cropStoryList.do">
                             <img src="/farmStory/images/head_menu_line.png" alt="라인">
                             <img src="/farmStory/images/head_menu3.png" alt="농작물이야기">
                         </a>

@@ -9,15 +9,15 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/view/cropStory/returnToFarmingSchool.do")
-public class ReturnToFarmingSchoolController extends HttpServlet {
+@WebServlet("/view/cropStory/farmingSchool/farmingSchoolList.do")
+public class FarmingSchoolController extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/cropStory/returnToFarmingSchool.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/cropStory/farmingSchool/farmingSchoolList.jsp");
 		dispatcher.forward(req, resp);
 	
 	

@@ -28,6 +28,7 @@ public class AdminProRegister extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
 		String pid = req.getParameter("pid");
 		String pName = req.getParameter("pName");
 		String types = req.getParameter("types");
@@ -50,11 +51,11 @@ public class AdminProRegister extends HttpServlet{
 		dto.setStock(stock);
 		dto.setpImage(pImage);
 		dto.setOther(other);
-		
+
 		
 		service.registerProduct(dto);
 		
-		resp.sendRedirect("farmStory/adminMain/adminProList.do");
+		resp.sendRedirect("/farmStory/adminMain/list.do");
 	}
 	
 	

@@ -25,11 +25,12 @@ public class AdminDAO extends DBHelper{
 			pstmt.setString(2, dto.getpName());
 			pstmt.setString(3, dto.getTypes());
 			pstmt.setInt(4, dto.getPrice());
-			pstmt.setInt(5, dto.getDiscount());
-			pstmt.setInt(6, dto.getCharge());
-			pstmt.setInt(7, dto.getStock());
-			pstmt.setString(8, dto.getpImage());
-			pstmt.setString(9, dto.getOther());
+			pstmt.setInt(5, dto.getPoint());
+			pstmt.setString(6, dto.getDiscount());
+			pstmt.setInt(7, dto.getCharge());
+			pstmt.setInt(8, dto.getStock());
+			pstmt.setString(9, dto.getpImage());
+			pstmt.setString(10, dto.getOther());
 			
 			pstmt.executeUpdate();
 			
@@ -57,10 +58,11 @@ public class AdminDAO extends DBHelper{
 				dto.setPid(rs.getInt(1));
 				dto.setpName(rs.getString(2));
 				dto.setTypes(rs.getString(3));
-				dto.setPrice(rs.getInt(5));
-				dto.setStock(rs.getInt(6));
-				dto.setpDate(rs.getString(7));
+				dto.setPrice(rs.getInt(4));
+				dto.setStock(rs.getInt(5));
+				dto.setpDate(rs.getString(6));
 				Products.add(dto);
+				
 			}
 			
 			closeAll();

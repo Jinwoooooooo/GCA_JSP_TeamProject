@@ -22,4 +22,7 @@ public class SQL {
 															+ "addr2 = ?,"
 															+ "regip = ?,"
 															+ "regDate = NOW()";
+	
+	
+	
 }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>농작물이야기</title>
-    <link rel="stylesheet" href="/farmStory/css/cropStory/cropStory.css">
+    <link rel="stylesheet" href="/farmStory/css/cropStory/write.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
@@ -24,13 +24,13 @@
                             <img src="/farmStory/images/sub_aside_cate3_tit.png" alt="농작물이야기">
                         </div>
                         <div>
-                            <a href="/farmStory/view/cropStory/cropStory/cropStoryList.do">
+                            <a href="/farmStory/cropStory/cropStoryList.do">
                                 <img src="/farmStory/images/sub_cate3_lnb1_ov.png" alt="농작물이야기">
                             </a>
-                            <a href="/farmStory/view/cropStory/gardening/gardeningList.do">
+                            <a href="/farmStory/gardening/gardeningList.do">
                                 <img src="/farmStory/images/sub_cate3_lnb2.png" alt="텃밭가꾸기">
                             </a>
-                            <a href="/farmStory/view/cropStory/farmingSchool/farmingSchoolList.do">
+                            <a href="/farmStory/farmingSchool/farmingSchoolList.do">
                                 <img src="/farmStory/images/sub_cate3_lnb3.png" alt="귀농학교">
                             </a>
                         </div>
@@ -46,7 +46,8 @@
                         </div>
                         <div class="sub_page">
                             <h1>글쓰기</h1>
-                            <form action="#">
+                            <form action="/farmStory/cropStory/cropStoryWrite.do" method="post" enctype="multipart/form-data">
+                            	<input type="hidden" name="uid" value="sessUser.uid" readonly="readonly">
                                 <table>
                                     <tr>
                                         <td>제목</td>
@@ -70,8 +71,8 @@
                                     </tr>
                                 </table>
                                 <div class="btnContainer">
-                                    <button class="btn btnCancel">취소</button>
-                                    <button class="btn btnSubmit" type="submit">작성완료</button>
+                                    <a href="/jboard/article/list.do" class="btn btnCancel">취소</a>
+                                    <input type="submit" value="작성완료" class="btn btnSubmit"/>
                                 </div>
                             </form>
                         </div>

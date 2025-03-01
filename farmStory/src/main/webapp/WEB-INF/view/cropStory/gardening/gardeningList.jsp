@@ -76,7 +76,7 @@
                                             <a href="#">2</a>
                                             <a href="#">3</a>
                                             <a href="#">다음</a>
-                                            <a href="/farmStory/view/cropStory/gardening/gardeningWrite.do">글쓰기</a>
+                                            <a href="/farmStory/gardening/gardeningWrite.do">글쓰기</a>
                                             
                                         </div>
                                         

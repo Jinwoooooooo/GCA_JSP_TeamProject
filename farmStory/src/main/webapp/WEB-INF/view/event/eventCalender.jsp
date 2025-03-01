@@ -26,7 +26,7 @@
                             <img src="/farmStory/images/sub_aside_cate4_tit.png" alt="이벤트">
                         </div>
                         <div>
-                            <img src="/farmStory/images/sub_cate4_lnb1_ov.png" alt="이벤트" onclick="location.href='/farmStory/view/event/eventCalender.do'" class="aside_link">
+                            <img src="/farmStory/images/sub_cate4_lnb1_ov.png" alt="이벤트" onclick="location.href='/farmStory/event/eventCalender.do'" class="aside_link">
                         </div>
                     </aside>
                     <article>

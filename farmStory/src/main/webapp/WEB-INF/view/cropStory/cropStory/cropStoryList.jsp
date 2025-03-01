@@ -24,13 +24,13 @@
                             <img src="/farmStory/images/sub_aside_cate3_tit.png" alt="농작물이야기">
                         </div>
                         <div>
-                            <a href="/farmStory/view/cropStory/cropStory/cropStoryList.do">
+                            <a href="/farmStory/cropStory/cropStoryList.do">
                                 <img src="/farmStory/images/sub_cate3_lnb1_ov.png" alt="농작물이야기">
                             </a>
-                            <a href="/farmStory/view/cropStory/gardening/gardeningList.do">
+                            <a href="/farmStory/gardening/gardeningList.do">
                                 <img src="/farmStory/images/sub_cate3_lnb2.png" alt="텃밭가꾸기">
                             </a>
-                            <a href="/farmStory/view/cropStory/farmingSchool/farmingSchoolList.do">
+                            <a href="/farmStory/farmingSchool/farmingSchoolList.do">
                                 <img src="/farmStory/images/sub_cate3_lnb3.png" alt="귀농학교">
                             </a>
                         </div>
@@ -76,7 +76,7 @@
                                             <a href="#">2</a>
                                             <a href="#">3</a>
                                             <a href="#">다음</a>
-                                            <a href="/farmStory/view/cropStory/cropStory/cropStoryWrite.do">글쓰기</a>
+                                            <a href="/farmStory/cropStory/cropStoryWrite.do">글쓰기</a>
                                             
                                         </div>
                                         

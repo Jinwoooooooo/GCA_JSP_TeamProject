@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/view/community/notice/noticeWrite.do")
+@WebServlet("/notice/noticeWrite.do")
 public class NoticeWriteController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -18,7 +18,7 @@ public class NoticeWriteController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/community/notice/noticeList.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/community/notice/noticeWrite.jsp");
 		dispatcher.forward(req, resp);
 	
 	

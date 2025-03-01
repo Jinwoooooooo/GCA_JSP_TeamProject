@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/view/cropStory/gardening/gardeningWrite.do")
+@WebServlet("/gardening/gardeningWrite.do")
 public class GardeningWriteController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;

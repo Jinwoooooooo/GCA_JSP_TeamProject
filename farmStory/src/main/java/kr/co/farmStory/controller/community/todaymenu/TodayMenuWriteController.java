@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/view/community/todayMenu/todayMenuWrite.do")
+@WebServlet("/todayMenu/todayMenuWrite.do")
 public class TodayMenuWriteController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;

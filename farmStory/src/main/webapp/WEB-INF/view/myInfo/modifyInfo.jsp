@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,12 +47,12 @@
                     </div>
 
                     <section>
-                        <form action="#">
+                        <form action="/farmStory/myInfo/modifyInfo.do" method="post">
                             <p>회원정보 설정</p>
                             <table class="table_1">
                                 <tr>
                                     <td class="td_left">아이디</td>
-                                    <td>chhak1234</td>
+                                    <td>${user.uid}</td>
                                 </tr>
                                 <tr>
                                     <td class="td_left">비밀번호</td>
@@ -66,7 +67,7 @@
                                 </tr>
                                 <tr>
                                     <td class="td_left">회원가입날짜</td>
-                                    <td>2022-01-01 12:45:12</td>
+                                    <td>${user.regDate}</td>
                                 </tr>
                             </table>
 

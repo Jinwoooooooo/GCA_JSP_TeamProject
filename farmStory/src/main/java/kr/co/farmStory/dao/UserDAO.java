@@ -113,6 +113,40 @@ public class UserDAO extends DBHelper {
 		return userDTO;
 	}
 	
+	public UserDTO selectUserId(String uid) {
+		
+		UserDTO dto = null; 
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(SQL.SELECT_USER_ID);
+			pstmt.setString(1, uid);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				dto = new UserDTO();
+				dto.setUid(rs.getString(1));
+				dto.setPass(rs.getString(2));
+				dto.setName(rs.getString(3));
+				dto.setNick(rs.getString(4));
+				dto.setEmail(rs.getString(5));
+				dto.setHp(rs.getString(6));
+				dto.setRole(rs.getString(7));
+				dto.setPoint(rs.getInt(8));
+				dto.setZip(rs.getString(9));
+				dto.setAddr1(rs.getString(10));
+				dto.setAddr2(rs.getString(11));
+				dto.setRegip(rs.getString(12));
+				dto.setRegDate(rs.getString(13));
+				dto.setLeaveDate(rs.getString(14));
+			}
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return dto;
+	}
+	
 	public List<UserDTO> selectAllUser() {
 		
 		List<UserDTO> users = new ArrayList<>();
@@ -146,5 +180,26 @@ public class UserDAO extends DBHelper {
 			logger.error(e.getMessage());
 		}
 		return users;
+	}
+	
+	public void updateUser(UserDTO dto) {
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(SQL.MODIFY_USER);
+			pstmt.setString(1, dto.getPass());
+			pstmt.setString(2, dto.getName());
+			pstmt.setString(3, dto.getNick());
+			pstmt.setString(4, dto.getEmail());
+			pstmt.setString(5, dto.getHp());
+			pstmt.setString(6, dto.getZip());
+			pstmt.setString(7, dto.getAddr1());
+			pstmt.setString(8, dto.getAddr2());
+			pstmt.setString(9, dto.getUid());
+			pstmt.executeQuery();
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
 	}
 }

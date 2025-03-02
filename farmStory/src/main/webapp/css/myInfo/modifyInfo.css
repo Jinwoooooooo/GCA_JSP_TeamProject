@@ -238,12 +238,18 @@ table input {
 }
 
 table button {
-    width: 85px;
-    height: 25px;
+    width: 80px;
+    height: 20px;
     background: #2E658A;
-    color: #FFFFFF;
     border: none;
-    border-radius: 2px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding-bottom: 2px;
+}
+
+table button > span {
+    font-weight: 400;	
+    color: #FFFFFF;
 }
 
 
@@ -259,7 +265,7 @@ table button {
     height: 25px;
     background: crimson;
     color: #FFFFFF;
-    border-radius: 2px;
+    border-radius: 3px;
     cursor: pointer;
 }
 

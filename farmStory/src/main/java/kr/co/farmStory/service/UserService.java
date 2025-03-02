@@ -31,22 +31,21 @@ public enum UserService {
 		return dao.selectUser(dto); 
 	}
 	
+	public UserDTO findUserId(String uid) { 
+		return dao.selectUserId(uid); 
+	}
+	
 	public List<UserDTO> findAllUser() { 
 		return dao.selectAllUser(); 
 	}
 	
-	/*
-	 * public UserDTO findUser(String uid) { return dao.selectUser(uid); }
-	 */
+	public void modifyUser(UserDTO dto) { 
+		dao.updateUser(dto); 
+	}
 	  
-	  
 	/*
-	 * 
-	 * public void modifyUser(UserDTO dto) { dao.updateUser(dto); }
-	 * 
 	 * public void deleteUser(String uid) { dao.deleteUser(uid); }
 	 */
-	 
 	
 	//이메일 발송
 	public String sendEmailCode(String receiver) {

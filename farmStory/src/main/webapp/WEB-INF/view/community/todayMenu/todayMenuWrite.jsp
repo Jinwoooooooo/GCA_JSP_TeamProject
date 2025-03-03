@@ -53,7 +53,8 @@
 						</div>
 						<div class="sub_page">
 							<h1>글쓰기</h1>
-							<form action="#">
+							<form action="farmStory/todayMenu/todayMenuWrite.do" method="post"
+							enctype="multipart/form-data">
 								<table>
 									<tr>
 										<td>제목</td>

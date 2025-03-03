@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <header>
-	<a href="#">
+	<a href="/farmStory/adminMain/list.do">
 		<img src="/farmStory/images/admin/admin_logo.jpg" alt="hd_logo" class="hd_logo">
 	</a>
 	<c:if test="${not empty sessionScope.sessUser}">

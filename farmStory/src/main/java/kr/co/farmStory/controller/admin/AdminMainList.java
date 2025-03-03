@@ -23,6 +23,10 @@ public class AdminMainList extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+
+		List<AdminDTO> dtos = service.findAllMainPro();
+		
+		req.setAttribute("dtos", dtos);
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/adminMain/adminMain.jsp");
 		dispatcher.forward(req, resp);

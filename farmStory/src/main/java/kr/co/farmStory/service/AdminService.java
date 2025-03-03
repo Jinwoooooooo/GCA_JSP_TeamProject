@@ -10,10 +10,19 @@ public enum AdminService {
 	INSTANCE;
 	private AdminDAO dao = AdminDAO.getIntance();
 	
+	// 메인 목록 
+	public List<AdminDTO> findAllMainPro() {
+		return dao.selectAllMinPro();
+	}
+	
+	
+	// 상품등록
 	public void registerProduct(AdminDTO dto) {
 		dao.insertAdminPro(dto);
 	}
 	
+	
+	// 상품목록
 	public List<AdminDTO> findAllProduct() {
 		return dao.selectAllPro();
 	}

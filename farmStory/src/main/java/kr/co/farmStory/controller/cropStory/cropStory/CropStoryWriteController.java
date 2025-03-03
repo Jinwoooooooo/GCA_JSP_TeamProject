@@ -40,18 +40,21 @@ public class CropStoryWriteController extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
 		// 데이터 수신
+		String uid = req.getParameter("uid");
 		String title = req.getParameter("title");
 		String content = req.getParameter("content");
-		String uid = req.getParameter("uid");
-		String regip = req.getParameter("regip");
+		String file = req.getParameter("file");
+		String writer = req.getParameter("writer");
+		String regip = req.getRemoteAddr();
 		
 		
 		
 		ArticleDTO dto = new ArticleDTO();
+		dto.setUid(uid);
 		dto.setTitle(title);
 		dto.setContent(content);
-		//dto.setFile(0);
-		dto.setUid(uid);
+		//dto.setFile(file);
+		dto.setWriter(writer);
 		dto.setRegip(regip);
 		
 		logger.debug(dto.toString());

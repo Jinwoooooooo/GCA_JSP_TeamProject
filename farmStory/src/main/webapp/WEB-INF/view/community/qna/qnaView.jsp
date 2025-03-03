@@ -55,7 +55,7 @@
 						</div>
 						<div class="sub_page">
 							<h1>글보기</h1>
-							<form action="#">
+							<form action="farmStory/qna/QnaView.do">
 								<table>
 									<tr>
 										<td>제목</td>

@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,30 +74,17 @@
                                 <th>재고</th>
                                 <th>등록일</th>
                             </tr>
+                          <c:forEach var="dto" items="${dtos}">
                             <tr class="table_bd1">
-                                <td>1011</td>
-                                <td>사과 500g</td>
-                                <td>과일</td>
-                                <td>4,000원</td>
-                                <td>100</td>
-                                <td>2023-01-01</td>
+                                <td>${dto.pid}</td>
+                                <td>${dto.pName}</td>
+                                <td>${dto.types}</td>
+                                <td>${dto.price}</td>
+                                <td>${dto.stock}</td>
+                                <td>${dto.pDate}</td>
                             </tr>
-                            <tr class="table_bd1">
-                                <td>1011</td>
-                                <td>사과 500g</td>
-                                <td>과일</td>
-                                <td>4,000원</td>
-                                <td>100</td>
-                                <td>2023-01-01</td>
-                            </tr>
-                            <tr class="table_bd1">
-                                <td>1011</td>
-                                <td>사과 500g</td>
-                                <td>과일</td>
-                                <td>4,000원</td>
-                                <td>100</td>
-                                <td>2023-01-01</td>
-                            </tr>
+                          </c:forEach>
+                           
                     </table>
                 </article>
 

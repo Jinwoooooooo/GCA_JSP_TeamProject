@@ -72,18 +72,19 @@
                                 <th>등록일</th>
                             </tr>
                             
-                            <tr class="table_bd1">
-                                <td class="img"><input type="checkbox"></td>
-                                <td><img src="/farmStory/images/market_item1.jpg" ></td>
-                            <c:forEach var="dto" items="${dtos}">
-                                <td>${dto.pid}</td>
-                                <td>${dto.pName}</td>
-                                <td>${dto.types}</td>
-                                <td>${dto.price}</td>
-                                <td>${dto.stock}</td>
-                                <td>${dto.pDate}</td>
+                             <c:forEach var="dto" items="${dtos}">
+	                            <tr class="table_bd1">
+	                                <td class="img"><input type="checkbox"></td>
+	                                <td><img src="/farmStory/images/market_item1.jpg" ></td>
+	                                <td>${dto.pid}</td>
+	                                <td>${dto.pName}</td>
+	                                <td>${dto.types}</td>
+	                                <td>${dto.price}</td>
+	                                <td>${dto.stock}</td>
+	                                <td>${dto.pDate}</td>
+                            	</tr>
                             </c:forEach>
-                            </tr>
+                            
                            
                     </table>
                     

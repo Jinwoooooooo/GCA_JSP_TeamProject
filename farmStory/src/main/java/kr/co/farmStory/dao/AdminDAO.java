@@ -73,4 +73,34 @@ public class AdminDAO extends DBHelper{
 		return Products;
 	}
 	
+	public List<AdminDTO> selectAllMinPro() {
+		
+		List<AdminDTO> Products = new ArrayList<AdminDTO>();
+		
+		try {
+			
+			conn = getConnection();
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(AdminSQL.SELECT_ALL_PRODUCT);
+			
+			while(rs.next()) {
+				AdminDTO dto = new AdminDTO();
+				dto.setPid(rs.getInt(1));
+				dto.setpName(rs.getString(2));
+				dto.setTypes(rs.getString(3));
+				dto.setPrice(rs.getInt(4));
+				dto.setStock(rs.getInt(5));
+				dto.setpDate(rs.getString(6));
+				Products.add(dto);
+				
+			}
+			
+			closeAll();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return Products;
+	}
+	
 }

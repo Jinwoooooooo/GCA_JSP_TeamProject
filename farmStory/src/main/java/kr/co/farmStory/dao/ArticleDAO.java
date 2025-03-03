@@ -30,16 +30,16 @@ public class ArticleDAO extends DBHelper {
 			pstmt.setString(2, dto.getTitle());
 			pstmt.setString(3, dto.getContent());
 			pstmt.setInt(4, dto.getFile());
-			pstmt.setString(5, dto.getRegip());
+			pstmt.setString(5, dto.getWriter());
+			pstmt.setString(6, dto.getRegip());
 			
 			pstmt.executeUpdate();
 			
 			closeAll();
 			
 			
-			
 		} catch (Exception e) {
-			logger.debug(e.getMessage());
+			logger.error(e.getMessage());
 		}
 		
 	}

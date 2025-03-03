@@ -4,13 +4,14 @@ public class ArticleSQL {
 	
 	
 	//CropStory
-		public static final String INSERT_ARTICLE = "INSERT INTO `post` SET "
-															+ "`uid`=?,"
-															+ "`title`=?,"
-															+ "`content`=?,"
-															+ "`file`='cropStory',"
-															+ "`cate`=?,"
-															+ "`regip`=?,"
-															+ "`wdate`=now()";
+	public static final String INSERT_ARTICLE = "insert into `post` set "
+																+ "`uid`=?,"
+																+ "`title`=?,"
+																+ "`content`=?,"
+																+ "`file`=?,"
+																+ "`writer`=?,"
+																+ "`cate`='cropStory',"
+																+ "`regip`=?,"
+																+ "`wdate`=now()";
 		
 }

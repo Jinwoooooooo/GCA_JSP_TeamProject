@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("qna/qnaView.do")
+@WebServlet("/qna/qnaView.do")
 public class QnaViewController extends HttpServlet{
 
 

@@ -13,10 +13,6 @@ public class ArticleDTO {
 	private String cate;
 	private String regip;
 	private String wdate;
-	
-	
-	
-	
 	public int getPostNo() {
 		return postNo;
 	}
@@ -84,12 +80,16 @@ public class ArticleDTO {
 		this.wdate = wdate;
 	}
 	
+	
 	@Override
 	public String toString() {
 		return "ArticleDTO [postNo=" + postNo + ", uid=" + uid + ", title=" + title + ", content=" + content
 				+ ", comment=" + comment + ", file=" + file + ", hit=" + hit + ", writer=" + writer + ", cate=" + cate
 				+ ", regip=" + regip + ", wdate=" + wdate + "]";
 	}
+	
+	
+	
 	
 	
 	

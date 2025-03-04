@@ -14,7 +14,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import kr.co.farmStory.dto.ArticleDTO;
+import kr.co.farmStory.dto.FileDTO;
 import kr.co.farmStory.service.ArticleService;
+import kr.co.farmStory.service.FileService;
 
 @WebServlet("/cropStory/cropStoryWrite.do")
 public class CropStoryWriteController extends HttpServlet {
@@ -24,6 +26,9 @@ public class CropStoryWriteController extends HttpServlet {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	private ArticleService service = ArticleService.INSTANCE;
+	private FileService fileservice = FileService.instance;
+	
+	
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -43,9 +48,13 @@ public class CropStoryWriteController extends HttpServlet {
 		String uid = req.getParameter("uid");
 		String title = req.getParameter("title");
 		String content = req.getParameter("content");
-		String file = req.getParameter("file");
 		String writer = req.getParameter("writer");
 		String regip = req.getRemoteAddr();
+		
+
+		
+		// 파일 업로드 서비스 호출
+		List<FileDTO> files = fileservice.uploadFile(req);
 		
 		
 		
@@ -53,13 +62,26 @@ public class CropStoryWriteController extends HttpServlet {
 		dto.setUid(uid);
 		dto.setTitle(title);
 		dto.setContent(content);
-		//dto.setFile(file);
 		dto.setWriter(writer);
 		dto.setRegip(regip);
 		
+		// 파일이 없을 경우
+		if(files==null || files.isEmpty()) {
+			dto.setFile(0);
+		}else {
+			dto.setFile(files.size());
+		}
+		
 		logger.debug(dto.toString());
 		
-		service.registeArticle(dto);
+		// 글 등록 서비스 호출
+		int postNo = service.registeArticle(dto);
+				
+		// 파일 등록 서비스 호출
+		for(FileDTO fileDTO : files) {
+			fileDTO.setPostNo(postNo);
+			fileservice.registeFile(fileDTO);
+		}
 		
 		
 		resp.sendRedirect("/farmStory/cropStory/cropStoryList.do");

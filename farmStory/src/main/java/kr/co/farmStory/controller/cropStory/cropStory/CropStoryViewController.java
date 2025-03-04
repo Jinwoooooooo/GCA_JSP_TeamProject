@@ -8,17 +8,31 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import kr.co.farmStory.dto.ArticleDTO;
+import kr.co.farmStory.service.ArticleService;
 
-@WebServlet("CropStory/CropStoryView.do")
+@WebServlet("/cropStory/CropStoryView.do")
 public class CropStoryViewController extends HttpServlet{
 
 
 	private static final long serialVersionUID = 1L;
+	
+	private ArticleService service = ArticleService.INSTANCE;
+	
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/community/todayMenu/todayMenuList.jsp");
+		// 글번호 수신
+		String postNo = req.getParameter("postNo");
+		
+		// 글 조회 서비스 호출
+		ArticleDTO articledto = service.findArticle(postNo);
+		
+		req.setAttribute("articledto", articledto);
+		
+		
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/cropStory/cropStory/cropStoryView.jsp");
 		dispatcher.forward(req, resp);
 	
 		

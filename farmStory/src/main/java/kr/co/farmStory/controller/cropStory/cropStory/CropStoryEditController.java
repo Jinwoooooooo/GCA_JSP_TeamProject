@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("cropStory/cropStoryEdit.do")
+@WebServlet("/cropStory/cropStoryEdit.do")
 public class CropStoryEditController extends HttpServlet{
 
 	

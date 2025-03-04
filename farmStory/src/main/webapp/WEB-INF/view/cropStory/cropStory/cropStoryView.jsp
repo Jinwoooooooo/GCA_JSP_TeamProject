@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>농작물이야기</title>
-    <link rel="stylesheet" href="/farmStory/css/cropStory/cropStory.css">
+    <link rel="stylesheet" href="/farmStory/css/cropStory/viewText.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
@@ -51,20 +52,23 @@
                                     <tr>
                                         <td>제목</td>
                                         <td>
-                                            <input type="text" name="title" value="제목입니다." class="title" readonly>
+                                            <input type="text" name="title" value="${articledto.title}" class="title" readonly>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>파일</td>
-                                        <td>
-                                            <p>2021년 상반기 매출현황.xls (7회) <a href="#">다운로드</a></p>
-                                            <p>교육 운영 관리자료.hwp (7회) <a href="#">다운로드</a></p>
-                                        </td>
-                                    </tr>
+                                    <c:if test="${articledto.file > 0}"></c:if>
+	                                    <tr>
+	                                        <td>파일</td>
+	                                        <td>
+	                                        	<c:forEach var="file" items="${articledto.files}">
+	                                        		<a href="#">${file.oName} </a><span>${file.download}</span>
+	                                        	</c:forEach>
+	                                        	
+	                                        </td>
+	                                    </tr>
                                     <tr>
                                         <td>내용</td>
                                         <td>
-                                            <textarea name="content" maxlength="1000" class="content" readonly></textarea>
+                                            <textarea name="content" maxlength="1000" class="content" readonly>${articledto.content}</textarea>
                                         </td>
                                     </tr>
                                 </table>

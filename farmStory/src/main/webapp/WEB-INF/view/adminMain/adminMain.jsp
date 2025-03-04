@@ -16,47 +16,7 @@
     <div id="wrapper">
     <%@include file="./_header.jsp"%>
         <main>
-            <aside>
-                <div class="heading">
-                    <p class="heading_p">주요기능</p>
-                </div>
-
-                <div class="list">
-                    <div>
-                        <p>상품관리</p>
-                        <ul>
-                            <li>
-                                <span>L</span>
-                                <a href="/farmStory/adminMain/adminProList.do" class="list_it">상품목록</a>
-                            </li>
-                            <li>
-                                <span>L</span>
-                                <a href="/farmStory/adminPro/register.do">상품등록</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <p>주문관리</p>
-                        <ul>
-                            <li>
-                                <span>L</span>
-                                <a href="#">주문목록</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <p>회원관리</p>
-                        <ul>
-                            <li>
-                                <span>L</span>
-                                <a href="/farmStory/memberList/list.do">회원목록</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </aside>
+             <%@include file="./_aside.jsp"%>
 
             <section>
                 <nav>관리자 메인</nav>
@@ -152,33 +112,20 @@
                             <th>등급</th>
                             <th>회원가입일</th>
                         </tr>
-                        <tr class="table_bd3">
-                            <td>a101</td>
-                            <td>김유신</td>
-                            <td>유신123</td>
-                            <td>010-1234-1001</td>
-                            <td>yusin123@naver.com</td>
-                            <td>2</td>
-                            <td>2023-01-01</td>
-                        </tr>
-                        <tr class="table_bd3">
-                            <td>a101</td>
-                            <td>김유신</td>
-                            <td>유신123</td>
-                            <td>010-1234-1001</td>
-                            <td>yusin123@naver.com</td>
-                            <td>2</td>
-                            <td>2023-01-01</td>
-                        </tr>
-                        <tr class="table_bd3">
-                            <td>a101</td>
-                            <td>김유신</td>
-                            <td>유신123</td>
-                            <td>010-1234-1001</td>
-                            <td>yusin123@naver.com</td>
-                            <td>2</td>
-                            <td>2023-01-01</td>
-                        </tr>
+                   <c:forEach var="user" items="${requestScope.users}">
+                            <tr class="table_bd1">
+                                <td class="check"><input type="checkbox"></td>
+                     
+                                <td>${user.name}</td>
+                                <td>${user.nick}</td>
+                                <td>${user.hp}</td>
+                                <td>${user.email}</td>
+                                <td><option value="lank" class="op">${user.role}</option></td>
+                                <td>${user.regDate}</td>
+                              
+                            </tr>
+                   </c:forEach>
+                    
                      </table>
                      
                 </article>

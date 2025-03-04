@@ -16,21 +16,14 @@
         <main>
             <div class="main_container">
                 <div class="sub_top_container">
-                    <img src="/images/sub_top_tit2.png" alt="마켓">
+                    <img src="/farmStory/images/sub_top_tit2.png" alt="마켓">
                 </div>
                 <section>
-                    <aside>
-                        <div>
-                            <img src="/images/sub_aside_cate2_tit.png" alt="장보기">
-                        </div>
-                        <div>
-                            <img src="/images/sub_cate2_lnb1_ov.png" alt="장보기">
-                        </div>
-                    </aside>
+                     <%@include file="./_side.jsp"%>
                     <article>
                         <div class="nav_bar">
                             <nav>
-                                <img src="/images/sub_nav_tit_cate2_tit1.png" alt="장보기">
+                                <img src="/farmStory/images/sub_nav_tit_cate2_tit1.png" alt="장보기">
                             </nav>
                             <div>
                                 <p>HOME > 장보기 > <span style="color: #91ba23; font-weight: 700;">장보기</span></p>
@@ -40,7 +33,7 @@
                             <p class="subtitle">기본정보</p>
                             <div class="basic_info">
                                 <div>
-                                    <img src="/images/market_item_thumb.jpg" alt="상품이미지">
+                                    <img src="/farmStory/images/market_item_thumb.jpg" alt="상품이미지">
                                     <div class="form_container">
                                         <form action="#">
                                             <table>

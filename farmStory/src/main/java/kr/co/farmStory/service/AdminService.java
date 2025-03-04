@@ -26,4 +26,30 @@ public enum AdminService {
 	public List<AdminDTO> findAllProduct() {
 		return dao.selectAllPro();
 	}
+	
+	// 장보기
+	public List<AdminDTO> findAllShopping() {
+		return dao.selectAllShopping();
+	}
+	
+	// ====================================================
+	
+	// 과일 목록
+	public List<AdminDTO> find_fruit(String types) {
+		return dao.select_fruit(types);
+	}
+	
+	// 야채 목록
+	public List<AdminDTO> find_vegetable(String types) {
+		return dao.select_vegetable(types);
+	}
+	
+	// 곡류 목록
+	public List<AdminDTO> find_grains(String types) {
+		return dao.select_grains(types);
+	}
+	
+	
+	
+	
 }

@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script src="/farmStory/js/daumPostcode.js"></script>
+    <script src="/farmStory/js/validation2.js"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -47,7 +50,7 @@
                     </div>
 
                     <section>
-                        <form action="/farmStory/myInfo/modifyInfo.do" method="post">
+                        <form action="/farmStory/myInfo/modifyInfo.do" method="post" name="formRegister">
                             <p>회원정보 설정</p>
                             <table class="table_1">
                                 <tr>
@@ -56,13 +59,16 @@
                                 </tr>
                                 <tr>
                                     <td class="td_left">비밀번호</td>
-                                    <td><input type="text" placeholder="비밀번호 입력"></td>
+                                    <td>
+                                    	<input type="text" name="pass1" placeholder="비밀번호 입력">
+                                    	<span class="passResult"></span>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="td_left">비밀번호 확인</td>
                                     <td>
-                                        <input type="text" placeholder="비밀번호 입력 확인">
-                                        <button type="button"><span>비밀번호 수정</span></button>
+                                        <input type="text" name="pass2" placeholder="비밀번호 입력 확인">
+                                        <button type="button"><p class="editPassBtn">비밀번호 수정</p></button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -75,15 +81,19 @@
                             <table class="table_2">
                                 <tr>
                                     <td class="td_left">이름</td>
-                                    <td><input type="text"></td>
+                                    <td>
+                                    	<input type="text" name="name" value="${user.name}">
+                                    	<span class="nameResult"></span>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="td_left">별명</td>
                                     <td>
                                         <p>공백없는 한글, 영문, 숫자 입력</p>
                                         <div class="div_btn">
-                                            <input type="text" placeholder="별명 입력">
-                                            <img src="/farmStory/images/myinfo/chk_id.gif" alt="중복확인">
+                                            <input type="text" name="nick" placeholder="별명 입력" value="${user.nick}">
+                                            <img src="/farmStory/images/myinfo/chk_id.gif" id="btnCheckNick" alt="중복확인" style="cursor: pointer;">
+                                            <span class="nickResult"></span>
                                         </div>
                                     </td>
                                 </tr>
@@ -92,8 +102,13 @@
                                         <td class="td_left">이메일</td>
                                         <td>
                                             <div class="div_btn">
-                                            <input type="text" placeholder="이메일 입력">
-                                            <img src="/farmStory/images/myinfo/chk_auth.gif" alt="인증번호 받기">
+                                            <input type="text" name="email" placeholder="이메일 입력" value="${user.email}">
+                                            <img src="/farmStory/images/myinfo/chk_auth.gif" id="btnSendEmail" alt="인증번호 받기" style="cursor: pointer;">
+                                        	<span class="emailResult"></span>
+                                        	<div class="auth">
+			                                    <input type="text" name="auth" placeholder="인증번호 입력"/>
+			                                    <img src="/farmStory/images/user/chk_confirm.gif" id="btnAuthEmail" alt="확인" style="cursor: pointer;"/>
+			                                </div>
                                         </div>
                                         </td>
                                     </tr>
@@ -102,18 +117,19 @@
                                 <tr>
                                     <td class="td_left">휴대폰</td>
                                     <td>
-                                        <input type="text" placeholder="휴대폰 입력">
+                                        <input type="text" name="hp" placeholder="휴대폰 입력" value="${user.hp}">
+                                    	<span class="hpResult"></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="td_left">주소</td>
                                     <td class="addr_td">
                                     <div class="div_btn">
-                                        <input type="text" placeholder="우편번호">
-                                        <img src="/farmStory/images/myinfo/chk_post.gif" alt="우편번호찾기"><br>
+                                        <input type="text" id="postcode" name="zip" placeholder="우편번호" value="${user.zip}" readonly>
+                                        <button type="button" onclick="DaumPostcode()"><img src="/farmStory/images/myinfo/chk_post.gif" alt="우편번호찾기"></button><br>
                                     </div>
-                                        <input type="text" placeholder="주소검색" class="addr_input"> <br>
-                                        <input type="text" placeholder="상세주소 입력" class="addr_input">
+                                        <input type="text" id="address" name="addr1" placeholder="주소검색" class="addr_input" value="${user.addr1}" readonly><br>
+                                        <input type="text" id="detailAddress" name="addr2" placeholder="상세주소 입력" class="addr_input" value="${user.addr2}">
                                     </td>
                                 </tr>
                                 <tr>
@@ -122,8 +138,8 @@
                                 </tr>
                             </table>
 	                        <div class="btn1">
-	                            <a href="#">취소</a>
-	                            <input type="submit" value="회원수정">
+	                            <a href="/farmStory/myInfo/modifyInfo.do">취소</a>
+	                            <input type="submit" value="회원수정" style="cursor: pointer;">
 	                        </div>
                         </form>
                         </section>                  

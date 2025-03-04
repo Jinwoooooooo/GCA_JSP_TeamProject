@@ -196,7 +196,7 @@ public class UserDAO extends DBHelper {
 			pstmt.setString(7, dto.getAddr1());
 			pstmt.setString(8, dto.getAddr2());
 			pstmt.setString(9, dto.getUid());
-			pstmt.executeQuery();
+			pstmt.executeUpdate();
 			closeAll();
 		} catch (Exception e) {
 			logger.error(e.getMessage());

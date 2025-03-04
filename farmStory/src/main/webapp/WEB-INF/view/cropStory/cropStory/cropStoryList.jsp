@@ -47,8 +47,7 @@
                         </div>
                         <div class="sub_page">
                                 <div class="sub_page_section">
-                                    <section>
-                                        
+                                    <section>      
                                         <nav>
                                         	<p>글목록</p>
                                             <form action="/farmStory/CropStory/CropStoryList.do">

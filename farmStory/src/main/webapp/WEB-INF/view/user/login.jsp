@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 	<script>
-		const result = ${result};
+	 const result = ${result != null ? result : 0};
 		
 		if(result == 100) {
 			alert("아이디나 비밀번호가 다릅니다.\n다시 로그인 하세요.");
@@ -51,9 +51,9 @@
                     <h3>회원 로그인 안내</h3>
                     <p>아직 회원이 아니시면 회원으로 가입하세요.</p>
                     <div style="text-align: right;">
-                        <a href="#">아이디 | </a>
-                        <a href="#">비밀번호찾기 | </a>
-                        <a href="#">회원가입</a>
+                        <a href="/farmStory/find/id_Find.do">아이디 | </a>
+                        <a href="/farmStory/find/pass_Find_Result.do">비밀번호찾기 | </a>
+                        <a href="/farmStory/view/user/register.do">회원가입</a>
                     </div>
                 </div>
             </section>

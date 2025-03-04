@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("notice/noticeView.do")
+@WebServlet("/notice/noticeView.do")
 public class NoticeViewController extends HttpServlet{
 
 	

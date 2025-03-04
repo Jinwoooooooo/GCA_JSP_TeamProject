@@ -1,4 +1,4 @@
-package kr.co.farmStory.controller.community.todaymenu;
+package kr.co.farmStory.controller.cropStory.farmingSchool;
 
 import java.io.IOException;
 
@@ -9,16 +9,16 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/todatmenu/todatmenuview")
-public class TodayMenuViewController extends HttpServlet{
+@WebServlet("/farmingSchool/farmingSchoolEdit.do")
+public class FarmingSchoolEditController extends HttpServlet{
 
-
+	
 	private static final long serialVersionUID = 1L;
-
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/community/todayMenu/todayMenuList.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/cropStory/farmingSchool/farmingSchoolList.jsp");
 		dispatcher.forward(req, resp);
 	
 	}
@@ -26,4 +26,5 @@ public class TodayMenuViewController extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 	}
+
 }

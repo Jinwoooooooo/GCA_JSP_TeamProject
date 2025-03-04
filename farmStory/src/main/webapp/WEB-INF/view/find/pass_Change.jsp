@@ -5,75 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>find::pass_change</title>
-    <link rel="stylesheet" href="/css/find/pass_Change.css">
+    <link rel="stylesheet" href="/farmStory/css/find/pass_Change.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="wrapper">
-        <header>
-            <div>
-                <div class="top">
-                    <div>
-                        <a href="#">HOME |</a>
-                        <a href="#">로그인 |</a>
-                        <a href="#">회원가입 |</a>
-                        <a href="#">나의정보 |</a>
-                        <a href="#">로그아웃 |</a>
-                        <a href="#">관리자 |</a>
-                        <a href="#">고객센터</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div>
-                <article>
-                    <a href="#" class="logo">
-                        <img src="/images/logo.png" alt="팜스토리 로고">
-                    </a>
-                    <a href="#" class="freeShipping">
-                        <img src="/images/head_txt_img.png" alt="팜스토리 로고">
-                    </a>
-                </article>
-            </div>
-
-            <div>
-                <ul>
-                    <li>
-                        <a href="#">
-                            <img src="/images/head_menu_line.png" alt="라인">
-                            <img src="/images/head_menu1.png" alt="팜스토리소개">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="/images/head_menu_badge.png" alt="30%" class="head_badge">
-                            <img src="/images/head_menu_line.png" alt="라인">
-                            <img src="/images/head_menu2.png" alt="장보기">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="/images/head_menu_line.png" alt="라인">
-                            <img src="/images/head_menu3.png" alt="농작물이야기">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="/images/head_menu_line.png" alt="라인">
-                            <img src="/images/head_menu4.png" alt="이벤트">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="/images/head_menu_line.png" alt="라인">
-                            <img src="/images/head_menu5.png" alt="커뮤니티">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </header>
+          <%@ include file="/../../header.jsp" %>
         <main>
             <section>
                 <form action="#">
@@ -104,7 +43,7 @@
                     영문, 숫자, 특수문자를 사용하여 8자 이상 입력해 주세요.
                 </p>
                 <div>
-                    <a href="#">취소</a>
+                    <a href="">취소</a>
                     <a href="#">다음</a>
                 </div>
             </section>

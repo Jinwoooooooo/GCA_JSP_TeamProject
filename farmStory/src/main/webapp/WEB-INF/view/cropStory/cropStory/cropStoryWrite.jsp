@@ -47,7 +47,7 @@
                         <div class="sub_page">
                             <h1>글쓰기</h1>
                             <form action="/farmStory/cropStory/cropStoryWrite.do" method="post" enctype="multipart/form-data">
-                            	<input type="text" name="uid" value="wo3795" readonly="readonly">
+                            	<input type="hidden" name="uid" value="wo3795" readonly="readonly">
                                 <table>
                                     <tr>
                                         <td>제목</td>
@@ -70,7 +70,7 @@
                                         </td>
                                     </tr>
                                 </table>
-                                <input type="text" name="writer" value="홍길동" readonly="readonly">
+                                <input type="hidden" name="writer" value="홍길동" readonly="readonly">
                                 <div class="btnContainer">
                                     <a href="/jboard/article/list.do" class="btn btnCancel">취소</a>
                                     <input type="submit" value="작성완료" class="btn btnSubmit"/>

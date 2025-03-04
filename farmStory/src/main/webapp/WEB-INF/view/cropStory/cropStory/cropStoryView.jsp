@@ -1,14 +1,81 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>농작물이야기</title>
-    <link rel="stylesheet" href="/farmStory/css/cropStory/cropStory.css">
+    <link rel="stylesheet" href="/farmStory/css/cropStory/viewText.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+	<script>
+	document.addEventListener('DOMContentLoaded', function(){
+		console.log('DOMContentLoaded...');
+		
+		const commentList = document.getElementsByClassName('commentList')[0];
+		const formComment = document.getElementById('commentForm'); // form id로 form 가져오기
+		
+		// 댓글 등록
+		formComment.onsubmit = function(e){
+			e.preventDefault();
+			
+			// 입력한 데이터 가져오기
+			const postNo = formComment.postNo.value;
+			const writer = formComment.writer.value;
+			const content = formComment.comment.value; // textarea name으로 content 가져오기
+			
+			// 폼 데이터 생성
+			const formData = new FormData();
+			formData.append('postNo', postNo);
+			formData.append('writer', writer);
+			formData.append('content', content);
+			console.log(formData);
+			
+			// 서버 전송
+			fetch('/farmStory/comment/write.do', {
+				method: 'POST',
+				body: formData
+			})
+			.then(response => response.json())
+			.then(data => {
+				console.log(data);
+				
+				// 동적 태그 생성
+				if(data != null){
+					
+					// 댓글창 비우기
+					document.getElementsByTagName("textarea")[0].value = ""; // 첫 번째 textarea를 비워야 함
+					
+					
+					const article = `<div class="commentContainer">
+								        <p class="date_author">${data.wdate} ${data.writer}</p>
+								        <p class="comment">${data.content}</p>
+								        <div class="remove_edit">
+								            <a href="#">삭제</a>
+								            <a href="#">수정</a>
+								        </div>
+								    </div>`;
+				                     
+					commentList.insertAdjacentHTML('beforeend', article);    					
+				}else{
+					alert('댓글 등록 실패 했습니다.');
+				}
+				
+			})
+			.catch(err => {
+				console.log(err);
+			});
+		}
+		
+		
+	});
+
+
+</script>
+    
+
 </head>
 <body>
     <div id="wrapper">
@@ -24,13 +91,13 @@
                             <img src="/farmStory/images/sub_aside_cate3_tit.png" alt="농작물이야기">
                         </div>
                         <div>
-                            <a href="/farmStory/view/cropStory/cropStory/cropStoryList.do">
+                            <a href="/farmStory/cropStory/cropStoryList.do">
                                 <img src="/farmStory/images/sub_cate3_lnb1_ov.png" alt="농작물이야기">
                             </a>
-                            <a href="/farmStory/view/cropStory/gardening/gardeningList.do">
+                            <a href="/farmStory/gardening/gardeningList.do">
                                 <img src="/farmStory/images/sub_cate3_lnb2.png" alt="텃밭가꾸기">
                             </a>
-                            <a href="/farmStory/view/cropStory/farmingSchool/farmingSchoolList.do">
+                            <a href="/farmStory/farmingSchool/farmingSchoolList.do">
                                 <img src="/farmStory/images/sub_cate3_lnb3.png" alt="귀농학교">
                             </a>
                         </div>
@@ -46,73 +113,63 @@
                         </div>
                         <div class="sub_page">
                             <h1>글보기</h1>
-                            <form action="farmStory/CropStory/CropStoryView.do">
+                            <form action="/farmStory/CropStory/CropStoryView.do">
                                 <table>
                                     <tr>
                                         <td>제목</td>
                                         <td>
-                                            <input type="text" name="title" value="제목입니다." class="title" readonly>
+                                            <input type="text" name="title" value="${articledto.title}" class="title" readonly>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>파일</td>
-                                        <td>
-                                            <p>2021년 상반기 매출현황.xls (7회) <a href="#">다운로드</a></p>
-                                            <p>교육 운영 관리자료.hwp (7회) <a href="#">다운로드</a></p>
-                                        </td>
-                                    </tr>
+                                    <c:if test="${articledto.file > 0}"></c:if>
+	                                    <tr>
+	                                        <td>파일</td>
+	                                        <td>
+	                                        	<c:forEach var="file" items="${articledto.files}">
+	                                        		<a href="/farmStory/file/download.do?fno=${file.fno}">${file.oName} </a><span>${file.download}회 다운로드</span><br>
+	                                        	</c:forEach>
+	                                        	
+	                                        </td>
+	                                    </tr>
                                     <tr>
                                         <td>내용</td>
                                         <td>
-                                            <textarea name="content" maxlength="1000" class="content" readonly></textarea>
+                                            <textarea name="content" maxlength="1000" class="content" readonly>${articledto.content}</textarea>
                                         </td>
                                     </tr>
                                 </table>
+                               </form>
                                 <div class="btnContainer1">
-                                    <button class="btn2">삭제</button>
-                                    <button class="btn2">수정</button>
-                                    <button class="btn2">목록</button>
+                                    <button class="btn2" onclick="location.href='#'">삭제</button>
+                                    <button class="btn2" onclick="location.href='/farmStory/cropStory/cropStoryEdit.do'">수정</button>
+                                    <button class="btn2" onclick="location.href='/farmStory/cropStory/cropStoryList.do'">목록</button>
                                 </div>
-                            </form>
-                            <form action="#">
-                                <div class="commentList">
+                            
+                                <section class="commentList">
                                     <h3 class="comment_sub_title">댓글목록</h3>
-                                    <div class="commentContainer">
-                                        <p class="date_author">2024-05-20 홍길동이</p>
-                                        <p class="comment">댓글 샘플입니다.</p>
-                                        <div class="remove_edit">
-                                            <a href="#">삭제</a>
-                                            <a href="#">수정</a>
-                                        </div>
-                                    </div>
-                                    <div class="commentContainer">
-                                        <p class="date_author">2024-05-20 홍길동이</p>
-                                        <p class="comment">댓글 샘플입니다.</p>
-                                        <div class="remove_edit">
-                                            <a href="#">삭제</a>
-                                            <a href="#">수정</a>
-                                        </div>
-                                    </div>
-                                    <div class="commentContainer">
-                                        <p class="date_author">2024-05-20 홍길동이</p>
-                                        <p class="comment">댓글 샘플입니다.</p>
-                                        <div class="remove_edit">
-                                            <a href="#">삭제</a>
-                                            <a href="#">수정</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="writeComment">
+                                    <c:forEach var="comment" items="${comments}">
+	                                    <div class="commentContainer">
+	                                        <p class="date_author">${comment.wdate} ${comment.writer}</p>
+	                                        <p class="comment">${comment.content}</p>
+	                                        <div class="remove_edit">
+	                                            <a href="#">삭제</a>
+	                                            <a href="#">수정</a>
+	                                        </div>
+	                                    </div>
+                                    </c:forEach>
+                                </section>
+                                <section class="writeComment">
                                     <h3 class="comment_sub_title">댓글쓰기</h3>
-                                    <div>
+                                    <form action="/farmStory/comment/write.do" method="post" id="commentForm">
+                                    	<input type="hidden" name="postNo" value="${articledto.postNo}">
+                                    	<input type="hidden" name="writer" value="${articledto.writer}">
                                         <textarea name="comment" maxlength="100"></textarea>
                                         <div class="btnContainer2">
-                                            <button class="btn btnCancel">취소</button>
-                                            <button class="btn btnSubmit" type="submit">작성완료</button>
+                                            <button class="btn btnCancel" onclick="location.href='/farmStory/cropStory/cropStoryList.do'">취소</button>                                            
+                                            <input type="submit" value="작성완료" class="btn btnComplete"/>
                                         </div>
-                                    </div>
-                                </div>
-                            </form>
+                                    </form>
+                                </section>
                         </div>
                     </article>
                 </section>

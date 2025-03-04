@@ -11,6 +11,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import kr.co.farmStory.dto.UserDTO;
 import kr.co.farmStory.service.UserService;
 
@@ -24,13 +25,17 @@ public class ModifyController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		HttpSession session = req.getSession();
+		UserDTO sessUser = (UserDTO) session.getAttribute("sessUser");
 		
-		String uid = req.getParameter("uid");
+		if (sessUser == null) {
+		    resp.sendRedirect("/farmStory/index.jsp");
+		    return;
+		}
 		
+		String uid = sessUser.getUid();
 		UserDTO dto = service.findUserId(uid);
-		
 		req.setAttribute("user", dto);
-		logger.debug("user : " + dto);
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/myInfo/modifyInfo.jsp");
 		dispatcher.forward(req, resp);

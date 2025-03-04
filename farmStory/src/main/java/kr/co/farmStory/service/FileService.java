@@ -1,7 +1,11 @@
 package kr.co.farmStory.service;
 
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -12,6 +16,7 @@ import org.slf4j.LoggerFactory;
 
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
 import kr.co.farmStory.dao.FileDAO;
 import kr.co.farmStory.dto.FileDTO;
@@ -93,9 +98,41 @@ public enum FileService {
 	}
 	
 	
-	public void findFile() {
+	// 파일 다운로드
+	public void downloadFile(HttpServletRequest req, HttpServletResponse resp) {
 		
+		// 공유 참조된 파일 정보객체 가져오기
+		FileDTO fileDTO = (FileDTO) req.getAttribute("fileDTO");
+		
+		ServletContext ctx = req.getServletContext();
+		String path = ctx.getRealPath("/uploads");
+		File target = new File(path + File.separator + fileDTO.getsName()); // 경로 + 구분자 + 파일명
+		
+		
+		try {
+			// response 파일 다운로드 헤더 정보 설정
+			resp.setContentType("application/octet-stream");
+			resp.setHeader("Content-Disposition", "attachment; filename="+URLEncoder.encode(fileDTO.getoName(), "utf-8"));
+			resp.setHeader("Content-Transfer-Encoding", "binary");
+			resp.setHeader("Pragma", "no-cache");
+			resp.setHeader("Cache-Control", "private");
+			
+			BufferedInputStream bis = new BufferedInputStream(new FileInputStream(target));
+			BufferedOutputStream bos = new BufferedOutputStream(resp.getOutputStream());
+			
+			// 파일 전송
+			bis.transferTo(bos);
+			
+			bos.flush();
+			bos.close();
+			bis.close();		
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
+	
+	
+	
 	
 	
 	

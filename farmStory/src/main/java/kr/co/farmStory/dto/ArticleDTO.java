@@ -1,5 +1,7 @@
 package kr.co.farmStory.dto;
 
+import java.util.List;
+
 public class ArticleDTO {
 
 	private int postNo;
@@ -13,6 +15,18 @@ public class ArticleDTO {
 	private String cate;
 	private String regip;
 	private String wdate;
+	
+	private List<FileDTO> files;
+	
+	
+	public List<FileDTO> getFiles() {
+		return files;
+	}
+	public void setFiles(List<FileDTO> files) {
+		this.files = files;
+	}
+	
+	
 	public int getPostNo() {
 		return postNo;
 	}

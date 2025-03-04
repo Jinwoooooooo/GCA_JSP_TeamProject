@@ -57,7 +57,6 @@ public class FileDAO extends DBHelper{
 				filedto.setDownload(rs.getInt(5));
 				filedto.setRdate(rs.getString(6));
 				
-				
 			}
 			
 			closeAll();

@@ -134,23 +134,26 @@ header > div:nth-child(3) > ul > li > a > img {
     background-image: url(/farmStory/images/sub_aside_bg_lnb.png);
 }
 
-.main_container > section > aside > div:nth-child(2) > img:nth-child(1) {
+.main_container > section > aside > div:nth-child(2) > a:nth-child(1) > img {
     position: absolute;
     top: 26px;
 }
-.main_container > section > aside > div:nth-child(2) > img:nth-child(2) {
+.main_container > section > aside > div:nth-child(2) > a:nth-child(2) > img {
     position: absolute;
     top: 61px;
 }
-.main_container > section > aside > div:nth-child(2) > img:nth-child(3) {
+
+.main_container > section > aside > div:nth-child(2) > a:nth-child(3) > img {
     position: absolute;
     top: 96px;
 }
-.main_container > section > aside > div:nth-child(2) > img:nth-child(4) {
+
+.main_container > section > aside > div:nth-child(2) > a:nth-child(4) > img {
     position: absolute;
     top: 131px;
 }
-.main_container > section > aside > div:nth-child(2) > img:nth-child(5) {
+
+.main_container > section > aside > div:nth-child(2) > a:nth-child(5) > img {
     position: absolute;
     top: 166px;
 }
@@ -252,7 +255,7 @@ textarea {
     border: 1px solid #bebebe;
     background-color: white;
 }
-.btnSubmit {
+.btnComplete {
     width: 66px;
     border: 1px solid #3b3c3f;
     background-color: #4b545e;
@@ -327,11 +330,11 @@ textarea {
     box-sizing: border-box;
 }
 
-.writeComment > div {
+.writeComment > form {
     margin-top: 10px;
 }
 
-.writeComment > div > textarea {
+.writeComment > form > textarea {
     width: 728px;
     height: 60px;
     border: 1px solid #e4eaec;

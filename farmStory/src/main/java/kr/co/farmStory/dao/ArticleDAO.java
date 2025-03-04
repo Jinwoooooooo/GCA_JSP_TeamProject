@@ -68,8 +68,9 @@ public class ArticleDAO extends DBHelper {
 		try {
 			
 			conn = getConnection();
-			pstmt = conn.prepareStatement(ArticleSQL.SELECT_ARTICLE);
+			pstmt = conn.prepareStatement(ArticleSQL.SELECT_ARTICLE_WITH_FILE);
 			pstmt.setString(1, postNo);
+			
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
@@ -100,9 +101,9 @@ public class ArticleDAO extends DBHelper {
 				filedto.setRdate(rs.getString(17));
 				files.add(filedto);
 				
-				
-				
 			}
+			
+			dto.setFiles(files);
 			
 			closeAll();
 			

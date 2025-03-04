@@ -51,7 +51,7 @@
                                         
                                         <nav>
                                         	<p>글목록</p>
-                                            <form action="farmStory/CropStory/CropStoryList.do">
+                                            <form action="/farmStory/CropStory/CropStoryList.do">
                                                 <input type="text" placeholder="제목 키워드, 글쓴이 검색">
                                                 <input type="submit" value="검색">
                                             </form>

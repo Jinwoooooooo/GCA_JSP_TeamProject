@@ -18,10 +18,10 @@ public class ArticleSQL {
 
 	public static final String SELECT_ARTICLE = "select * from `post` where `postNo`=?";
 	
-	public static final String SELECT_ARTICLE_WITH_FILE = "select p.*, f.* from `post` as p "
-																		+ "join `file` as f"
-																		+ "on p.postNo=f.postNo "
-																		+ "where a.postNo=?";
+	public static final String SELECT_ARTICLE_WITH_FILE = "SELECT p.*, f.* FROM `post` AS p "
+																		+ "JOIN `file` AS f "
+																		+ "ON p.postNo=f.postNo "
+																		+ "WHERE p.postNo=?";
 	
 	
 	public static final String SELECT_ALL_ARTICLE = "select * from `post`"

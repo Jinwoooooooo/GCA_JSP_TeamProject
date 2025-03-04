@@ -8,7 +8,9 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-@WebServlet("/inquiry/inquiryEdit.do")
+
+@WebServlet("/Inquiry/inquiryEdit.do")
+
 public class InquiryEditController extends HttpServlet{
 
 

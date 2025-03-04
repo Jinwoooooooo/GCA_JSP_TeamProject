@@ -223,6 +223,7 @@ header > div:nth-child(3) > ul > li > a > img {
 }
 .sub_page > table tr > td:nth-child(3) {
     width: 311px;
+    text-align: center;
 }
 .sub_page > table tr > td:nth-child(4) {
     width: 91px;

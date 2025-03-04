@@ -135,6 +135,7 @@ table {
     height: 170px;
     border-top: 1px solid #333333;
     border-collapse: collapse; /*셀 합치기*/
+    text-align: center;
 }
 
 .table_hd {
@@ -145,17 +146,17 @@ table {
 
 .table_bd1 > td {
     border-bottom: 1px dashed #999999;
-    text-align: center;
+    
 }
 
 .table_bd2 > td {
     border-bottom: 1px dashed #999999;
-    text-align: center;
+    
 }
 
 .table_bd3 > td {
     border-bottom: 1px dashed #999999;
-    text-align: center;
+    
 }
 
 /* -------------------------------------------------------------*/

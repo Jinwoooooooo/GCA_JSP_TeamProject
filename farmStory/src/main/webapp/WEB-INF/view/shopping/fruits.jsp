@@ -31,7 +31,7 @@
                             </div>
                         </div>
                         <div class="sub_page">
-                           <%@ include file="./_subPage.jsp"%>
+                              <%@ include file="./_subPage.jsp"%>
                             <table>
                                 <tr>
                                     <th>이미지</th>
@@ -41,7 +41,7 @@
                                     <th>포인트</th>
                                     <th>판매가격</th>
                                 </tr>
-                              <c:forEach var="dto" items="${dtos}">
+                              <c:forEach var="fruits" items="${fruits}">
 	                            <tr class="table_bd1">      
 	                                <td>
 		                                <a href="/farmStory/shopping/productDetail.do">
@@ -49,13 +49,13 @@
 		                                </a>
 	                                </td>   
 	                                
-	                                <td>${dto.types}</td>
-	                                <td>${dto.pName}</td>
-	                                <td>${dto.discount}%</td>
-	                                <td>${dto.point}</td> 
+	                                <td>${fruits.types}</td>
+	                                <td>${fruits.pName}</td>
+	                                <td>${fruits.discount}%</td>
+	                                <td>${fruits.point}</td> 
 	                                <td>
-	                                <del>${dto.price}</del>
-	                                <strong>${dto.price-(dto.price/100)*10}</strong>
+	                                <del>${fruits.price}</del>
+	                                <strong>${fruits.price-(fruits.price/100)*10}</strong>
 	                                </td>
 	                                
                             	</tr>

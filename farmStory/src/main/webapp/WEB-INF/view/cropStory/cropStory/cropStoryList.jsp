@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,9 +47,9 @@
                         </div>
                         <div class="sub_page">
                                 <div class="sub_page_section">
-                                    <section>
-                                        <p>글목록</p>
+                                    <section>      
                                         <nav>
+                                        	<p>글목록</p>
                                             <form action="/farmStory/CropStory/CropStoryList.do">
                                                 <input type="text" placeholder="제목 키워드, 글쓴이 검색">
                                                 <input type="submit" value="검색">
@@ -62,13 +63,16 @@
                                                 <td>날짜</td>
                                                 <td>조회</td>
                                             </tr>
-                                            <tr id="table_body" height="41px">
-                                                <td>1</td>
-                                                <td>공지사항 게시물입니다.[3]</td>
-                                                <td>길동이</td>
-                                                <td>2025-02-18</td>
-                                                <td>12</td>
-                                            </tr>
+                                            <c:forEach var="article" items="${requestScope.articles}">
+	                                            <tr id="table_body" height="41px">
+	                                                <td>${article.postNo}</td>
+	                                                <td><a href="/farmStory/cropStory/CropStoryView.do?postNo=${article.postNo}">${article.title}[${article.comment}]</a></td>
+	                                                <td>${article.writer}</td>
+	                                                <td>${article.wdate}</td>
+	                                                <td>${article.hit}</td>
+	                                            </tr>
+                                            </c:forEach>
+                                            
                                         </table>
                                         <div>
                                             <a href="#">이전</a>

@@ -1,5 +1,6 @@
 package kr.co.farmStory.dto;
 
+
 public class FileDTO {
 	
 	private int fno;
@@ -9,21 +10,19 @@ public class FileDTO {
 	private int download;
 	private String rdate;
 	
+	
 	public int getFno() {
 		return fno;
 	}
 	public void setFno(int fno) {
 		this.fno = fno;
 	}
-	
 	public int getPostNo() {
 		return postNo;
 	}
-	
 	public void setPostNo(int postNo) {
 		this.postNo = postNo;
 	}
-	
 	public String getoName() {
 		return oName;
 	}
@@ -48,12 +47,17 @@ public class FileDTO {
 	public void setRdate(String rdate) {
 		this.rdate = rdate;
 	}
-	
 	@Override
 	public String toString() {
 		return "FileDTO [fno=" + fno + ", postNo=" + postNo + ", oName=" + oName + ", sName=" + sName + ", download="
 				+ download + ", rdate=" + rdate + "]";
 	}
+	
+
+
+	
+	
+	
 	
 	
 	

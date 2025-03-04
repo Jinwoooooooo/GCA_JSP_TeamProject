@@ -20,14 +20,7 @@
                     <img src="/images/sub_top_tit2.png" alt="마켓">
                 </div>
                 <section>
-                    <aside>
-                        <div>
-                            <img src="/images/sub_aside_cate2_tit.png" alt="장보기">
-                        </div>
-                        <div>
-                            <img src="/images/sub_cate2_lnb1_ov.png" alt="장보기">
-                        </div>
-                    </aside>
+                    <%@include file="./_side.jsp"%>
                     <article>
                         <div class="nav_bar">
                             <nav>

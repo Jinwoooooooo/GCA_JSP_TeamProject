@@ -53,7 +53,7 @@
                     <div style="text-align: right;">
                         <a href="#">아이디 | </a>
                         <a href="#">비밀번호찾기 | </a>
-                        <a href="#">회원가입</a>
+                        <a href="/farmStory/view/user/register.do">회원가입</a>
                     </div>
                 </div>
             </section>

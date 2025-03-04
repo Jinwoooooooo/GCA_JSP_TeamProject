@@ -216,6 +216,7 @@ table {
 .table_2 tr:nth-child(2) > td > p {
     margin-bottom: 5px;
 }
+
 .my {
     width: 75.2px;
     height: 14px;

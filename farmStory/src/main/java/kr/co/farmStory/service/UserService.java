@@ -40,7 +40,11 @@ public enum UserService {
 	}
 	
 	public void modifyUser(UserDTO dto) { 
-		dao.updateUser(dto); 
+		dao.updateUserInfo(dto); 
+	}
+	
+	public void modifyUserPass(UserDTO dto) { 
+		dao.updateUserPass(dto); 
 	}
 	  
 	/*

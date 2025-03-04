@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("Inquiry/inquiryVier.do")
+@WebServlet("/Inquiry/inquiryVier.do")
 public class InquiryViewController extends HttpServlet{
 
 	

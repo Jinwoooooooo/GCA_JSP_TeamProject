@@ -19,7 +19,7 @@
         <section>
             <nav class="heading2">상품등록</nav>
             <article>
-                <form action="/farmStory/adminPro/register.do" method="post">
+                <form action="/farmStory/adminPro/register.do" method="post" enctype="multipart/form-data">
                     <table>
                      <tr class="table_tr">
                             <td>상품코드</td>

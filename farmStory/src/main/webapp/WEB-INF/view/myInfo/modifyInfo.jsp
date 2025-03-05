@@ -152,7 +152,7 @@
                                     </tr>
                                     <tr>
                                         <td class="td_left">회원탈퇴</td>
-                                        <td><button type="button" class="button1">탈퇴하기</button></td>
+                                        <td><button type="submit" class="button1" formaction="/farmStory/myInfo/removeUser.do">탈퇴하기</button></td>
                                     </tr>
                                 </table>
                                 <div class="btn1">

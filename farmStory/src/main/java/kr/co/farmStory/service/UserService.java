@@ -47,9 +47,10 @@ public enum UserService {
 		dao.updateUserPass(dto); 
 	}
 	  
-	/*
-	 * public void deleteUser(String uid) { dao.deleteUser(uid); }
-	 */
+	public void removeUser(String uid) { 
+		dao.deleteUser(uid); 
+	}
+	 
 	
 	//이메일 발송
 	public String sendEmailCode(String receiver) {

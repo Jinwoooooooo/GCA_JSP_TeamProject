@@ -45,6 +45,9 @@ public class RemoveController extends HttpServlet {
 			service.removeUser(uid);
 		}
 		
+		session.removeAttribute("sessUser");
+		session.invalidate();
+		
 		// 삭제 후, 메인 페이지로 리디렉션
 		resp.sendRedirect("/farmStory/index.jsp");
 	}

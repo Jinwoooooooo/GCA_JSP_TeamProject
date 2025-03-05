@@ -16,18 +16,34 @@ public class ArticleSQL {
 	
 	
 
-	public static final String SELECT_ARTICLE = "select * from `post` where `postNo`=?";
+	public static final String SELECT_ARTICLE = "select * from `post` where `postNo`=? and `cate`='cropStory'";
 	
 	public static final String SELECT_ARTICLE_WITH_FILE = "SELECT p.*, f.* FROM `post` AS p "
-																		+ "JOIN `file` AS f "
+																		+ "left JOIN `file` AS f "
 																		+ "ON p.postNo=f.postNo "
-																		+ "WHERE p.postNo=?";
+																		+ "WHERE p.postNo=? and p.cate='cropStory'";
 	
 	
-	public static final String SELECT_ALL_ARTICLE = "select * from `post`"
-															+ "order by `postNo` desc";
+	public static final String SELECT_ALL_ARTICLE = "select * from `post` as p "
+															+ "LEFT JOIN `user` AS u "
+															+ "ON u.uid=p.uid "
+															+ "WHERE `cate`='cropStory' "
+															+ "order by `postNo` desc "
+															+ "LIMIT ?, 10";
 	
-	public static final String SELECT_MAX_NO = "SELECT MAX(`postNo`) FROM `post`";
+	public static final String SELECT_MAX_NO = "SELECT MAX(`postNo`) FROM `post`"
+																	+ "where `cate`='cropStory'";
 	
+	
+	public static final String SELECT_COUNT_ARTICLE = "SELECT COUNT(*) FROM `post` where `cate`='cropStory'";
+	
+	
+	
+	public static final String UPDATE_ARTICLE = "UPDATE `post` SET "
+														+ "`title`= ?, "
+														+ "`content`= ? "
+														+ "WHERE `postNo`=?";
+	
+	public static final String DELETE_ARTICLE = "delete from `post` where `postNo`=? and `cate`='cropStory'";
 	
 }

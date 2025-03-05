@@ -45,26 +45,28 @@ public class CropStoryWriteController extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
 		// 데이터 수신
-		String uid = req.getParameter("uid");
-		String title = req.getParameter("title");
-		String content = req.getParameter("content");
-		String writer = req.getParameter("writer");
-		String regip = req.getRemoteAddr();
+	    String uid = req.getParameter("uid");
+	    String title = req.getParameter("title");
+	    String content = req.getParameter("content");
+	    String writer = req.getParameter("writer");
+	    String nick = req.getParameter("nick");
+	    String regip = req.getRemoteAddr();
+	    
+	    // 파일 업로드 서비스 호출
+	    List<FileDTO> files = fileservice.uploadFile(req); // postNo 전달
 		
+	    
+	    ArticleDTO dto = new ArticleDTO();
+	    dto.setUid(uid);
+	    dto.setTitle(title);
+	    dto.setContent(content);
+	    dto.setWriter(writer);
+	    dto.setRegip(regip);
+	    dto.setNick(nick);
+	    dto.setFile(0);
 
-		
-		// 파일 업로드 서비스 호출
-		List<FileDTO> files = fileservice.uploadFile(req);
-		
-		
-		
-		ArticleDTO dto = new ArticleDTO();
-		dto.setUid(uid);
-		dto.setTitle(title);
-		dto.setContent(content);
-		dto.setWriter(writer);
-		dto.setRegip(regip);
-		
+	    
+	    
 		// 파일이 없을 경우
 		if(files==null || files.isEmpty()) {
 			dto.setFile(0);
@@ -72,15 +74,15 @@ public class CropStoryWriteController extends HttpServlet {
 			dto.setFile(files.size());
 		}
 		
-		logger.debug(dto.toString());
 		
 		// 글 등록 서비스 호출
-		int postNo = service.registeArticle(dto);
-				
+	    int postNo = service.registeArticle(dto);
+		
+		
 		// 파일 등록 서비스 호출
 		for(FileDTO fileDTO : files) {
 			fileDTO.setPostNo(postNo);
-			fileservice.registeFile(fileDTO);
+			fileservice.registerFile(fileDTO);
 		}
 		
 		

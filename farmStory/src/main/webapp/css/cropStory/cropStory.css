@@ -227,7 +227,7 @@ header > div:nth-child(3) > ul > li > a > img {
     border-collapse: collapse;
     border-top: 2px solid black;
     border-bottom: 1px solid #d7d7d7;
-    margin-top: 40px;
+    margin-top: 10px;
     margin-bottom: 20px;
 }
 
@@ -238,15 +238,14 @@ header > div:nth-child(3) > ul > li > a > img {
 }
 
 .sub_page_section > section > nav{
-	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
 
-	}
 .sub_page_section > section > nav > p{
-    position: float;
-    left: 0px;
-    width: 50px;
-    font-size: 15px;
-    margin-top: 5px;
+	width: 50px;
+	font-size: 15px;
 }
 
 
@@ -267,43 +266,41 @@ header > div:nth-child(3) > ul > li > a > img {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 42px;
-    height: 35px;
+    width: 24px;
+    height: 33px;
     border: 1px solid #d7d7d7;
 }
 
-.sub_page_section > section > div > a:nth-child(2){
-    width: 24px;
-    height: 32px;
-    background: #888888;
-    border: 1px solid #6d6d6d;
-    color: #d7d7d7;
-}
 
-.sub_page_section > section > div > a:nth-child(3){
-    width: 24px;
-    height: 33px;
-}
 
-.sub_page_section > section > div > a:nth-child(4){
-    width: 24px;
-    height: 33px;
-}
 
-.sub_page_section > section > div > a:nth-child(6){
-    position: absolute;
+
+.sub_page_section > section > .page > .btnWrite{
+	
+	position: absolute;
     right: 0px;
     width: 54px;
     height: 35px;
     background: #4B545E;
     border: 1px solid #3B3C3F;
     color: #FFFFFF;
-    
+}
+
+.sub_page_section > section > .page > .prev{
+	width: 42px;
+    height: 35px;
+    border: 1px solid #d7d7d7;
+}
+
+.sub_page_section > section > .page > .next{
+	width: 42px;
+    height: 35px;
+    border: 1px solid #d7d7d7;
 }
 
 
+
 .main_container > section > article > div:nth-child(2) > div > section{
-    position: float;
     width: 762px;
     height: auto;
 }
@@ -341,6 +338,11 @@ header > div:nth-child(3) > ul > li > a > img {
     margin-bottom: 2px;
 }
 
+.page > .current{
+	background: #888888;
+    border: 1px solid #6d6d6d;
+    color: #d7d7d7;
+}
 
 
 footer {

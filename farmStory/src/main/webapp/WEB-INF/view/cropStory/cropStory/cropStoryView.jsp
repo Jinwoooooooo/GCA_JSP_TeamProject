@@ -121,7 +121,7 @@
                                             <input type="text" name="title" value="${articledto.title}" class="title" readonly>
                                         </td>
                                     </tr>
-                                    <c:if test="${articledto.file > 0}"></c:if>
+                                    <c:if test="${articledto.file > 0}">
 	                                    <tr>
 	                                        <td>파일</td>
 	                                        <td>
@@ -131,6 +131,7 @@
 	                                        	
 	                                        </td>
 	                                    </tr>
+	                                </c:if>
                                     <tr>
                                         <td>내용</td>
                                         <td>
@@ -140,13 +141,15 @@
                                 </table>
                                </form>
                                 <div class="btnContainer1">
-                                    <button class="btn2" onclick="location.href='#'">삭제</button>
-                                    <button class="btn2" onclick="location.href='/farmStory/cropStory/cropStoryEdit.do'">수정</button>
+                                    <button class="btn2" onclick="location.href='/farmStory/cropStory/cropStoryRemove.do?postNo=${articledto.postNo}'">삭제</button>
+                                    <button class="btn2" onclick="location.href='/farmStory/cropStory/cropStoryEdit.do?postNo=${articledto.postNo}'">수정</button>
                                     <button class="btn2" onclick="location.href='/farmStory/cropStory/cropStoryList.do'">목록</button>
                                 </div>
                             
                                 <section class="commentList">
-                                    <h3 class="comment_sub_title">댓글목록</h3>
+                                	<c:if test="${comment.cno > 0}">
+                                    	<h3 class="comment_sub_title">댓글목록</h3>
+                                    </c:if>
                                     <c:forEach var="comment" items="${comments}">
 	                                    <div class="commentContainer">
 	                                        <p class="date_author">${comment.wdate} ${comment.writer}</p>

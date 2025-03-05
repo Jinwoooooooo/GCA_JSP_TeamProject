@@ -170,7 +170,7 @@ public class UserDAO extends DBHelper {
 				dto.setAddr1(rs.getString(10));
 				dto.setAddr2(rs.getString(11));
 				dto.setRegip(rs.getString(12));
-				dto.setRegDate(rs.getString(13));
+				dto.setRegDate(rs.getString(13).substring(0, 10));
 				dto.setLeaveDate(rs.getString(14));
 				users.add(dto);
 			}

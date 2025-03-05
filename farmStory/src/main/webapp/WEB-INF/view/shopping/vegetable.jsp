@@ -41,7 +41,7 @@
                                     <th>포인트</th>
                                     <th>판매가격</th>
                                 </tr>
-                              <c:forEach var="dto" items="${vegetable}">
+                              <c:forEach var="vegetable" items="${vegetables}">
 	                            <tr class="table_bd1">      
 	                                <td>
 		                                <a href="/farmStory/shopping/productDetail.do">
@@ -49,13 +49,13 @@
 		                                </a>
 	                                </td>   
 	                                
-	                                <td>${dto.types}</td>
-	                                <td>${dto.pName}</td>
-	                                <td>${dto.discount}%</td>
-	                                <td>${dto.point}</td> 
+	                                <td>${vegetable.types}</td>
+	                                <td>${vegetable.pName}</td>
+	                                <td>${vegetable.discount}%</td>
+	                                <td>${vegetable.point}</td> 
 	                                <td>
-	                                <del>${dto.price}</del>
-	                                <strong>${dto.price-(dto.price/100)*10}</strong>
+	                                <del>${vegetable.price}</del>
+	                                <strong>${vegetable.price-(vegetable.price/100)*10}</strong>
 	                                </td>
 	                                
                             	</tr>

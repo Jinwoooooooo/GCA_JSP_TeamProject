@@ -44,7 +44,7 @@
                               <c:forEach var="dto" items="${dtos}">
 	                            <tr class="table_bd1">      
 	                                <td>
-		                                <a href="/farmStory/shopping/productDetail.do">
+		                                <a href="/farmStory/shopping/productDetail.do?pid={}">
 		                                	<img src="/farmStory/images/market_item1.jpg" class="item_img">
 		                                </a>
 	                                </td>   

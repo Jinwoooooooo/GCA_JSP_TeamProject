@@ -25,9 +25,11 @@ public class Grains extends HttpServlet {
 		
 		String types = req.getParameter("types");
 		
-		List<AdminDTO> grains = service.find_grains(types);
+		List<AdminDTO> grainss = service.find_grains(types);
 		
-		req.setAttribute("grains", grains);
+		System.out.println("곡류" + grainss);
+		
+		req.setAttribute("grainss", grainss);
 		
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/shopping/grains.jsp");

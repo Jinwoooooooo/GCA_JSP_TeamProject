@@ -146,6 +146,8 @@ public class AdminDAO extends DBHelper{
 			pstmt = conn.prepareStatement(ShoppingSQL.SELECT_FRUIT);
 			pstmt.setString(1, types);
 			
+		    System.out.println("실행되는 SQL: SELECT * FROM product WHERE types = '" + types + "'");
+			
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
@@ -208,6 +210,8 @@ public class AdminDAO extends DBHelper{
 			pstmt = conn.prepareStatement(ShoppingSQL.SELECT_GRAINS);
 			pstmt.setString(1, types);
 			rs = pstmt.executeQuery();
+			
+			  System.out.println("실행되는 SQL: SELECT * FROM product WHERE types = '" + types + "'");
 			
 			while(rs.next()) {
 				AdminDTO dto = new AdminDTO();

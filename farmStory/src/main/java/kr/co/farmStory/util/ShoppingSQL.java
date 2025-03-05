@@ -7,12 +7,12 @@ public class ShoppingSQL {
 
 
 	// 과일 조회
-	public static final String SELECT_FRUIT = "SELECT * FROM `product` WHERE `types` = ?";
+	public static final String SELECT_FRUIT = "SELECT `types`, `pName`, `discount`, `point`, `price` FROM `product` WHERE `types` = ?";
 	
 	// 야채 조회
-	public static final String SELECT_VEGETABLE= "SELECT * FROM `product` WHERE `types` = ?";
+	public static final String SELECT_VEGETABLE= "SELECT `types`, `pName`, `discount`, `point`, `price` FROM `product` WHERE `types` = ?";
 	
 	// 곡류 조회
-	public static final String SELECT_GRAINS = "SELECT * FROM `product` WHERE `types` = ?";
+	public static final String SELECT_GRAINS = "SELECT `types`, `pName`, `discount`, `point`, `price` FROM `product` WHERE `types` = ?";
 	
 }

@@ -1,6 +1,7 @@
 package kr.co.farmStory.controller.myInfo;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,7 +39,11 @@ public class RemoveController extends HttpServlet {
 		}
 		
 		String uid = sessUser.getUid();
-		logger.debug("CheckUid: " + uid);
+		
+		resp.setContentType("text/html; charset=UTF-8"); // 응답 인코딩 설정
+		resp.setCharacterEncoding("UTF-8"); // 응답 문자 인코딩 지정		
+		
+		PrintWriter out = resp.getWriter();
 		
 		// 유효한 uid인지 확인 후 삭제
 		if (uid != null && !uid.isEmpty()) {
@@ -48,8 +53,12 @@ public class RemoveController extends HttpServlet {
 		session.removeAttribute("sessUser");
 		session.invalidate();
 		
-		// 삭제 후, 메인 페이지로 리디렉션
-		resp.sendRedirect("/farmStory/index.jsp");
+		out.println("<script>");
+        out.println("alert('회원탈퇴 완료되었습니다.');");
+        out.println("location.href='/farmStory/index.jsp';");
+        out.println("</script>");
+		
+		//resp.sendRedirect("/farmStory/index.jsp");
 	}
 	
 }

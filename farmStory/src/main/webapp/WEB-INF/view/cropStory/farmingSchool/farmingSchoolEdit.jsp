@@ -46,7 +46,8 @@
                         </div>
                         <div class="sub_page">
                             <h1>글수정</h1>
-                            <form action="#">
+                            <form action="/farmStory/farmingSchoolEdit.do" method="post"
+                            enctype="multipart/form-data">
                                 <table>
                                     <tr>
                                         <td>제목</td>

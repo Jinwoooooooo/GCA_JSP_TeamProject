@@ -54,7 +54,7 @@
 						</div>
 						<div class="sub_page">
 							<h1>글쓰기</h1>
-							<form action="famStory/inquiry/InquiryWrite.do" method="post" 
+							<form action="/farmStory/inquiry/InquiryWrite.do" method="post" 
 							enctype="multipart/form-data">
 								<table>
 									<tr>

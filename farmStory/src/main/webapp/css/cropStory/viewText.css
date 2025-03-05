@@ -11,21 +11,7 @@ ul, ol {
 a {
     text-decoration: none;
     color: #111;
-}
-
-.auth {
-    display: none;
-    margin-top: 6px;
-}
-
-.editPassBtn {
-    font-weight: 300;	
-    color: #FFFFFF;
-}
-button {cursor: pointer;}
-
-span {
-	margin-left:5px;
+    cursor: pointer;
 }
 
 #wrapper {
@@ -114,7 +100,7 @@ header > div:nth-child(3) > ul > li > a > img {
 .sub_top_container {
     position: relative;
     height: 184px;
-    background-image: url(/farmStory/images/myinfo/myinfo_top_bg.jpg);
+    background-image: url(/farmStory/images/sub_top_bg.jpg);
 }
 
 .sub_top_container > img {
@@ -146,22 +132,32 @@ header > div:nth-child(3) > ul > li > a > img {
     width: 99%;
     height: 233px;
     background-image: url(/farmStory/images/sub_aside_bg_lnb.png);
-    background-repeat: no-repeat;
-    background-position: left;
 }
 
-.main_container > section > aside > div:nth-child(2) > a:nth-child(1) {
+.main_container > section > aside > div:nth-child(2) > a:nth-child(1) > img {
     position: absolute;
     top: 26px;
 }
-.main_container > section > aside > div:nth-child(2) > a:nth-child(2) {
+.main_container > section > aside > div:nth-child(2) > a:nth-child(2) > img {
     position: absolute;
     top: 61px;
 }
-.main_container > section > aside > div:nth-child(2) > a:nth-child(3) {
+
+.main_container > section > aside > div:nth-child(2) > a:nth-child(3) > img {
     position: absolute;
     top: 96px;
 }
+
+.main_container > section > aside > div:nth-child(2) > a:nth-child(4) > img {
+    position: absolute;
+    top: 131px;
+}
+
+.main_container > section > aside > div:nth-child(2) > a:nth-child(5) > img {
+    position: absolute;
+    top: 166px;
+}
+
 .main_container > section > article {
     float: right;
     width: 762px;
@@ -180,7 +176,8 @@ header > div:nth-child(3) > ul > li > a > img {
     height: 72px;
     border-bottom: 1px solid #c2c2c2;
 }
-.main_container > section > article > div > nav > img{
+
+.main_container > section > article > .nav_bar > nav > img {
     position: absolute;
     top: 41px;
 }
@@ -200,126 +197,155 @@ header > div:nth-child(3) > ul > li > a > img {
     margin-left: 12px;
 }
 
-/* table 스타일 */
-table {
-    display: block;
-    width: 762px;
-    height: auto;
-    border: 1px solid #111;
+.sub_page > form > table {
     border-collapse: collapse;
-    margin-top: 7px;
-}
-
-.table_2 tr:nth-child(2) {
-    height: 72px;
-}
-.table_2 tr:nth-child(2) > td > p {
-    margin-bottom: 5px;
-}
-
-.my {
-    width: 75.2px;
-    height: 14px;
-    margin-top: 20px;
-}
-
-/* table의 tr, td 스타일 */
-table tr {
-    width: 761px;
-    border-bottom: 1px solid #E9E9E9;
-    height: 42.5px;
-}
-
-table tr:last-child {
-    border: none;
-}
-
-table td {
-    padding-left: 10px;
-    height: auto;
-}
-table input {
-    width: 164px;
-    height: 24px;
-    background: #F7F7F7;
-    border: 1px solid #E4EAEC;
-    padding-left: 5px;
-    margin-right: 5px;
-    
-}
-
-.td_left {
-    width: 105px;
-    background: #F5F8F9;
-}
-
-table button {
-    width: 80px;
-    height: 20px;
-    background: #2E658A;
-    border: none;
-    border-radius: 3px;
+    border-top: 2px solid #111;
     box-sizing: border-box;
-    padding-bottom: 2px;
 }
 
-.div_btn {
-    display: flex; 
-    align-items: center;
+h1 {
+    margin: 5px 0;
 }
 
+textarea {
+    resize: none;
+}
 
-.button1 {
-    width: 58px;
-    height: 25px;
-    background: crimson;
-    color: #FFFFFF;
-    border-radius: 3px;
+.title {
+    width: 400px;
+    padding: 2px 0 2px 3px;
+    border: none;
+}
+
+.content {
+    width: 630px;
+    height: 280px;
+    border: none;
+}
+
+.file {
+    display: block;
+}
+
+.file1 {
+    margin: 10px 0;
+}
+
+.btnContainer1 {
+    text-align: right;
+    margin: 10px 0;
+}
+.btnContainer2 {
+    text-align: right;
+    margin-top: 10px;
+}
+.btn {
+    height: 35px;
     cursor: pointer;
 }
-
-input {
-    width: 162px;
-    height: 17px;
-    top: 3.5px;
-    left: 1px;
-}
-
-.btn1 {
-    display: flex;
-    justify-content: flex-end;
-    gap: 2px; 
-    margin-top: 20px; 
-    margin-bottom: 10px; 
-}
-.btn1 > input {
-    width: 66px;
+.btn2 {
+    width: 42px;
     height: 35px;
-    margin-bottom: 10px;
     border: 1px solid #bebebe;
+    background-color: white;
+    cursor: pointer;
 }
-.btn1 > a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
+.btnCancel {
     width: 42px;
     border: 1px solid #bebebe;
+    background-color: white;
+}
+.btnComplete {
+    width: 66px;
+    border: 1px solid #3b3c3f;
+    background-color: #4b545e;
+    color: white;
 }
 
-.addr_td {
-    height: 105px;
+.sub_page > form > table tr {
+    border-bottom: 1px solid #e9e9e9;
 }
 
-.addr_td  > input {
-    margin-top: 3.6px;
+.sub_page > form > table tr > td:nth-child(1) {
+    width: 112px;
+    height: 51px;
+    background-color: #f5f8f9;
+    text-align: center;
 }
 
-.addr_input {
-    width: 362px;
-    height: 24px;
+.sub_page > form > table tr > td:nth-child(2) {
+    width: 650px;
+    padding: 10px;
 }
 
+.sub_page_p > p > a {
+    color: #999999;
+    font-size: 12px;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+.sub_page_p > p > a:nth-child(1) {
+    color: #111;
+    margin-bottom: 2px;
+}
+
+.comment_sub_title {
+    font-size: 13px;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    padding: 5px 0;
+}
+
+.commentList {
+    width: 762px;
+    height: auto;
+    padding: 10px 15px 10px 15px;
+    border: 1px solid #e3e3e3;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+.date_author {
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.comment {
+    padding: 10px;
+}
+
+.remove_edit {
+    text-align: right;
+}
+
+.writeComment {
+    position: relative;
+    width: 762px;
+    height: auto;
+    margin-top: 10px;
+    padding: 10px 15px 10px 15px;
+    border: 1px solid #e3e3e3;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+.writeComment > form {
+    margin-top: 10px;
+}
+
+.writeComment > form > textarea {
+    width: 728px;
+    height: 60px;
+    border: 1px solid #e4eaec;
+}
+
+.commentContainer {
+    border: 1px solid #eee;
+    padding: 5px 10px;
+    margin: 10px 0 5px 0;
+    background-color: white;
+}
 
 footer {
     display: inline-block;
@@ -359,7 +385,3 @@ footer {
     float: right;
     color: #888888;
 }
-
-
-
-

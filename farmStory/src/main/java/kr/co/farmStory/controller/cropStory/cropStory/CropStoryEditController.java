@@ -18,7 +18,7 @@ public class CropStoryEditController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/community/todayMenu/todayMenuList.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/cropStory/cropStory/cropStoryEdit.jsp");
 		dispatcher.forward(req, resp);
 	
 	}

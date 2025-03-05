@@ -1,5 +1,5 @@
 //유효성 검사에 사용할 정규표현식
-const rePass  = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{5,16}$/;
+const rePass  = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/;
 const reName  = /^[가-힣]{2,10}$/ 
 const reNick  = /^[a-zA-Zㄱ-힣0-9][a-zA-Zㄱ-힣0-9]*$/;
 const reEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	let isEmailOk = false;
 	let isHpOk = false;
 	
-	//2. 비밀번호 유효성 검사
+	//1. 비밀번호 유효성 검사
 	const passResult = document.getElementsByClassName("passResult")[0];
 	
 	formRegister.pass2.addEventListener('focusout', function() {
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		}
 	});
 	
-	//3. 이름 유효성 검사
+	//2. 이름 유효성 검사
 	const nameResult = document.querySelector('.nameResult');
 	
 	formRegister.name.addEventListener('focusout', function() {
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		}
 	});
 	
-	//4. 별명 유효성 검사(중복 체크 포함)
+	//3. 별명 유효성 검사(중복 체크 포함)
 	const btnCheckNick = document.getElementById("btnCheckNick");
 	const nickResult = document.getElementsByClassName("nickResult")[0];
  
@@ -91,10 +91,12 @@ document.addEventListener('DOMContentLoaded', function() {
 		}
 	}
 	
-	//5. 이메일 유효성 검사 (중복/인증처리 포함)
+	//4. 이메일 유효성 검사 (중복/인증처리 포함)
 	const btnSendEmail = document.getElementById("btnSendEmail");
 	const emailResult = document.querySelector('.emailResult');
 	const auth = document.querySelector('.auth');
+	const divBtn = document.querySelector('.div_btn');
+	const emailBox = document.querySelector('.emailBox');
 	let preventDoubleClick = false;
 	
 	btnSendEmail.onclick = async function() {
@@ -122,7 +124,12 @@ document.addEventListener('DOMContentLoaded', function() {
 			emailResult.style.color = "crimson";
 			isEmailOk = false;
 		} else {
-			auth.style.display = "block";
+			auth.style.display = "flex";
+			auth.style.alignItems = "center";
+			
+			emailBox.style.height = "70px";
+			emailBox.style.paddingTop = "10px";
+			emailBox.style.paddingBottom = "10px";
 		}
 	}
 	
@@ -157,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		}
 	}
 	
-	//6. 휴대폰 유효성 검사
+	//5. 휴대폰 유효성 검사
 	const hpResult = document.querySelector('.hpResult');
 	
 	formRegister.hp.addEventListener('focusout', async function() {
@@ -189,32 +196,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 	//최종 폼 전송 이벤트
 	formRegister.onsubmit = function(e) {
-		
-		//2. 비밀번호 유효성 검사 결과
-		if(!isPassOk) {
-			return false;
-		}
-		
-		//3. 이름 유효성 검사 결과
-		if(!isNameOk) {
-			return false;
-		}
-		
-		//4. 별명 유효성 검사 결과
-		if(!isNickOk) {
-			return false;
-		}
-		
-		//5. 이메일 유효성 검사 결과
-		if(!isEmailOk) {
-			return false;
-		}
-		
-		//6. 휴대폰 유효성 검사 결과
-		if(!isHpOk) {
-			return false;
-		}
-		
 		return true; //폼 전송 시작
 	}
 });

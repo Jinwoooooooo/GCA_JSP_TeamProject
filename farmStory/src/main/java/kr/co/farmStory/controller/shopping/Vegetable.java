@@ -27,7 +27,7 @@ public class Vegetable extends HttpServlet {
 		
 		List<AdminDTO> vegetable = service.find_vegetable(types);
 		
-		req.setAttribute("vegetable", vegetable);
+		req.setAttribute("vegetables", vegetable);
 		
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/shopping/vegetable.jsp");

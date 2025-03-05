@@ -41,7 +41,7 @@
                                     <th>포인트</th>
                                     <th>판매가격</th>
                                 </tr>
-                              <c:forEach var="fruits" items="${fruits}">
+                              <c:forEach var="fruit" items="${fruits}">
 	                            <tr class="table_bd1">      
 	                                <td>
 		                                <a href="/farmStory/shopping/productDetail.do">
@@ -49,13 +49,13 @@
 		                                </a>
 	                                </td>   
 	                                
-	                                <td>${fruits.types}</td>
-	                                <td>${fruits.pName}</td>
-	                                <td>${fruits.discount}%</td>
-	                                <td>${fruits.point}</td> 
+	                                <td>${fruit.types}</td>
+	                                <td>${fruit.pName}</td>
+	                                <td>${fruit.discount}%</td>
+	                                <td>${fruit.point}</td> 
 	                                <td>
-	                                <del>${fruits.price}</del>
-	                                <strong>${fruits.price-(fruits.price/100)*10}</strong>
+	                                <del>${fruit.price}</del>
+	                                <strong>${fruit.price-(fruit.price/100)*10}</strong>
 	                                </td>
 	                                
                             	</tr>

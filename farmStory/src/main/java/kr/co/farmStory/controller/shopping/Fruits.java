@@ -26,6 +26,8 @@ public class Fruits extends HttpServlet {
 		
 		List<AdminDTO> fruits = service.find_fruit(types);
 		
+		System.out.println("과일" + fruits);
+		
 		req.setAttribute("fruits", fruits);
 		
 		

@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import kr.co.farmStory.dto.FileDTO;
+import kr.co.farmStory.util.ArticleSQL;
 import kr.co.farmStory.util.DBHelper;
 import kr.co.farmStory.util.FileSQL;
 
@@ -81,4 +82,22 @@ public class FileDAO extends DBHelper {
 		}
 	}
 	
+	public void deleteFile(String postNo) {
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(FileSQL.DELETE_FILE);
+			pstmt.setString(1, postNo);
+			
+			pstmt.executeUpdate();
+			
+			closeAll();
+			
+			
+			
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		
+	}
 }

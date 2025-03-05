@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import kr.co.farmStory.dto.ArticleDTO;
+import kr.co.farmStory.dto.PageGroupDTO;
 import kr.co.farmStory.service.ArticleService;
 
 @WebServlet("/cropStory/cropStoryList.do")
@@ -27,10 +28,36 @@ public class CropStoryListController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		List<ArticleDTO> articles = service.findAllArticle();
+		// pg 데이터 수신
+		String pg = req.getParameter("pg");
+		
+		// 전체 게시물 갯수 구하기
+		int total = service.getCountArticle();
+				
+		// 마지막 페이지 번호 구하기
+		int lastPageNum = service.getLastPageNum(total);
+		
+		// 현재 페이지 번호 구하기
+		int currentPage = service.getCurrentPage(pg);
+		
+		// limit
+		int start = service.getStartNum(currentPage);
+		
+		// 페이지 그룹
+		PageGroupDTO pageGroupDTO = service.getCurrentPageGroup(currentPage, lastPageNum);
+		
+		// 페이지 시작번호 구하기
+		int pageStartNum = service.getPageStartNum(total, currentPage);
+		
+		
+		
+		List<ArticleDTO> articles = service.findAllArticle(start);
 		
 		req.setAttribute("articles", articles);
-		
+		req.setAttribute("currentPage", currentPage);
+		req.setAttribute("lastPageNum", lastPageNum);
+		req.setAttribute("pageStartNum", pageStartNum);
+		req.setAttribute("pageGroupDTO", pageGroupDTO);
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/cropStory/cropStory/cropStoryList.jsp");
 		dispatcher.forward(req, resp);

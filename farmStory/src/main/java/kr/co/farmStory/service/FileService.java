@@ -29,7 +29,7 @@ public enum FileService {
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-	public void registeFile(FileDTO dto) {
+	public void registerFile(FileDTO dto) {
 		dao.insertFile(dto);
 	}
 	
@@ -92,6 +92,7 @@ public enum FileService {
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 		}
+		
 		
 		return files;
 		

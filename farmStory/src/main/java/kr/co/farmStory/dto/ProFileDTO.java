@@ -1,15 +1,13 @@
 package kr.co.farmStory.dto;
 
 
-public class FileDTO {
+public class ProFileDTO {
 	
 	private int fno;
-	private int postNo;
+	private int pid;
 	private String oName;
 	private String sName;
-	private int download;
 	private String rdate;
-	
 	
 	public int getFno() {
 		return fno;
@@ -17,11 +15,11 @@ public class FileDTO {
 	public void setFno(int fno) {
 		this.fno = fno;
 	}
-	public int getPostNo() {
-		return postNo;
+	public int getPid() {
+		return pid;
 	}
-	public void setPostNo(int postNo) {
-		this.postNo = postNo;
+	public void setPid(int pid) {
+		this.pid = pid;
 	}
 	public String getoName() {
 		return oName;
@@ -35,32 +33,18 @@ public class FileDTO {
 	public void setsName(String sName) {
 		this.sName = sName;
 	}
-	public int getDownload() {
-		return download;
-	}
-	public void setDownload(int download) {
-		this.download = download;
-	}
 	public String getRdate() {
 		return rdate;
 	}
 	public void setRdate(String rdate) {
 		this.rdate = rdate;
 	}
+	
 	@Override
 	public String toString() {
-		return "FileDTO [fno=" + fno + ", postNo=" + postNo + ", oName=" + oName + ", sName=" + sName + ", download="
-				+ download + ", rdate=" + rdate + "]";
+		return "ProFileDTO [fno=" + fno + ", proNo=" + pid + ", oName=" + oName + ", sName=" + sName + ", rdate="
+				+ rdate + "]";
 	}
-	
-
-
-
-	
-	
-	
-	
-	
 	
 	
 	

@@ -8,7 +8,7 @@ import kr.co.farmStory.util.ArticleSQL;
 import kr.co.farmStory.util.DBHelper;
 import kr.co.farmStory.util.FileSQL;
 
-public class FileDAO extends DBHelper{
+public class FileDAO extends DBHelper {
 
 	private static final FileDAO instance = new FileDAO();
 	public static FileDAO getInstance() {
@@ -100,6 +100,4 @@ public class FileDAO extends DBHelper{
 		}
 		
 	}
-	
-	
 }

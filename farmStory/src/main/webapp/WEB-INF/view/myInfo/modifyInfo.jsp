@@ -8,29 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>정보수정</title>
     <link rel="stylesheet" href="/farmStory/css/myInfo/modifyInfo.css">
+    <link rel="stylesheet" href="/farmStory/css/modal/modal.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script src="/farmStory/js/daumPostcode.js"></script>
     <script src="/farmStory/js/validation2.js"></script>
-
-	<%
-    String message = (String) session.getAttribute("message"); // 세션에서 message 값을 가져옴
-    if (message != null) {
-        session.removeAttribute("message"); // 메시지를 한 번만 출력하고 제거
-    %>
-        <script>
-            window.onload = function() {
-                alert(<%= "\"" + message.replace("\"", "\\\"") + "\"" %>); // 안전하게 alert로 메시지 출력
-            }
-        </script>
-    <%
-    }
-    %>
+    <script src="/farmStory/js/modal.js"></script>
 </head>
 
 <body>
+	<%@ include file="../modal/modal.jsp" %>
     <div id="wrapper">
         <%@ include file="/../../header.jsp" %>
         <main>
@@ -74,16 +63,16 @@
                                         <td>${user.uid}</td>
                                     </tr>
                                     <tr>
-                                        <td class="td_left">비밀번호</td>
+                                        <td class="td_left">새 비밀번호</td>
                                         <td>
-                                            <input type="password" name="pass1" placeholder="비밀번호 입력">
+                                            <input type="password" name="pass1" placeholder="새 비밀번호 입력">
                                             <span class="passResult"></span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="td_left">비밀번호 확인</td>
+                                        <td class="td_left">새 비밀번호 확인</td>
                                         <td>
-                                            <input type="password" name="pass2" placeholder="비밀번호 입력 확인">
+                                            <input type="password" name="pass2" placeholder="새 비밀번호 입력">
                                             <button type="submit" formaction="/farmStory/myInfo/modifyPass.do">
                                                 <p class="editPassBtn">비밀번호 수정</p>
                                             </button>
@@ -152,7 +141,7 @@
                                     </tr>
                                     <tr>
                                         <td class="td_left">회원탈퇴</td>
-                                        <td><button type="button" class="button1">탈퇴하기</button></td>
+                                        <td><button type="button" class="button1" id="delete-btn">탈퇴하기</button></td>
                                     </tr>
                                 </table>
                                 <div class="btn1">

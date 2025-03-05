@@ -170,7 +170,7 @@ public class UserDAO extends DBHelper {
 				dto.setAddr1(rs.getString(10));
 				dto.setAddr2(rs.getString(11));
 				dto.setRegip(rs.getString(12));
-				dto.setRegDate(rs.getString(13));
+				dto.setRegDate(rs.getString(13).substring(0, 10));
 				dto.setLeaveDate(rs.getString(14));
 				users.add(dto);
 			}
@@ -241,6 +241,19 @@ public class UserDAO extends DBHelper {
 			pstmt = conn.prepareStatement(SQL.MODIFY_USER_PASS);
 			pstmt.setString(1, dto.getPass());
 			pstmt.setString(2, dto.getUid());
+			pstmt.executeUpdate();
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+	}
+	
+	public void deleteUser(String uid) {
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(SQL.DELETE_USER);
+			pstmt.setString(1, uid);
 			pstmt.executeUpdate();
 			closeAll();
 		} catch (Exception e) {

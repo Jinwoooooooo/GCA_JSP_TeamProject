@@ -23,12 +23,12 @@ public enum ArticleService {
 		return dao.selectArticle(postNo);
 	}
 	
-	public List<ArticleDTO> findAllArticle(int start) {
-		return dao.selectAllArticle(start);
+	public List<ArticleDTO> findAllArticle(String cate, int start) {
+		return dao.selectAllArticle(cate, start);
 	}
 	
-	public List<ArticleDTO> searchAllArticle(ArticleDTO dto, int start) {
-		return dao.selectAllArticleBySearch(dto, start);
+	public List<ArticleDTO> searchAllArticle(ArticleDTO dto, int start, String cate) {
+		return dao.selectAllArticleBySearch(dto, start, cate);
 	}
 	
 	public int getCountArticleBySearch(ArticleDTO dto) {

@@ -30,6 +30,8 @@ public class CropStoryListController extends HttpServlet {
 		
 		// pg 데이터 수신
 		String pg = req.getParameter("pg");
+		String cate = req.getParameter("cate");
+		
 		
 		// 전체 게시물 갯수 구하기
 		int total = service.getCountArticle();
@@ -52,7 +54,7 @@ public class CropStoryListController extends HttpServlet {
 		
 		
 		
-		List<ArticleDTO> articles = service.findAllArticle(start);
+		List<ArticleDTO> articles = service.findAllArticle(cate, start);
 		
 		req.setAttribute("articles", articles);
 		req.setAttribute("currentPage", currentPage);

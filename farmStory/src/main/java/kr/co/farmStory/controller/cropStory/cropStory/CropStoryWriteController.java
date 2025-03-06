@@ -48,9 +48,12 @@ public class CropStoryWriteController extends HttpServlet {
 	    String uid = req.getParameter("uid");
 	    String title = req.getParameter("title");
 	    String content = req.getParameter("content");
-	    String writer = req.getParameter("writer");
+	    //String writer = req.getParameter("writer");
 	    String nick = req.getParameter("nick");
 	    String regip = req.getRemoteAddr();
+	    
+	    //logger.debug(writer);
+	    logger.debug(nick);
 	    
 	    // 파일 업로드 서비스 호출
 	    List<FileDTO> files = fileservice.uploadFile(req); // postNo 전달
@@ -60,7 +63,7 @@ public class CropStoryWriteController extends HttpServlet {
 	    dto.setUid(uid);
 	    dto.setTitle(title);
 	    dto.setContent(content);
-	    dto.setWriter(writer);
+	    //dto.setWriter(writer);
 	    dto.setRegip(regip);
 	    dto.setNick(nick);
 	    dto.setFile(0);

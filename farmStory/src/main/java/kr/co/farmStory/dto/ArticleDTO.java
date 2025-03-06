@@ -11,14 +11,15 @@ public class ArticleDTO {
 	private int comment;
 	private int file;
 	private int hit;
-	private String writer;
+	private String nick;
+	//private String writer;
 	private String cate;
 	private String regip;
 	private String wdate;
 	
 	
 	private List<FileDTO> files;
-	private String nick;
+
 	
 	
 	
@@ -90,13 +91,13 @@ public class ArticleDTO {
 		this.hit = hit;
 	}
 
-	public String getWriter() {
-		return writer;
-	}
-
-	public void setWriter(String writer) {
-		this.writer = writer;
-	}
+//	public String getWriter() {
+//		return writer;
+//	}
+//
+//	public void setWriter(String writer) {
+//		this.writer = writer;
+//	}
 
 	public String getCate() {
 		return cate;
@@ -131,15 +132,16 @@ public class ArticleDTO {
 	}
 
 	
-	
 	@Override
 	public String toString() {
 		return "ArticleDTO [postNo=" + postNo + ", uid=" + uid + ", title=" + title + ", content=" + content
-				+ ", comment=" + comment + ", file=" + file + ", hit=" + hit + ", writer=" + writer + ", cate=" + cate
-				+ ", regip=" + regip + ", wdate=" + wdate + ", files=" + files + ", nick=" + nick + "]";
+				+ ", comment=" + comment + ", file=" + file + ", hit=" + hit + ", cate=" + cate + ", regip=" + regip
+				+ ", wdate=" + wdate + ", files=" + files + ", nick=" + nick + "]";
 	}
 
-
+	
+	
+	
 	
 	
 	

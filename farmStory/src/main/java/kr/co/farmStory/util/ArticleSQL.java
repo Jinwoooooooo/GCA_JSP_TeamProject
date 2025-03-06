@@ -9,7 +9,7 @@ public class ArticleSQL {
 																+ "`title`=?,"
 																+ "`content`=?,"
 																+ "`file`=?,"
-																+ "`writer`=?,"
+																+ "`nick`=?,"
 																+ "`cate`='cropStory',"
 																+ "`regip`=?,"
 																+ "`wdate`=now()";

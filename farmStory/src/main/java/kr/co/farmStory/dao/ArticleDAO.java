@@ -37,7 +37,7 @@ public class ArticleDAO extends DBHelper {
 			pstmt.setString(2, dto.getTitle());
 			pstmt.setString(3, dto.getContent());
 			pstmt.setInt(4, dto.getFile());
-			pstmt.setString(5, dto.getWriter());
+			pstmt.setString(5, dto.getNick());
 			pstmt.setString(6, dto.getRegip());
 			
 			
@@ -86,7 +86,7 @@ public class ArticleDAO extends DBHelper {
 					dto.setComment(rs.getInt(5));
 					dto.setFile(rs.getInt(6));
 					dto.setHit(rs.getInt(7));
-					dto.setWriter(rs.getString(8));
+					dto.setNick(rs.getString(8));
 					dto.setCate(rs.getString(9));
 					dto.setRegip(rs.getString(10));
 					dto.setWdate(rs.getString(11));
@@ -157,7 +157,7 @@ public class ArticleDAO extends DBHelper {
 				dto.setComment(rs.getInt(5));
 				dto.setFile(rs.getInt(6));
 				dto.setHit(rs.getInt(7));
-				dto.setWriter(rs.getString(8));
+				dto.setNick(rs.getString(8));
 				dto.setCate(rs.getString(9));
 				dto.setRegip(rs.getString(10));
 				dto.setWdate(rs.getString(11).substring(2, 16));

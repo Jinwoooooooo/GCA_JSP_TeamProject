@@ -33,7 +33,7 @@ public enum CommentService {
 		dao.updateComment(dto);
 	}
 	
-	public void deleteComment(int cno) {
+	public void deleteComment(String cno) {
 		dao.deleteComment(cno);
 	}
 

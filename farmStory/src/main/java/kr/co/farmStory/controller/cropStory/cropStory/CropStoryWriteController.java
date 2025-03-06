@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -18,6 +19,7 @@ import kr.co.farmStory.dto.FileDTO;
 import kr.co.farmStory.service.ArticleService;
 import kr.co.farmStory.service.FileService;
 
+@MultipartConfig
 @WebServlet("/cropStory/cropStoryWrite.do")
 public class CropStoryWriteController extends HttpServlet {
 
@@ -36,8 +38,6 @@ public class CropStoryWriteController extends HttpServlet {
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/cropStory/cropStory/cropStoryWrite.jsp");
 		dispatcher.forward(req, resp);
 	
-	
-	
 	}
 	
 	
@@ -54,7 +54,6 @@ public class CropStoryWriteController extends HttpServlet {
 	    
 	    // 파일 업로드 서비스 호출
 	    List<FileDTO> files = fileservice.uploadFile(req); // postNo 전달
-		
 	    
 	    ArticleDTO dto = new ArticleDTO();
 	    dto.setUid(uid);
@@ -64,13 +63,11 @@ public class CropStoryWriteController extends HttpServlet {
 	    dto.setRegip(regip);
 	    dto.setNick(nick);
 	    dto.setFile(0);
-
-	    
 	    
 		// 파일이 없을 경우
-		if(files==null || files.isEmpty()) {
+		if(files == null || files.isEmpty()) {
 			dto.setFile(0);
-		}else {
+		} else {
 			dto.setFile(files.size());
 		}
 		
@@ -85,10 +82,6 @@ public class CropStoryWriteController extends HttpServlet {
 			fileservice.registerFile(fileDTO);
 		}
 		
-		
 		resp.sendRedirect("/farmStory/cropStory/cropStoryList.do");
-				
 	}
-	
-	
 }

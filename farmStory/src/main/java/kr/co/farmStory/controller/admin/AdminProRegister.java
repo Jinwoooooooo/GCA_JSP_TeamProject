@@ -15,21 +15,14 @@ import kr.co.farmStory.dto.ProFileDTO;
 import kr.co.farmStory.service.AdminService;
 import kr.co.farmStory.service.ProFileService;
 
-
-
 @WebServlet("/adminPro/register.do")
-@MultipartConfig( 
-	    fileSizeThreshold = 1024 * 1024 * 2, // 2MB
-	    maxFileSize = 1024 * 1024 * 10,      // 10MB (파일 하나의 최대 크기)
-	    maxRequestSize = 1024 * 1024 * 50    // 50MB (전체 요청 크기)
-	    )
 public class AdminProRegister extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
 
 	private AdminService service = AdminService.INSTANCE;
 	
-	private ProFileService ProfileService = ProFileService.instance;
+	private ProFileService profileService = ProFileService.instance;
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -50,10 +43,9 @@ public class AdminProRegister extends HttpServlet{
 		String discount = req.getParameter("discount");
 		String charge = req.getParameter("charge");
 		String stock = req.getParameter("stock");
-		String pImage = req.getParameter("pImage");
 		String other = req.getParameter("other");
 		
-		//List<ProFileDTO> profiles = ProfileService.uploadFile(req);
+		List<ProFileDTO> profiles = profileService.uploadProFile(req);
 		
 		AdminDTO dto = new AdminDTO();
 		dto.setPid(pid);
@@ -64,11 +56,15 @@ public class AdminProRegister extends HttpServlet{
 		dto.setDiscount(discount);
 		dto.setCharge(charge);
 		dto.setStock(stock);
-		dto.setpImage(pImage);
 		dto.setOther(other);
-
 		
-		service.registerProduct(dto);
+		int pcode = service.registerProduct(dto);
+		
+		// 파일 등록 서비스 호출
+		for(ProFileDTO profileDTO : profiles) {
+			profileDTO.setProId(pcode);
+			profileService.registerProFile(profileDTO);
+		}
 		
 		resp.sendRedirect("/farmStory/adminMain/list.do");
 	}

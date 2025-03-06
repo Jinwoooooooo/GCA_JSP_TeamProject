@@ -1,5 +1,7 @@
 package kr.co.farmStory.dao;
 
+import java.sql.Statement;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,26 +16,31 @@ public class ProFileDAO extends DBHelper{
 		return instance;
 	}
 	
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
-	
 	private ProFileDAO() {}
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	public void insertProFile(ProFileDTO dto) {
 		
 		try {
 			
 			conn = getConnection();
-			pstmt = conn.prepareStatement(ProFileSQL.INSERT_PROFILE);
-			pstmt.setInt(1, dto.getPid());
+			pstmt = conn.prepareStatement(ProFileSQL.INSERT_PROFILE,  Statement.RETURN_GENERATED_KEYS);
+			pstmt.setInt(1, dto.getProId());
 			pstmt.setString(2, dto.getoName());
 			pstmt.setString(3, dto.getsName());
 			pstmt.executeUpdate();
 			
+			
 			closeAll();
+			
+			
 			
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 		}
+		
 	}
+	
+	
 	
 }

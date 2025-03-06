@@ -58,7 +58,7 @@
 											<select name="searchType" style="padding: 6px;">
 					                    		<option value="title">제목</option>
 					                    		<option value="content">내용</option>
-					                    		<option value="writer">글쓴이</option>
+					                    		<option value="nick">글쓴이</option>
 					                    	</select>
 											<input type="text" name="keyword" placeholder="제목 키워드, 글쓴이 검색">
 											<input type="submit" value="검색">

@@ -32,7 +32,7 @@ public class CommentDAO extends DBHelper {
 			pstmt = conn.prepareStatement(CommentSQL.INSERT_COMMENT, Statement.RETURN_GENERATED_KEYS);
 			pstmt.setInt(1, dto.getPostNo());
 			pstmt.setString(2, dto.getContent());
-			pstmt.setString(3, dto.getWriter());
+			pstmt.setString(3, dto.getNick());
 			pstmt.setString(4, dto.getRegip());
 			pstmt.executeUpdate();
 			
@@ -69,7 +69,7 @@ public class CommentDAO extends DBHelper {
 				dto.setCno(rs.getInt(1));
 				dto.setPostNo(rs.getInt(2));
 				dto.setContent(rs.getString(3));
-				dto.setWriter(rs.getString(4));
+				dto.setNick(rs.getString(4));
 				dto.setRegip(rs.getString(5));
 				dto.setWdate(rs.getString(6).substring(0, 10));
 			}
@@ -96,9 +96,10 @@ public class CommentDAO extends DBHelper {
 				dto.setCno(rs.getInt(1));
 				dto.setPostNo(rs.getInt(2));
 				dto.setContent(rs.getString(3));
-				dto.setWriter(rs.getString(4));
+				dto.setNick(rs.getString(4));
 				dto.setRegip(rs.getString(5));
 				dto.setWdate(rs.getString(6).substring(0, 10));
+				
 				comments.add(dto);
 			}
 			closeAll();
@@ -113,7 +114,22 @@ public class CommentDAO extends DBHelper {
 		
 	}
 	
-	public void deleteComment(int cno) {
+	public void deleteComment(String cno) {
+		
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(CommentSQL.DELETE_COMMENT);
+			pstmt.setString(1, cno);
+			pstmt.executeUpdate();
+			
+			closeAll();
+			
+			
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+
 		
 	}
 	

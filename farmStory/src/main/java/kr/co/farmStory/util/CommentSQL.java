@@ -5,7 +5,7 @@ public class CommentSQL {
 	public static final String INSERT_COMMENT = "INSERT INTO `comment` SET "
 															+ "`postNo`= ?,"
 															+ "`content`=?,"
-															+ "`writer`=?,"
+															+ "`nick`=?,"
 															+ "`regip`=?,"
 															+ "`wdate`=NOW()";
 	
@@ -15,5 +15,7 @@ public class CommentSQL {
 																	+ "FROM `comment` "
 																	+ "WHERE `postNo`=? "
 																	+ "ORDER BY `cno` ASC";
+	
+	public static final String DELETE_COMMENT = "DELETE FROM `comment` WHERE `cno`=?";
 	
 }

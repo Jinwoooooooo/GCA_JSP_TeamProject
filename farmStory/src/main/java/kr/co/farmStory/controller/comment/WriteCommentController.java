@@ -16,8 +16,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import kr.co.farmStory.dto.CommentDTO;
 import kr.co.farmStory.service.CommentService;
 
-@WebServlet("/comment/write.do")
-public class WriteController extends HttpServlet {
+@WebServlet("/comment/commentWrite.do")
+public class WriteCommentController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -38,7 +38,7 @@ public class WriteController extends HttpServlet {
 		// 데이터 수신
 		String postNo = req.getParameter("postNo");
 		String content = req.getParameter("content");
-		String writer = req.getParameter("writer");
+		String nick = req.getParameter("nick");
 		String regip = req.getRemoteAddr();
 		
 		int postNoInt = Integer.parseInt(postNo);
@@ -48,7 +48,7 @@ public class WriteController extends HttpServlet {
 		CommentDTO dto = new CommentDTO();
 		dto.setPostNo(postNoInt);
 		dto.setContent(content);
-		dto.setWriter(writer);
+		dto.setNick(nick);
 		dto.setRegip(regip);
 		logger.debug(dto.toString());
 		

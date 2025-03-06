@@ -13,63 +13,65 @@
 	<script>
 	document.addEventListener('DOMContentLoaded', function(){
 		console.log('DOMContentLoaded...');
-		
+
 		const commentList = document.getElementsByClassName('commentList')[0];
 		const formComment = document.getElementById('commentForm'); // form id로 form 가져오기
-		
+
 		// 댓글 등록
 		formComment.onsubmit = function(e){
 			e.preventDefault();
-			
+
 			// 입력한 데이터 가져오기
-			const postNo = formComment.postNo.value;
-			const writer = formComment.writer.value;
-			const content = formComment.comment.value; // textarea name으로 content 가져오기
-			
+			const postNo = formComment.postNo?.value;
+			const nick = formComment.nick?.value;
+			const content = formComment.comment?.value; // textarea name으로 content 가져오기
+
 			// 폼 데이터 생성
 			const formData = new FormData();
 			formData.append('postNo', postNo);
-			formData.append('writer', writer);
+			formData.append('nick', nick);
 			formData.append('content', content);
 			console.log(formData);
-			
+
 			// 서버 전송
-			fetch('/farmStory/comment/write.do', {
+			fetch('/farmStory/comment/commentWrite.do', {
 				method: 'POST',
 				body: formData
 			})
 			.then(response => response.json())
 			.then(data => {
 				console.log(data);
-				
+
 				// 동적 태그 생성
 				if(data != null){
-					
+
 					// 댓글창 비우기
-					document.getElementsByTagName("textarea")[0].value = ""; // 첫 번째 textarea를 비워야 함
-					
-					
+					const textarea = document.querySelector('textarea[name="comment"]');
+					if (textarea) {
+						textarea.value = "";
+					}
+
 					const article = `<div class="commentContainer">
-								        <p class="date_author">${data.wdate} ${data.writer}</p>
+								        <p class="date_author">${data.wdate} ${data.nick}</p>
 								        <p class="comment">${data.content}</p>
 								        <div class="remove_edit">
 								            <a href="#">삭제</a>
 								            <a href="#">수정</a>
 								        </div>
 								    </div>`;
-				                     
-					commentList.insertAdjacentHTML('beforeend', article);    					
+
+					commentList.insertAdjacentHTML('beforeend', article);
 				}else{
 					alert('댓글 등록 실패 했습니다.');
 				}
-				
+
 			})
 			.catch(err => {
 				console.log(err);
 			});
 		}
-		
-		
+
+
 	});
 
 
@@ -152,10 +154,11 @@
                                     </c:if>
                                     <c:forEach var="comment" items="${comments}">
 	                                    <div class="commentContainer">
-	                                        <p class="date_author">${comment.wdate} ${comment.writer}</p>
+	                                        <p class="date_author">${comment.wdate} ${comment.nick}</p>
 	                                        <p class="comment">${comment.content}</p>
 	                                        <div class="remove_edit">
-	                                            <a href="#">삭제</a>
+	                                        	<input type="hidden" name="postNo" value="${articledto.postNo}">
+	                                            <a href="/farmStory/comment/remove.do?cno=${comment.cno}&postNo=${comment.postNo}">삭제</a>
 	                                            <a href="#">수정</a>
 	                                        </div>
 	                                    </div>
@@ -163,9 +166,9 @@
                                 </section>
                                 <section class="writeComment">
                                     <h3 class="comment_sub_title">댓글쓰기</h3>
-                                    <form action="/farmStory/comment/write.do" method="post" id="commentForm">
-                                    	<input type="hidden" name="postNo" value="${articledto.postNo}">
-                                    	<input type="hidden" name="writer" value="${articledto.writer}">
+                                    <form action="/farmStory/comment/commentWrite.do" method="post" id="commentForm">
+                                    	<input type=hidden name="postNo" value="${articledto.postNo}">
+                                    	<input type="hidden" name="nick" value="${articledto.nick}">
                                         <textarea name="comment" maxlength="100"></textarea>
                                         <div class="btnContainer2">
                                             <button class="btn btnCancel" onclick="location.href='/farmStory/cropStory/cropStoryList.do'">취소</button>                                            

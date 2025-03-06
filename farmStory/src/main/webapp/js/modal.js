@@ -23,5 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
     modalContent.addEventListener('click', function(event) {
         event.stopPropagation();
     });
+	
 });
 

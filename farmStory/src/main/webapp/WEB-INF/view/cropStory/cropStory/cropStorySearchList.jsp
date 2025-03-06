@@ -90,18 +90,15 @@
 									<div class="page">
 										<c:if test="${pageGroupDTO.start > 1}">
 											<a
-												href="/farmStory/cropStory/cropStoryList.do?pg=${pageGroupDTO.start - 1}"
+												href="/farmStory/cropStory/cropStorySearchList.do?pg=${pageGroupDTO.start - 1}"
 												class="prev">이전</a>
 										</c:if>
-										<c:forEach var="num" begin="${pageGroupDTO.start}"
-											end="${pageGroupDTO.end}">
-											<a href="/farmStory/cropStory/cropStoryList.do?pg=${num}"
-												class="num ${currentPage == num ? 'current':''}">${num}</a>
+										<c:forEach var="num" begin="${pageGroupDTO.start}" end="${pageGroupDTO.end}">
+											<a href="/farmStory/cropStory/cropStorySearch.do?searchType=${searchType}&keyword=${keyword}&pg=${num}" class="num ${currentPage == num ? 'current':''}">${num}</a>
 										</c:forEach>
 										<c:if test="${pageGroupDTO.end < lastPageNum}">
 											<a
-												href="/farmStory/cropStory/cropStoryList.do?pg=${pageGroupDTO.end + 1}"
-												class="next">다음</a>
+												href="/farmStory/cropStory/cropStorySearchList.do?pg=${pageGroupDTO.end + 1}"class="next">다음</a>
 										</c:if>
 										<a href="/farmStory/cropStory/cropStoryWrite.do" class="btn btnWrite">글쓰기</a>
 

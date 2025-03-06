@@ -9,25 +9,58 @@ public class ArticleSQL {
 																+ "`title`=?,"
 																+ "`content`=?,"
 																+ "`file`=?,"
-																+ "`writer`=?,"
+																+ "`nick`=?,"
 																+ "`cate`='cropStory',"
 																+ "`regip`=?,"
 																+ "`wdate`=now()";
 	
 	
 
-	public static final String SELECT_ARTICLE = "select * from `post` where `postNo`=?";
+	public static final String SELECT_ARTICLE = "select * from `post` where `postNo`=? and `cate`='cropStory'";
 	
 	public static final String SELECT_ARTICLE_WITH_FILE = "SELECT p.*, f.* FROM `post` AS p "
-																		+ "JOIN `file` AS f "
+																		+ "left JOIN `file` AS f "
 																		+ "ON p.postNo=f.postNo "
-																		+ "WHERE p.postNo=?";
+																		+ "WHERE p.postNo=? and p.cate='cropStory'";
 	
 	
-	public static final String SELECT_ALL_ARTICLE = "select * from `post`"
-															+ "order by `postNo` desc";
+	public static final String SELECT_ALL_ARTICLE = "select * from `post` as p "
+															+ "LEFT JOIN `user` AS u "
+															+ "ON u.uid=p.uid "
+															+ "WHERE `cate`='cropStory' "
+															+ "order by `postNo` desc "
+															+ "LIMIT ?, 10";
 	
-	public static final String SELECT_MAX_NO = "SELECT MAX(`postNo`) FROM `post`";
+	public static final String SELECT_ALL_ARTICLE2 = "SELECT * FROM `post` "
+															+ "WHERE `cate`='cropStory' "
+															+ "LIMIT 5";
 	
+	public static final String SELECT_MAX_NO = "SELECT MAX(`postNo`) FROM `post`"
+																	+ "where `cate`='cropStory'";
+	
+	
+	public static final String SELECT_COUNT_ARTICLE = "SELECT COUNT(*) FROM `post` where `cate`='cropStory'";
+	
+	
+	public static final String SELECT_ALL_ARTICLE_BY_SEARCH = "select p.*, u.nick "
+																			+ "from `post` as p "
+																			+ "join `user` as u "
+																			+ "on p.uid=u.uid ";
+	
+	public final static String SELECT_COUNT_POST_FOR_SEARCH = "select count(*) from `post` as p ";
+	public final static String JOIN_FOR_SEARCH_NICK  = "JOIN `user` as u ON p.uid = u.uid ";
+	public final static String WHERE_FOR_SEARCH_TITLE   = "WHERE `title` LIKE ? ";
+	public final static String WHERE_FOR_SEARCH_CONTENT = "WHERE `content` LIKE ? ";
+	public final static String WHERE_FOR_SEARCH_NICK  = "WHERE u.nick LIKE ? ";	
+	public final static String ORDER_FOR_SEARCH  = "ORDER BY `postNo` DESC ";
+	public final static String LIMIT_FOR_SEARCH  = "LIMIT ?, 10";
+	
+	
+	public static final String UPDATE_ARTICLE = "UPDATE `post` SET "
+														+ "`title`= ?, "
+														+ "`content`= ? "
+														+ "WHERE `postNo`=?";
+	
+	public static final String DELETE_ARTICLE = "delete from `post` where `postNo`=? and `cate`='cropStory'";
 	
 }

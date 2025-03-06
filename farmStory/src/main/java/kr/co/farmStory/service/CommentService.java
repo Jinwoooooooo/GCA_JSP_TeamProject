@@ -29,11 +29,11 @@ public enum CommentService {
 		return dao.selectAllComment(postNo);
 	}
 	
-	public void modifyComment(CommentDTO dto) {
-		dao.updateComment(dto);
+	public CommentDTO modifyComment(CommentDTO dto) {
+		return dao.updateComment(dto);
 	}
 	
-	public void deleteComment(int cno) {
+	public void deleteComment(String cno) {
 		dao.deleteComment(cno);
 	}
 

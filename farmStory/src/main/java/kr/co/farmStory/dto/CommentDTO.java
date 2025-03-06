@@ -5,10 +5,17 @@ public class CommentDTO {
 	private int cno;
 	private int postNo;
 	private String content;
-	private String writer;
+	private String nick;
 	private String regip;
 	private String wdate;
+	private String uid;
 	
+	public String getUid() {
+		return uid;
+	}
+	public void setUid(String uid) {
+		this.uid = uid;
+	}
 	public int getCno() {
 		return cno;
 	}
@@ -27,11 +34,11 @@ public class CommentDTO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getWriter() {
-		return writer;
+	public String getNick() {
+		return nick;
 	}
-	public void setWriter(String writer) {
-		this.writer = writer;
+	public void setNick(String nick) {
+		this.nick = nick;
 	}
 	public String getRegip() {
 		return regip;
@@ -45,13 +52,14 @@ public class CommentDTO {
 	public void setWdate(String wdate) {
 		this.wdate = wdate;
 	}
-	
 	@Override
 	public String toString() {
-		return "CommentDTO [cno=" + cno + ", postNo=" + postNo + ", content=" + content + ", writer=" + writer
-				+ ", regip=" + regip + ", wdate=" + wdate + "]";
+		return "CommentDTO [cno=" + cno + ", postNo=" + postNo + ", content=" + content + ", nick=" + nick + ", regip="
+				+ regip + ", wdate=" + wdate + "]";
 	}
 	
+	
+
 	
 }	
 	

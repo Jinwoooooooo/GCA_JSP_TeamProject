@@ -46,32 +46,32 @@
                         </div>
                         <div class="sub_page">
                             <h1>글수정</h1>
-                            <form action="farmStory/CropStory/CropStoryEdit.do" method="post"
-                            enctype="multipart/form-data">
+                            <form action="/farmStory/cropStory/cropStoryEdit.do" method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="postNo" value="${articledto.postNo}" class="postNo">
                                 <table>
                                     <tr>
                                         <td>제목</td>
                                         <td>
-                                            <input type="text" name="title" placeholder="제목을 입력하세요." class="title" required>
+                                            <input type="text" name="title" value="${articledto.title}" class="title" required>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>내용</td>
                                         <td>
-                                            <textarea name="content" maxlength="1000" class="content" required></textarea>
+                                            <textarea name="content" maxlength="1000" class="content" required>${articledto.content}</textarea>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>파일</td>
-                                        <td>
-                                            <p>최대 2개 파일 첨부 가능, 각 파일당 최대 10MB까지 가능</p>
-                                            <input type="file" name="file1" class="file1 file">
-                                            <input type="file" name="file2" class="file2 file">
-                                        </td>
-                                    </tr>
+								    <td>파일</td>
+								    <td>
+								        <p>최대 2개 파일 첨부 가능, 각 파일당 최대 10MB까지 가능</p>
+								        
+								        
+								    </td>
+								</tr>
                                 </table>
                                 <div class="btnContainer">
-                                    <button class="btn btnCancel">취소</button>
+                                    <button class="btn btnCancel" onclick="location.href='/farmStory/cropStory/cropStoryView.do?postNo='${articledto.postNo}">취소</button>
                                     <button class="btn btnSubmit" type="submit">수정완료</button>
                                 </div>
                             </form>

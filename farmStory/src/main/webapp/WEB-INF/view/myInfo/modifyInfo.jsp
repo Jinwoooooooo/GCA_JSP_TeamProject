@@ -16,20 +16,6 @@
     <script src="/farmStory/js/daumPostcode.js"></script>
     <script src="/farmStory/js/validation2.js"></script>
     <script src="/farmStory/js/modal.js"></script>
-
-	<%
-    String message = (String) session.getAttribute("message"); // 세션에서 message 값을 가져옴
-    if (message != null) {
-        session.removeAttribute("message"); // 메시지를 한 번만 출력하고 제거
-    %>
-        <script>
-            window.onload = function() {
-                alert(<%= "\"" + message.replace("\"", "\\\"") + "\"" %>); // 안전하게 alert로 메시지 출력
-            }
-        </script>
-    <%
-    }
-    %>
 </head>
 
 <body>

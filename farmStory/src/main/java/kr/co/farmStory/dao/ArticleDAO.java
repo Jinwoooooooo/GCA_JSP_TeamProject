@@ -37,10 +37,13 @@ public class ArticleDAO extends DBHelper {
 			pstmt.setString(2, dto.getTitle());
 			pstmt.setString(3, dto.getContent());
 			pstmt.setInt(4, dto.getFile());
-			pstmt.setString(5, dto.getWriter());
+			pstmt.setString(5, dto.getNick());
 			pstmt.setString(6, dto.getRegip());
 			
+			
 			pstmt.executeUpdate();
+			
+			
 			
 			// 글 번호 조회 쿼리 실행
 			stmt = conn.createStatement();
@@ -48,8 +51,7 @@ public class ArticleDAO extends DBHelper {
 			if(rs.next()) {
 				postNo = rs.getInt(1);
 			}
-			
-			
+						
 			closeAll();
 			
 			
@@ -63,7 +65,7 @@ public class ArticleDAO extends DBHelper {
 		
 		ArticleDTO dto = null;
 		
-		List<FileDTO> files = new ArrayList<FileDTO>();
+		List<FileDTO> files = new ArrayList<>();
 		
 		try {
 			
@@ -84,7 +86,7 @@ public class ArticleDAO extends DBHelper {
 					dto.setComment(rs.getInt(5));
 					dto.setFile(rs.getInt(6));
 					dto.setHit(rs.getInt(7));
-					dto.setWriter(rs.getString(8));
+					dto.setNick(rs.getString(8));
 					dto.setCate(rs.getString(9));
 					dto.setRegip(rs.getString(10));
 					dto.setWdate(rs.getString(11));
@@ -116,7 +118,25 @@ public class ArticleDAO extends DBHelper {
 		
 	}
 	
-	public List<ArticleDTO> selectAllArticle() {
+	public int selectCountArticle() {
+		
+		int total = 0;
+		
+		try {
+			conn = getConnection();
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(ArticleSQL.SELECT_COUNT_ARTICLE);
+			if(rs.next()) {
+				total = rs.getInt(1);
+			}
+			closeAll();
+		}catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return total;
+	}
+	
+	public List<ArticleDTO> selectAllArticle(int start) {
 		
 		List<ArticleDTO> articles = new ArrayList<ArticleDTO>();
 		
@@ -124,6 +144,7 @@ public class ArticleDAO extends DBHelper {
 			
 			conn = getConnection();
 			pstmt = conn.prepareStatement(ArticleSQL.SELECT_ALL_ARTICLE);
+			pstmt.setInt(1, start);
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
@@ -136,12 +157,12 @@ public class ArticleDAO extends DBHelper {
 				dto.setComment(rs.getInt(5));
 				dto.setFile(rs.getInt(6));
 				dto.setHit(rs.getInt(7));
-				dto.setWriter(rs.getString(8));
+				dto.setNick(rs.getString(8));
 				dto.setCate(rs.getString(9));
 				dto.setRegip(rs.getString(10));
-				dto.setWdate(rs.getString(11));
+				dto.setWdate(rs.getString(11).substring(2, 16));
+				dto.setNick(rs.getString(15));
 				articles.add(dto);
-				
 				
 			}
 			
@@ -152,6 +173,181 @@ public class ArticleDAO extends DBHelper {
 		}
 		
 		return articles;
+		
+	}
+	
+	public List<ArticleDTO> selectAllArticle2() {
+		
+		List<ArticleDTO> articles = new ArrayList<ArticleDTO>();
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(ArticleSQL.SELECT_ALL_ARTICLE2);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				ArticleDTO dto = new ArticleDTO();
+				dto.setPostNo(rs.getInt(1));
+				dto.setUid(rs.getString(2));
+				dto.setTitle(rs.getString(3));
+				dto.setContent(rs.getString(4));
+				dto.setComment(rs.getInt(5));
+				dto.setFile(rs.getInt(6));
+				dto.setHit(rs.getInt(7));
+				dto.setNick(rs.getString(8));
+				dto.setCate(rs.getString(9));
+				dto.setRegip(rs.getString(10));
+				dto.setWdate(rs.getString(11).substring(0, 10));
+				articles.add(dto);
+			}
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return articles;
+	}
+	
+	public int selectCountArticleBySearch(ArticleDTO articleDTO) {
+		
+		int count = 0;
+		
+		StringBuilder sql = new StringBuilder(ArticleSQL.SELECT_COUNT_POST_FOR_SEARCH);
+		
+		if(articleDTO.getSearchType().equals("title")) {
+			sql.append(ArticleSQL.WHERE_FOR_SEARCH_TITLE);
+		}else if(articleDTO.getSearchType().equals("content")) {
+			sql.append(ArticleSQL.WHERE_FOR_SEARCH_CONTENT);
+		}else if(articleDTO.getSearchType().equals("nick")) {
+			sql.append(ArticleSQL.JOIN_FOR_SEARCH_NICK);
+			sql.append(ArticleSQL.WHERE_FOR_SEARCH_NICK);	
+		}
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql.toString());
+			pstmt.setString(1, "%"+articleDTO.getKeyword()+"%");
+			logger.debug(pstmt.toString());
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				count = rs.getInt(1);				
+			}
+			closeAll();
+			
+		}catch (Exception e) {
+			logger.error(e.getMessage());
+		}		
+		return count;
+		
+
+		
+	}
+	
+	
+	public List<ArticleDTO> selectAllArticleBySearch(ArticleDTO articleDTO, int start) {
+		
+		List<ArticleDTO> articles = new ArrayList<ArticleDTO>();
+		
+		StringBuilder sql = new StringBuilder(ArticleSQL.SELECT_ALL_ARTICLE_BY_SEARCH);
+		
+		if(articleDTO.getSearchType().equals("title")) {
+			sql.append(ArticleSQL.WHERE_FOR_SEARCH_TITLE);
+			sql.append(ArticleSQL.ORDER_FOR_SEARCH);
+			sql.append(ArticleSQL.LIMIT_FOR_SEARCH);
+		}else if(articleDTO.getSearchType().equals("content")) {
+			sql.append(ArticleSQL.WHERE_FOR_SEARCH_CONTENT);
+			sql.append(ArticleSQL.ORDER_FOR_SEARCH);
+			sql.append(ArticleSQL.LIMIT_FOR_SEARCH);
+		}else if(articleDTO.getSearchType().equals("nick")){
+			sql.append(ArticleSQL.WHERE_FOR_SEARCH_NICK);
+			sql.append(ArticleSQL.ORDER_FOR_SEARCH);
+			sql.append(ArticleSQL.LIMIT_FOR_SEARCH);
+		}
+		
+		
+		try {
+			
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql.toString());
+			pstmt.setString(1, "%"+articleDTO.getKeyword()+"%");
+			pstmt.setInt(2, start);
+			
+			logger.debug(pstmt.toString());
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				ArticleDTO dto = new ArticleDTO();
+				dto.setPostNo(rs.getInt(1));
+				dto.setUid(rs.getString(2));
+				dto.setTitle(rs.getString(3));
+				dto.setContent(rs.getString(4));
+				dto.setComment(rs.getInt(5));
+				dto.setFile(rs.getInt(6));
+				dto.setHit(rs.getInt(7));
+				dto.setNick(rs.getString(8));
+				dto.setCate(rs.getString(9));
+				dto.setRegip(rs.getString(10));
+				dto.setWdate(rs.getString(11).substring(2, 16));
+				dto.setNick(rs.getString(12));
+				articles.add(dto);
+				
+			}
+			
+			closeAll();
+			
+			
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		
+		return articles;
+		
+	}
+	
+	
+	
+	
+	
+
+	public void updateArticle(ArticleDTO dto) {
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(ArticleSQL.UPDATE_ARTICLE);
+			pstmt.setString(1, dto.getTitle());
+			pstmt.setString(2, dto.getContent());
+			pstmt.setInt(3, dto.getPostNo());
+			pstmt.executeUpdate();
+			
+			closeAll();
+			
+			
+			
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		
+	}
+	
+	
+	public void deleteArticle(String postNo) {
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(ArticleSQL.DELETE_ARTICLE);
+			pstmt.setString(1, postNo);
+			
+			pstmt.executeUpdate();
+			
+			closeAll();
+			
+			
+			
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
 		
 	}
 	

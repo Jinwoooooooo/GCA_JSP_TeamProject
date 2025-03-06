@@ -1,6 +1,7 @@
 package kr.co.farmStory.controller.user;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -57,8 +58,18 @@ public class RegisterController extends HttpServlet {
 		dto.setAddr2(addr2);
 		dto.setRegip(regip);
 		
+		resp.setContentType("text/html; charset=UTF-8"); // 응답 인코딩 설정
+		resp.setCharacterEncoding("UTF-8"); // 응답 문자 인코딩 지정
+		
+		PrintWriter out = resp.getWriter();
+		
 		service.registerUser(dto);
 		
-		resp.sendRedirect("/farmStory/view/user/login.do");
+		out.println("<script>");
+        out.println("alert('회원가입이 완료되었습니다.');");
+        out.println("location.href='/farmStory/view/user/login.do';");
+        out.println("</script>");
+		
+		//resp.sendRedirect("/farmStory/view/user/login.do");
 	}
 }

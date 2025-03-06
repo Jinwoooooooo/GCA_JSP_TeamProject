@@ -5,7 +5,7 @@
         <div class="top">
             <c:if test="${empty sessionScope.sessUser}">
             <div>
-                <a href="/farmStory/index.jsp">HOME |</a>
+                <a href="/farmStory/index.do">HOME |</a>
                 <a href="/farmStory/view/user/login.do">로그인 |</a>
                 <a href="/farmStory/view/user/register.do">회원가입 |</a>
                 <a href="/farmStory/inquiry/inquiryList.do">고객센터</a>
@@ -13,7 +13,7 @@
             </c:if>
             <c:if test="${not empty sessionScope.sessUser}">
             <div>
-                <a href="/farmStory/index.jsp">HOME |</a>
+                <a href="/farmStory/index.do">HOME |</a>
                 <a href="/farmStory/view/user/logout.do">로그아웃 |</a>
                 <a href="/farmStory/myInfo/myCart.do">나의정보 |</a>
                 <a href="/farmStory/adminMain/list.do">관리자 |</a>
@@ -25,7 +25,7 @@
     
     <div>
         <article>
-            <a href="/farmStory/index.jsp" class="logo">
+            <a href="/farmStory/index.do" class="logo">
                 <img src="/farmStory/images/logo.png" alt="팜스토리 로고">
             </a>
             <a href="#" class="freeShipping">

@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import com.google.gson.Gson;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -16,8 +17,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import kr.co.farmStory.dto.CommentDTO;
 import kr.co.farmStory.service.CommentService;
 
-@WebServlet("/comment/write.do")
-public class WriteController extends HttpServlet {
+@MultipartConfig
+@WebServlet("/comment/commentWrite.do")
+public class WriteCommentController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -38,7 +40,8 @@ public class WriteController extends HttpServlet {
 		// 데이터 수신
 		String postNo = req.getParameter("postNo");
 		String content = req.getParameter("content");
-		String writer = req.getParameter("writer");
+		String nick = req.getParameter("nick");
+		String uid = req.getParameter("uid");
 		String regip = req.getRemoteAddr();
 		
 		int postNoInt = Integer.parseInt(postNo);
@@ -48,9 +51,12 @@ public class WriteController extends HttpServlet {
 		CommentDTO dto = new CommentDTO();
 		dto.setPostNo(postNoInt);
 		dto.setContent(content);
-		dto.setWriter(writer);
+		dto.setNick(nick);
+		dto.setUid(uid);
 		dto.setRegip(regip);
 		logger.debug(dto.toString());
+		
+		req.setAttribute("commentInfo", dto);
 		
 		// 서비스 호출
 		CommentDTO savedCommentDTO = service.registerComment(dto);
@@ -62,7 +68,10 @@ public class WriteController extends HttpServlet {
 		Gson gson = new Gson();
 		String json = gson.toJson(savedCommentDTO);
 		printWriter.println(json);
-	
+		
+		
+		
+		
 	}
 	
 	

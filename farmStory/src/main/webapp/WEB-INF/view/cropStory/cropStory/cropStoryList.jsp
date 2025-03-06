@@ -28,7 +28,7 @@
 							<img src="/farmStory/images/sub_aside_cate3_tit.png" alt="농작물이야기">
 						</div>
 						<div>
-							<a href="/farmStory/cropStory/cropStoryList.do"> <img
+							<a href="/farmStory/cropStory/cropStoryList.do?searchType=cropStory"> <img
 								src="/farmStory/images/sub_cate3_lnb1_ov.png" alt="농작물이야기">
 							</a> <a href="/farmStory/gardening/gardeningList.do"> <img
 								src="/farmStory/images/sub_cate3_lnb2.png" alt="텃밭가꾸기">
@@ -55,6 +55,7 @@
 									<nav>
 										<p>글목록</p>
 										<form action="/farmStory/cropStory/cropStorySearch.do">
+											<input type="hidden" name="cate" value="cropStory"/>
 											<select name="searchType" style="padding: 6px;">
 					                    		<option value="title">제목</option>
 					                    		<option value="content">내용</option>
@@ -77,7 +78,7 @@
 											<tr id="table_body" height="41px">
 												<td>${pageStartNum}</td>
 												<td>
-													<a href="/farmStory/cropStory/cropStoryView.do?postNo=${article.postNo}">${article.title}[${article.comment}]</a>
+													<a href="/farmStory/cropStory/cropStoryView.do?cate=cropStory&postNo=${article.postNo}">${article.title}[${article.comment}]</a>
 												</td>
 												<td>${article.nick}</td>
 												<td>${article.wdate}</td>

@@ -27,7 +27,7 @@ public class ArticleSQL {
 	public static final String SELECT_ALL_ARTICLE = "select * from `post` as p "
 															+ "LEFT JOIN `user` AS u "
 															+ "ON u.uid=p.uid "
-															+ "WHERE `cate`='cropStory' "
+															+ "WHERE `cate`=? "
 															+ "order by `postNo` desc "
 															+ "LIMIT ?, 10";
 	
@@ -52,6 +52,9 @@ public class ArticleSQL {
 	public final static String WHERE_FOR_SEARCH_TITLE   = "WHERE `title` LIKE ? ";
 	public final static String WHERE_FOR_SEARCH_CONTENT = "WHERE `content` LIKE ? ";
 	public final static String WHERE_FOR_SEARCH_NICK  = "WHERE u.nick LIKE ? ";	
+	
+	public final static String AND_FOR_SEARCH_CATE = "and `cate`=?";
+	
 	public final static String ORDER_FOR_SEARCH  = "ORDER BY `postNo` DESC ";
 	public final static String LIMIT_FOR_SEARCH  = "LIMIT ?, 10";
 	
@@ -62,5 +65,8 @@ public class ArticleSQL {
 														+ "WHERE `postNo`=?";
 	
 	public static final String DELETE_ARTICLE = "delete from `post` where `postNo`=? and `cate`='cropStory'";
+	
+	
+	
 	
 }

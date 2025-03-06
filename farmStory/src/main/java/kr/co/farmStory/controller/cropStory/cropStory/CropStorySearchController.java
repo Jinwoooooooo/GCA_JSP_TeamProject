@@ -26,6 +26,7 @@ public class CropStorySearchController extends HttpServlet {
 		String pg = req.getParameter("pg");
 		String searchType = req.getParameter("searchType");
 		String keyword = req.getParameter("keyword");
+		String cate = req.getParameter("cate");
 		
 		ArticleDTO dto = new ArticleDTO();
 		dto.setSearchType(searchType);
@@ -40,7 +41,7 @@ public class CropStorySearchController extends HttpServlet {
 		int pageStartNum = service.getPageStartNum(total, currentPage);
 		
 		
-		List<ArticleDTO> articles = service.searchAllArticle(dto, start);
+		List<ArticleDTO> articles = service.searchAllArticle(dto, start, cate);
 		
 		
 		req.setAttribute("articles", articles);
@@ -50,6 +51,7 @@ public class CropStorySearchController extends HttpServlet {
 		req.setAttribute("pageGroupDTO", pageGroupDTO);
 		req.setAttribute("searchType", searchType);
 		req.setAttribute("keyword", keyword);
+		req.setAttribute("cate", cate);
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/cropStory/cropStory/cropStorySearchList.jsp");
 		dispatcher.forward(req, resp);	

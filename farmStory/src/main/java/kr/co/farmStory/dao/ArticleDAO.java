@@ -136,7 +136,7 @@ public class ArticleDAO extends DBHelper {
 		return total;
 	}
 	
-	public List<ArticleDTO> selectAllArticle(int start) {
+	public List<ArticleDTO> selectAllArticle(String cate, int start) {
 		
 		List<ArticleDTO> articles = new ArrayList<ArticleDTO>();
 		
@@ -144,7 +144,8 @@ public class ArticleDAO extends DBHelper {
 			
 			conn = getConnection();
 			pstmt = conn.prepareStatement(ArticleSQL.SELECT_ALL_ARTICLE);
-			pstmt.setInt(1, start);
+			pstmt.setString(1, cate);
+            pstmt.setInt(2, start);
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
@@ -245,7 +246,7 @@ public class ArticleDAO extends DBHelper {
 	}
 	
 	
-	public List<ArticleDTO> selectAllArticleBySearch(ArticleDTO articleDTO, int start) {
+	public List<ArticleDTO> selectAllArticleBySearch(ArticleDTO articleDTO, int start, String cate) {
 		
 		List<ArticleDTO> articles = new ArrayList<ArticleDTO>();
 		
@@ -253,14 +254,17 @@ public class ArticleDAO extends DBHelper {
 		
 		if(articleDTO.getSearchType().equals("title")) {
 			sql.append(ArticleSQL.WHERE_FOR_SEARCH_TITLE);
+			sql.append(ArticleSQL.AND_FOR_SEARCH_CATE);
 			sql.append(ArticleSQL.ORDER_FOR_SEARCH);
 			sql.append(ArticleSQL.LIMIT_FOR_SEARCH);
 		}else if(articleDTO.getSearchType().equals("content")) {
 			sql.append(ArticleSQL.WHERE_FOR_SEARCH_CONTENT);
+			sql.append(ArticleSQL.AND_FOR_SEARCH_CATE);
 			sql.append(ArticleSQL.ORDER_FOR_SEARCH);
 			sql.append(ArticleSQL.LIMIT_FOR_SEARCH);
 		}else if(articleDTO.getSearchType().equals("nick")){
 			sql.append(ArticleSQL.WHERE_FOR_SEARCH_NICK);
+			sql.append(ArticleSQL.AND_FOR_SEARCH_CATE);
 			sql.append(ArticleSQL.ORDER_FOR_SEARCH);
 			sql.append(ArticleSQL.LIMIT_FOR_SEARCH);
 		}
@@ -272,6 +276,7 @@ public class ArticleDAO extends DBHelper {
 			pstmt = conn.prepareStatement(sql.toString());
 			pstmt.setString(1, "%"+articleDTO.getKeyword()+"%");
 			pstmt.setInt(2, start);
+			pstmt.setString(3, cate);
 			
 			logger.debug(pstmt.toString());
 			

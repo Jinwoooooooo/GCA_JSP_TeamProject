@@ -164,7 +164,6 @@ public class ArticleDAO extends DBHelper {
 				dto.setNick(rs.getString(15));
 				articles.add(dto);
 				
-				
 			}
 			
 			closeAll();
@@ -175,6 +174,37 @@ public class ArticleDAO extends DBHelper {
 		
 		return articles;
 		
+	}
+	
+	public List<ArticleDTO> selectAllArticle2() {
+		
+		List<ArticleDTO> articles = new ArrayList<ArticleDTO>();
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(ArticleSQL.SELECT_ALL_ARTICLE2);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				ArticleDTO dto = new ArticleDTO();
+				dto.setPostNo(rs.getInt(1));
+				dto.setUid(rs.getString(2));
+				dto.setTitle(rs.getString(3));
+				dto.setContent(rs.getString(4));
+				dto.setComment(rs.getInt(5));
+				dto.setFile(rs.getInt(6));
+				dto.setHit(rs.getInt(7));
+				dto.setNick(rs.getString(8));
+				dto.setCate(rs.getString(9));
+				dto.setRegip(rs.getString(10));
+				dto.setWdate(rs.getString(11).substring(0, 10));
+				articles.add(dto);
+			}
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return articles;
 	}
 	
 	public int selectCountArticleBySearch(ArticleDTO articleDTO) {

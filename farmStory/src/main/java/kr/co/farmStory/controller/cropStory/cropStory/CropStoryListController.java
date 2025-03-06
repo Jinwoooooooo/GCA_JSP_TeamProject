@@ -12,6 +12,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import kr.co.farmStory.dto.ArticleDTO;
 import kr.co.farmStory.dto.PageGroupDTO;
 import kr.co.farmStory.service.ArticleService;

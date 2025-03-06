@@ -45,7 +45,7 @@
 	                            <tr class="table_bd1">      
 	                                <td>
 		                                <a href="/farmStory/shopping/productDetail.do">
-		                                	<img src="/farmStory/images/market_item1.jpg" class="item_img">
+		                                	<img src="/farmStory/uploadImg/${fruit.sName}" class="item_img">
 		                                </a>
 	                                </td>   
 	                                

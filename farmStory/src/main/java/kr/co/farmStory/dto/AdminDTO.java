@@ -14,6 +14,15 @@ public class AdminDTO {
 	
 	
 	private String oName;
+	private String sName;
+	
+	public String getsName() {
+		return sName;
+	}
+	
+	public void setsName(String sName) {
+		this.sName = sName;
+	}
 	
 	public String getoName() {
 		return oName;

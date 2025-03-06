@@ -30,29 +30,24 @@ public class CropStoryViewController extends HttpServlet{
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		// 글번호 수신
-		String postNo = req.getParameter("postNo");
-		
-		// 글 조회 서비스 호출
-		ArticleDTO articledto = service.findArticle(postNo);
-		logger.debug("articledto : " + articledto);
-		
-		//List<FileDTO> files = articledto.getFiles();
-		//logger.debug("files : " + files);
-		
-		List<CommentDTO> comments = commentService.findAllComment(postNo);
-		logger.debug("comments : " + comments);
-		
-		req.setAttribute("articledto", articledto);
-		req.setAttribute("comments", comments);
-		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/cropStory/cropStory/cropStoryView.jsp");
-		dispatcher.forward(req, resp);
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // 글번호 수신
+        String postNo = req.getParameter("postNo");
+
+        // 글 조회 서비스 호출
+        ArticleDTO articledto = service.findArticle(postNo);
+        logger.debug("articledto : " + articledto);
+
+        List<CommentDTO> comments = commentService.findAllComment(postNo);
+        logger.debug("comments : " + comments);
+
+        req.setAttribute("articledto", articledto);
+        req.setAttribute("comments", comments);
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/cropStory/cropStory/cropStoryView.jsp");
+        dispatcher.forward(req, resp);
+    }
 	
-		
-	}
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		

@@ -110,7 +110,25 @@ public class CommentDAO extends DBHelper {
 	}
 	
 	
-	public void updateComment(CommentDTO dto) {
+	public CommentDTO updateComment(CommentDTO dto) {
+		
+		try {
+			
+			conn = getConnection();
+			pstmt = conn.prepareStatement(CommentSQL.UPDATE_COMMENT);
+			pstmt.setString(1, dto.getContent());
+			pstmt.setInt(1, dto.getCno());
+			pstmt.executeUpdate();
+			
+			closeAll();
+			
+			
+			
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		
+		return dto;
 		
 	}
 	

@@ -18,7 +18,7 @@ import kr.co.farmStory.dto.FileDTO;
 import kr.co.farmStory.service.ArticleService;
 import kr.co.farmStory.service.CommentService;
 
-@WebServlet("/cropStory/CropStoryView.do")
+@WebServlet("/cropStory/cropStoryView.do")
 public class CropStoryViewController extends HttpServlet{
 
 

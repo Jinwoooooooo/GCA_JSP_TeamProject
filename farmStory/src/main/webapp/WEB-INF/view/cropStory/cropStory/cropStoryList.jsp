@@ -72,7 +72,7 @@
 											<tr id="table_body" height="41px">
 												<td>${pageStartNum}</td>
 												<td>
-													<a href="/farmStory/cropStory/CropStoryView.do?postNo=${article.postNo}">${article.title}[${article.comment}]</a>
+													<a href="/farmStory/cropStory/cropStoryView.do?postNo=${article.postNo}">${article.title}[${article.comment}]</a>
 												</td>
 												<td>${article.nick}</td>
 												<td>${article.wdate}</td>

@@ -65,6 +65,7 @@ public class ArticleSQL {
 														+ "WHERE `postNo`=?";
 	
 	public static final String DELETE_ARTICLE = "delete from `post` where `postNo`=? and `cate`='cropStory'";
+	public static final String DELETE_ARTICLE_IN_COMMENT = "DELETE FROM comment WHERE postNo = ?";
 	
 	
 	

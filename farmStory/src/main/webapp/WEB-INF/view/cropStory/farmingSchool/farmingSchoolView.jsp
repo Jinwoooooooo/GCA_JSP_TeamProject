@@ -24,7 +24,7 @@
                             <img src="/farmStory/images/sub_aside_cate3_tit.png" alt="텃밭가꾸기">
                         </div>
                         <div>
-                            <a href="/farmStorycropStory/cropStoryList.do">
+                            <a href="/farmStorycropStory/cropStoryList.do?cate=cropStory">
                                 <img src="/farmStory/images/sub_cate3_lnb1.png" alt="농작물이야기">
                             </a>
                             <a href="/farmStory/gardening/gardeningList.do">

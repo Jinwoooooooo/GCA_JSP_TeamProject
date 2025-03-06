@@ -341,22 +341,19 @@ public class ArticleDAO extends DBHelper {
 		
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement(ArticleSQL.DELETE_ARTICLE);
+			pstmt = conn.prepareStatement(ArticleSQL.DELETE_ARTICLE_IN_COMMENT);
 			pstmt.setString(1, postNo);
-			
 			pstmt.executeUpdate();
 			
+			pstmt2 = conn.prepareStatement(ArticleSQL.DELETE_ARTICLE);
+			pstmt2.setString(1, postNo);
+			pstmt2.executeUpdate();
+			
 			closeAll();
-			
-			
 			
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 		}
-		
 	}
-	
-	
-	
 }
 

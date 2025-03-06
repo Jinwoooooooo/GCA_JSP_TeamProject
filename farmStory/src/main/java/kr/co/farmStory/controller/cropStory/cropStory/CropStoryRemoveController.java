@@ -17,16 +17,13 @@ import kr.co.farmStory.service.ArticleService;
 @WebServlet("/cropStory/cropStoryRemove.do")
 public class CropStoryRemoveController extends HttpServlet {
 
-
 	private static final long serialVersionUID = 1L;
 	
 	private ArticleService service = ArticleService.INSTANCE;
-	
 	Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
 
 		String postNo = req.getParameter("postNo");
 		
@@ -34,18 +31,12 @@ public class CropStoryRemoveController extends HttpServlet {
 		
 		service.removeArticle(postNo);
 		
-		
-		resp.sendRedirect("/farmStory/cropStory/cropStoryList.do");
-		
-		
+		resp.sendRedirect("/farmStory/cropStory/cropStoryList.do?cate=cropStory");
 	
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-	
 	
 	}
-	
 }

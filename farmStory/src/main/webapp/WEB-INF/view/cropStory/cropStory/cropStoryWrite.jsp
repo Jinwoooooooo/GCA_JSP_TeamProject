@@ -24,7 +24,7 @@
                             <img src="/farmStory/images/sub_aside_cate3_tit.png" alt="농작물이야기">
                         </div>
                         <div>
-                            <a href="/farmStory/cropStory/cropStoryList.do">
+                            <a href="/farmStory/cropStory/cropStoryList.do?cate=cropStory">
                                 <img src="/farmStory/images/sub_cate3_lnb1_ov.png" alt="농작물이야기">
                             </a>
                             <a href="/farmStory/gardening/gardeningList.do">
@@ -72,7 +72,7 @@
                                     </tr>
                                 </table>
                                 <div class="btnContainer">
-                                    <a href="/jboard/article/list.do" class="btn btnCancel">취소</a>
+                                    <a href="/farmStory/cropStory/cropStoryList.do" class="btn btnCancel">취소</a>
                                     <input type="submit" value="작성완료" class="btn btnSubmit"/>
                                 </div>
                             </form>

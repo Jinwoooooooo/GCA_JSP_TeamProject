@@ -28,7 +28,7 @@
 							<img src="/farmStory/images/sub_aside_cate3_tit.png" alt="농작물이야기">
 						</div>
 						<div>
-							<a href="/farmStory/cropStory/cropStoryList.do?searchType=cropStory"> <img
+							<a href="/farmStory/cropStory/cropStoryList.do?cate=cropStory"> <img
 								src="/farmStory/images/sub_cate3_lnb1_ov.png" alt="농작물이야기">
 							</a> <a href="/farmStory/gardening/gardeningList.do"> <img
 								src="/farmStory/images/sub_cate3_lnb2.png" alt="텃밭가꾸기">
@@ -61,8 +61,8 @@
 					                    		<option value="content">내용</option>
 					                    		<option value="nick">글쓴이</option>
 					                    	</select>
-											<input type="text" name="keyword" placeholder="제목 키워드, 글쓴이 검색">
-											<input type="submit" value="검색">
+											<input type="text" name="keyword" placeholder="제목 키워드, 글쓴이 검색" class="searchBox">
+											<input type="submit" value="검색" class="searchBtn">
 										</form>
 									</nav>
 									<table width="100%">
@@ -104,8 +104,9 @@
 												href="/farmStory/cropStory/cropStoryList.do?pg=${pageGroupDTO.end + 1}"
 												class="next">다음</a>
 										</c:if>
-										<a href="/farmStory/cropStory/cropStoryWrite.do" class="btn btnWrite">글쓰기</a>
-
+										<c:if test="${not empty sessUser}">
+											<a href="/farmStory/cropStory/cropStoryWrite.do" class="btn btnWrite">글쓰기</a>
+										</c:if>
 									</div>
 
 								</section>

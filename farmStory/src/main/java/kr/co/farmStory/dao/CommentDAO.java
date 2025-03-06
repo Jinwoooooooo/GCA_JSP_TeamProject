@@ -72,6 +72,7 @@ public class CommentDAO extends DBHelper {
 				dto.setNick(rs.getString(4));
 				dto.setRegip(rs.getString(5));
 				dto.setWdate(rs.getString(6).substring(0, 10));
+				dto.setUid(rs.getString(8));
 			}
 			closeAll();
 		}catch (Exception e) {

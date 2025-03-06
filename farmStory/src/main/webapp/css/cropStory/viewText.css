@@ -209,6 +209,8 @@ h1 {
 
 textarea {
     resize: none;
+    box-sizing: border-box;
+    padding: 5px;
 }
 
 .title {
@@ -295,6 +297,10 @@ textarea {
     font-weight: bold;
     border-bottom: 1px solid #ddd;
     padding: 5px 0;
+}
+
+.comment_sub_titleIsEmpty {
+	text-align: center;
 }
 
 .commentList {

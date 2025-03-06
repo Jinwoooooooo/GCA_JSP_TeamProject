@@ -189,12 +189,16 @@
                                 </table>
                                </form>
                                 <div class="btnContainer1">
+                               <c:if test="${articledto.uid eq sessUser.uid}">
                                     <button class="btn2" onclick="location.href='/farmStory/cropStory/cropStoryRemove.do?postNo=${articledto.postNo}'">삭제</button>
                                     <button class="btn2" onclick="location.href='/farmStory/cropStory/cropStoryEdit.do?postNo=${articledto.postNo}'">수정</button>
                                     <button class="btn2" onclick="location.href='/farmStory/cropStory/cropStoryList.do'">목록</button>
+                            	</c:if>
                                 </div>
-                            
                                 <section class="commentList">
+                                	<c:if test="${empty comments}">
+                                    	<p class="comment_sub_titleIsEmpty">첫 댓글을 작성해주세요!</p>
+                                    </c:if>
                                 	<c:if test="${comment.cno > 0}">
                                     	<h3 class="comment_sub_title">댓글목록</h3>
                                     </c:if>
@@ -204,8 +208,10 @@
 									        <p class="comment">${comment.content}</p>
 									        <div class="remove_edit">
 									            <input type="hidden" name="postNo" value="${articledto.postNo}">
-									            <a href="/farmStory/comment/remove.do?cno=${comment.cno}&postNo=${articledto.postNo}">삭제</a>
-									            <a href="#" class="editCommentBtn" data-cno="${comment.cno}" data-postno="${articledto.postNo}">수정</a>
+									            <c:if test="${comment.nick eq sessUser.nick}">
+									            	<a href="/farmStory/comment/remove.do?cno=${comment.cno}&postNo=${articledto.postNo}">삭제</a>
+									            	<a href="#" class="editCommentBtn" data-cno="${comment.cno}" data-postno="${articledto.postNo}">수정</a>
+									        	</c:if>
 									        </div>
 									    </div>
 									    <!-- 댓글 수정 폼 (숨겨진 상태) -->
@@ -225,7 +231,7 @@
                                     <form action="/farmStory/comment/commentWrite.do" method="post" id="commentForm">
                                     	<input type="hidden" name="postNo" value="${articledto.postNo}">
                                     	<input type="hidden" name="nick" value="${sessUser.nick}">
-                                        <textarea name="content" maxlength="100"></textarea>
+                                        <textarea name="content" maxlength="100" placeholder="댓글 입력" required></textarea>
                                         <div class="btnContainer2">
                                             <button class="btn btnCancel" onclick="location.href='/farmStory/cropStory/cropStoryList.do'">취소</button>                                            
                                             <input type="submit" value="작성완료" class="btn btnComplete"/>

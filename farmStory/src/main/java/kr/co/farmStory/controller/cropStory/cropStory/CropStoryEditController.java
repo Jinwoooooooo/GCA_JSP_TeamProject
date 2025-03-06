@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -11,6 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import kr.co.farmStory.dto.ArticleDTO;
 import kr.co.farmStory.service.ArticleService;
 
+@MultipartConfig
 @WebServlet("/cropStory/cropStoryEdit.do")
 public class CropStoryEditController extends HttpServlet{
 

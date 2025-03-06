@@ -9,7 +9,7 @@ public class CommentSQL {
 															+ "`regip`=?,"
 															+ "`wdate`=NOW()";
 	
-	public static final String SELECT_ALL_COMMENT = "SELECT * FROM `comment` where `cno`=?";
+	public static final String SELECT_ALL_COMMENT = "SELECT * FROM `comment` AS c JOIN post AS p ON c.postNo = p.postNo JOIN user AS u ON p.uid = u.uid WHERE `cno`= ?";
 	
 	public static final String SELECT_ALL_COMMENT_BY_POSTNO = "SELECT * "
 																	+ "FROM `comment` "

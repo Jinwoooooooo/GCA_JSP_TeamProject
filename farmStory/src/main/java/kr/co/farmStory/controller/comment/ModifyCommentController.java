@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import com.google.gson.Gson;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -16,6 +17,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import kr.co.farmStory.dto.CommentDTO;
 import kr.co.farmStory.service.CommentService;
 
+@MultipartConfig
 @WebServlet("/comment/modify.do")
 public class ModifyCommentController extends HttpServlet {
 

@@ -105,7 +105,7 @@
                                 <div class="writeComment">
                                     <h3 class="comment_sub_title">댓글쓰기</h3>
                                     <div>
-                                        <textarea name="comment" maxlength="100"></textarea>
+                                        <textarea name="comment" maxlength="100" placeholder="댓글 입력" required></textarea>
                                         <div class="btnContainer2">
                                             <button class="btn btnCancel">취소</button>
                                             <button class="btn btnSubmit" type="submit">작성완료</button>

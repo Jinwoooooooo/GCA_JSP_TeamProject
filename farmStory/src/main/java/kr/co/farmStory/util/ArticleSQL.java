@@ -38,6 +38,19 @@ public class ArticleSQL {
 	public static final String SELECT_COUNT_ARTICLE = "SELECT COUNT(*) FROM `post` where `cate`='cropStory'";
 	
 	
+	public static final String SELECT_ALL_ARTICLE_BY_SEARCH = "select p.*, u.nick "
+																			+ "from `post` as p "
+																			+ "join `user` as u "
+																			+ "on p.uid=u.uid ";
+	
+	public final static String SELECT_COUNT_POST_FOR_SEARCH = "select count(*) from `post` as p ";
+	public final static String JOIN_FOR_SEARCH_NICK  = "JOIN `user` as u ON p.uid = u.uid ";
+	public final static String WHERE_FOR_SEARCH_TITLE   = "WHERE `title` LIKE ? ";
+	public final static String WHERE_FOR_SEARCH_CONTENT = "WHERE `content` LIKE ? ";
+	public final static String WHERE_FOR_SEARCH_NICK  = "WHERE u.nick LIKE ? ";	
+	public final static String ORDER_FOR_SEARCH  = "ORDER BY `postNo` DESC ";
+	public final static String LIMIT_FOR_SEARCH  = "LIMIT ?, 10";
+	
 	
 	public static final String UPDATE_ARTICLE = "UPDATE `post` SET "
 														+ "`title`= ?, "

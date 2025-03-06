@@ -203,20 +203,19 @@ header > div:nth-child(3) > ul > li > a > img {
 }
 
 .sub_page_section > section > nav > form{
-    position: float;
     right: 0px;
-    width: 247px;
+    width: auto;
     height: 31px;
 }
 
-.sub_page_section > section > nav > form > input:nth-child(1){
+.sub_page_section > section > nav > form > input:nth-child(2){
     width: 202px;
     height: 28px;
     border: 1px solid #d7d7d7;
     box-sizing: border-box;
 }
 
-.sub_page_section > section > nav > form > input:nth-child(2){
+.sub_page_section > section > nav > form > input:nth-child(3){
     width: 38px;
     height: 31px;
     border: 1px solid #d7d7d7;

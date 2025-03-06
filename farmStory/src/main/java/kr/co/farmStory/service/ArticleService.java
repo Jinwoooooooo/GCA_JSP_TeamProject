@@ -27,6 +27,15 @@ public enum ArticleService {
 		return dao.selectAllArticle(start);
 	}
 	
+	public List<ArticleDTO> searchAllArticle(ArticleDTO dto, int start) {
+		return dao.selectAllArticleBySearch(dto, start);
+	}
+	
+	public int getCountArticleBySearch(ArticleDTO dto) {
+		return dao.selectCountArticleBySearch(dto);
+	}
+	
+	
 	public int getCountArticle() {
 		return dao.selectCountArticle();
 	}

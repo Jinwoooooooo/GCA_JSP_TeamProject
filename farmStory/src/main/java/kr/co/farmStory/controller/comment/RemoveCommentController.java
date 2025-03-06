@@ -37,7 +37,7 @@ public class RemoveCommentController extends HttpServlet {
 	    
 	    //req.getRequestDispatcher("/farmStory/cropStory/cropStoryView.do?postNo=" + postNo).forward(req, resp);
 	    
-	    resp.sendRedirect("/farmStory/cropStory/CropStoryView.do?postNo=" + postNo);
+	    resp.sendRedirect("/farmStory/cropStory/cropStoryView.do?postNo=" + postNo);
 	    
 	
 	}

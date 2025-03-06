@@ -12,66 +12,112 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 	<script>
 	document.addEventListener('DOMContentLoaded', function(){
-		console.log('DOMContentLoaded...');
+	    console.log('DOMContentLoaded...');
 
-		const commentList = document.getElementsByClassName('commentList')[0];
-		const formComment = document.getElementById('commentForm'); // form id로 form 가져오기
+	    const commentList = document.getElementsByClassName('commentList')[0];
+	    const formComment = document.getElementById('commentForm');
 
-		// 댓글 등록
-		formComment.onsubmit = function(e){
-			e.preventDefault();
+	    // 댓글 등록
+	    formComment.onsubmit = function(e){
+	        e.preventDefault();
 
-			// 입력한 데이터 가져오기
-			const postNo = formComment.postNo?.value;
-			const nick = formComment.nick?.value;
-			const content = formComment.comment?.value; // textarea name으로 content 가져오기
+	        const postNo = formComment.postNo?.value;
+	        const nick = formComment.nick?.value;
+	        const content = formComment.content?.value;
 
-			// 폼 데이터 생성
-			const formData = new FormData();
-			formData.append('postNo', postNo);
-			formData.append('nick', nick);
-			formData.append('content', content);
-			console.log(formData);
+	        const formData = new FormData();
+	        formData.append('postNo', postNo);
+	        formData.append('nick', nick);
+	        formData.append('content', content);
+	        console.log(formData);
 
-			// 서버 전송
-			fetch('/farmStory/comment/commentWrite.do', {
-				method: 'POST',
-				body: formData
-			})
-			.then(response => response.json())
-			.then(data => {
-				console.log(data);
+	        fetch('/farmStory/comment/commentWrite.do', {
+	            method: 'POST',
+	            body: formData
+	        })
+	        .then(response => response.json())
+	        .then(data => {
+	            console.log(data);
 
-				// 동적 태그 생성
-				if(data != null){
+	            if(data != null){
+	                alert('댓글 등록이 완료되었습니다.');
+	                const article = `<div class="commentContainer">
+	                                    <p class="date_author">${data.wdate} ${data.nick}</p>
+	                                    <p class="comment">${data.content}</p>
+	                                    <div class="remove_edit">
+	                                        <input type="hidden" name="postNo" value="${data.postNo}">
+	                                        <a href="/farmStory/comment/remove.do?cno=${data.cno}&postNo=${data.postNo}">삭제</a>
+	                                        <a href="#" class="editCommentBtn" data-cno="${data.cno}" data-postno="${data.postNo}">수정</a>
+	                                    </div>
+	                                </div>`;
 
-					// 댓글창 비우기
-					const textarea = document.querySelector('textarea[name="comment"]');
-					if (textarea) {
-						textarea.value = "";
-					}
+	                commentList.insertAdjacentHTML('beforeend', article);
+	                formComment.content.value = '';
+	                location.href = "/farmStory/cropStory/cropStoryView.do?postNo=" + postNo;
+	            }else{
+	                alert('댓글 등록 실패 했습니다.');
+	            }
+	        })
+	        .catch(err => {
+	            console.log(err);
+	        });
+	    }
 
-					const article = `<div class="commentContainer">
-								        <p class="date_author">${data.wdate} ${data.nick}</p>
-								        <p class="comment">${data.content}</p>
-								        <div class="remove_edit">
-								            <a href="#">삭제</a>
-								            <a href="#">수정</a>
-								        </div>
-								    </div>`;
+	    // 댓글 수정 버튼 클릭 이벤트
+	    commentList.addEventListener('click', function(e) {
+	        if (e.target.classList.contains('editCommentBtn')) {
+	            e.preventDefault();
+	            const cno = e.target.dataset.cno;
+	            const postNo = e.target.dataset.postno;
+	            const editForm = document.querySelector(`.editCommentForm[data-cno="${cno}"]`);
+	            editForm.style.display = 'block';
+	        }
 
-					commentList.insertAdjacentHTML('beforeend', article);
-				}else{
-					alert('댓글 등록 실패 했습니다.');
-				}
+	        if (e.target.classList.contains('editCancelBtn')) {
+	            e.preventDefault();
+	            const cno = e.target.dataset.cno;
+	            const editForm = document.querySelector(`.editCommentForm[data-cno="${cno}"]`);
+	            editForm.style.display = 'none';
+	        }
+	    });
 
-			})
-			.catch(err => {
-				console.log(err);
-			});
-		}
+	    // 댓글 수정 폼 제출 이벤트
+	    commentList.addEventListener('submit', function(e) {
+	        if (e.target.classList.contains('editCommentForm')) {
+	            e.preventDefault();
 
+	            const editForm = e.target;
+	            const cno = editForm.cno.value;
+	            const postNo = editForm.postNo.value;
+	            const content = editForm.content.value;
 
+	            const formData = new FormData();
+	            formData.append('cno', cno);
+	            formData.append('postNo', postNo);
+	            formData.append('content', content);
+
+	            fetch('/farmStory/comment/modify.do', {
+	                method: 'POST',
+	                body: formData
+	            })
+	            .then(response => response.json())
+	            .then(data => {
+	                console.log(data);
+
+	                if (data != null) {
+	                    // 댓글 목록 갱신 또는 수정된 댓글 내용으로 업데이트
+	                    const commentContainer = e.target.closest('.commentContainer');
+	                    commentContainer.querySelector('.comment').textContent = data.content;
+	                    editForm.style.display = 'none';
+	                } else {
+	                    alert('댓글 수정 실패했습니다.');
+	                }
+	            })
+	            .catch(err => {
+	                console.log(err);
+	            });
+	        }
+	    });
 	});
 
 
@@ -115,7 +161,7 @@
                         </div>
                         <div class="sub_page">
                             <h1>글보기</h1>
-                            <form action="/farmStory/CropStory/CropStoryView.do">
+                            <form action="/farmStory/cropStory/cropStoryView.do">
                                 <table>
                                     <tr>
                                         <td>제목</td>
@@ -153,23 +199,33 @@
                                     	<h3 class="comment_sub_title">댓글목록</h3>
                                     </c:if>
                                     <c:forEach var="comment" items="${comments}">
-	                                    <div class="commentContainer">
-	                                        <p class="date_author">${comment.wdate} ${comment.nick}</p>
-	                                        <p class="comment">${comment.content}</p>
-	                                        <div class="remove_edit">
-	                                        	<input type="hidden" name="postNo" value="${articledto.postNo}">
-	                                            <a href="/farmStory/comment/remove.do?cno=${comment.cno}&postNo=${comment.postNo}">삭제</a>
-	                                            <a href="#">수정</a>
-	                                        </div>
-	                                    </div>
-                                    </c:forEach>
+									    <div class="commentContainer">
+									        <p class="date_author">${comment.wdate} ${comment.nick}</p>
+									        <p class="comment">${comment.content}</p>
+									        <div class="remove_edit">
+									            <input type="hidden" name="postNo" value="${articledto.postNo}">
+									            <a href="/farmStory/comment/remove.do?cno=${comment.cno}&postNo=${articledto.postNo}">삭제</a>
+									            <a href="#" class="editCommentBtn" data-cno="${comment.cno}" data-postno="${articledto.postNo}">수정</a>
+									        </div>
+									    </div>
+									    <!-- 댓글 수정 폼 (숨겨진 상태) -->
+									    <form class="editCommentForm" data-cno="${comment.cno}" style="display: none;">
+									        <input type="hidden" name="cno" value="${comment.cno}">
+									        <input type="hidden" name="postNo" value="${articledto.postNo}">
+									        <textarea name="content" maxlength="100">${comment.content}</textarea>
+									        <div class="btnContainer2">
+									            <button type="button" class="btn btnCancel editCancelBtn" data-cno="${comment.cno}">취소</button>
+									            <button type="submit" class="btn btnComplete">수정 완료</button>
+									        </div>
+									    </form>
+									</c:forEach>
                                 </section>
                                 <section class="writeComment">
                                     <h3 class="comment_sub_title">댓글쓰기</h3>
                                     <form action="/farmStory/comment/commentWrite.do" method="post" id="commentForm">
-                                    	<input type=hidden name="postNo" value="${articledto.postNo}">
-                                    	<input type="hidden" name="nick" value="${articledto.nick}">
-                                        <textarea name="comment" maxlength="100"></textarea>
+                                    	<input type="hidden" name="postNo" value="${articledto.postNo}">
+                                    	<input type="hidden" name="nick" value="${sessUser.nick}">
+                                        <textarea name="content" maxlength="100"></textarea>
                                         <div class="btnContainer2">
                                             <button class="btn btnCancel" onclick="location.href='/farmStory/cropStory/cropStoryList.do'">취소</button>                                            
                                             <input type="submit" value="작성완료" class="btn btnComplete"/>

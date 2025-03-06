@@ -80,7 +80,7 @@ public class CropStoryWriteController extends HttpServlet {
 		// 파일 등록 서비스 호출
 		for(FileDTO fileDTO : files) {
 			fileDTO.setPostNo(postNo);
-			fileservice.registeFile(fileDTO);
+			fileservice.registerFile(fileDTO);
 		}
 		
 		

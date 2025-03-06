@@ -17,8 +17,9 @@ public enum AdminService {
 	
 	
 	// 상품등록
-	public void registerProduct(AdminDTO dto) {
-		dao.insertAdminPro(dto);
+	public int registerProduct(AdminDTO dto) {
+		return dao.insertAdminPro(dto);
+		
 	}
 	
 	

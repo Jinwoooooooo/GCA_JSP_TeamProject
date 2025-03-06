@@ -176,6 +176,110 @@ public class ArticleDAO extends DBHelper {
 		return articles;
 		
 	}
+	
+	public int selectCountArticleBySearch(ArticleDTO articleDTO) {
+		
+		int count = 0;
+		
+		StringBuilder sql = new StringBuilder(ArticleSQL.SELECT_COUNT_POST_FOR_SEARCH);
+		
+		if(articleDTO.getSearchType().equals("title")) {
+			sql.append(ArticleSQL.WHERE_FOR_SEARCH_TITLE);
+		}else if(articleDTO.getSearchType().equals("content")) {
+			sql.append(ArticleSQL.WHERE_FOR_SEARCH_CONTENT);
+		}else if(articleDTO.getSearchType().equals("nick")) {
+			sql.append(ArticleSQL.JOIN_FOR_SEARCH_NICK);
+			sql.append(ArticleSQL.WHERE_FOR_SEARCH_NICK);	
+		}
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql.toString());
+			pstmt.setString(1, "%"+articleDTO.getKeyword()+"%");
+			logger.debug(pstmt.toString());
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				count = rs.getInt(1);				
+			}
+			closeAll();
+			
+		}catch (Exception e) {
+			logger.error(e.getMessage());
+		}		
+		return count;
+		
+
+		
+	}
+	
+	
+	public List<ArticleDTO> selectAllArticleBySearch(ArticleDTO articleDTO, int start) {
+		
+		List<ArticleDTO> articles = new ArrayList<ArticleDTO>();
+		
+		StringBuilder sql = new StringBuilder(ArticleSQL.SELECT_ALL_ARTICLE_BY_SEARCH);
+		
+		if(articleDTO.getSearchType().equals("title")) {
+			sql.append(ArticleSQL.WHERE_FOR_SEARCH_TITLE);
+			sql.append(ArticleSQL.ORDER_FOR_SEARCH);
+			sql.append(ArticleSQL.LIMIT_FOR_SEARCH);
+		}else if(articleDTO.getSearchType().equals("content")) {
+			sql.append(ArticleSQL.WHERE_FOR_SEARCH_CONTENT);
+			sql.append(ArticleSQL.ORDER_FOR_SEARCH);
+			sql.append(ArticleSQL.LIMIT_FOR_SEARCH);
+		}else if(articleDTO.getSearchType().equals("nick")){
+			sql.append(ArticleSQL.WHERE_FOR_SEARCH_NICK);
+			sql.append(ArticleSQL.ORDER_FOR_SEARCH);
+			sql.append(ArticleSQL.LIMIT_FOR_SEARCH);
+		}
+		
+		
+		try {
+			
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql.toString());
+			pstmt.setString(1, "%"+articleDTO.getKeyword()+"%");
+			pstmt.setInt(2, start);
+			
+			logger.debug(pstmt.toString());
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				ArticleDTO dto = new ArticleDTO();
+				dto.setPostNo(rs.getInt(1));
+				dto.setUid(rs.getString(2));
+				dto.setTitle(rs.getString(3));
+				dto.setContent(rs.getString(4));
+				dto.setComment(rs.getInt(5));
+				dto.setFile(rs.getInt(6));
+				dto.setHit(rs.getInt(7));
+				dto.setNick(rs.getString(8));
+				dto.setCate(rs.getString(9));
+				dto.setRegip(rs.getString(10));
+				dto.setWdate(rs.getString(11).substring(2, 16));
+				dto.setNick(rs.getString(12));
+				articles.add(dto);
+				
+			}
+			
+			closeAll();
+			
+			
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		
+		return articles;
+		
+	}
+	
+	
+	
+	
+	
 
 	public void updateArticle(ArticleDTO dto) {
 		

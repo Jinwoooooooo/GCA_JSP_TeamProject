@@ -17,12 +17,30 @@ public class ArticleDTO {
 	private String regip;
 	private String wdate;
 	
-	
 	private List<FileDTO> files;
+	private String searchType;
+	private String keyword;
+	
+	
+	
+	
+	
+	public String getSearchType() {
+		return searchType;
+	}
 
-	
-	
-	
+	public void setSearchType(String searchType) {
+		this.searchType = searchType;
+	}
+
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+
 	public String getNick() {
 		return nick;
 	}
@@ -131,18 +149,16 @@ public class ArticleDTO {
 		this.files = files;
 	}
 
-	
 	@Override
 	public String toString() {
 		return "ArticleDTO [postNo=" + postNo + ", uid=" + uid + ", title=" + title + ", content=" + content
-				+ ", comment=" + comment + ", file=" + file + ", hit=" + hit + ", cate=" + cate + ", regip=" + regip
-				+ ", wdate=" + wdate + ", files=" + files + ", nick=" + nick + "]";
+				+ ", comment=" + comment + ", file=" + file + ", hit=" + hit + ", nick=" + nick + ", cate=" + cate
+				+ ", regip=" + regip + ", wdate=" + wdate + ", files=" + files + ", searchType=" + searchType
+				+ ", keyword=" + keyword + "]";
 	}
 
 	
-	
-	
-	
+
 	
 	
 	

@@ -26,23 +26,16 @@ public class Fruits extends HttpServlet {
 		
 		List<AdminDTO> fruits = service.find_fruit(types);
 		
-		System.out.println("과일" + fruits);
+		System.out.println("과일컨트롤러" + fruits);
 		
 		req.setAttribute("fruits", fruits);
 		
-		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/shopping/fruits.jsp");
 		dispatcher.forward(req, resp);
-	
-
 	}
-	
-	
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 	}
-	
-	
 }

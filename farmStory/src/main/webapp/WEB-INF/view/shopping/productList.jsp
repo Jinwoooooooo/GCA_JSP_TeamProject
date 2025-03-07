@@ -32,7 +32,14 @@
                             </div>
                         </div>
                         <div class="sub_page">
-                           <%@ include file="./_subPage.jsp"%>
+                        	<div class="sub_page_p">
+								<p>
+								    <a href="/farmStory/shopping/productList.do" style="color: #111">전체 | </a>
+								    <a href="/farmStory/shopping/Fruits.do?types=과일">과일 | </a>
+								    <a href="/farmStory/shopping/vegetable.do?types=야채">야채 | </a>
+								    <a href="/farmStory/shopping/grains.do?types=곡류">곡류</a>
+								</p>
+							</div>
                             <table>
                                 <tr>
                                     <th>이미지</th>

@@ -192,8 +192,7 @@ header > div:nth-child(3) > ul > li > a > img {
     margin-bottom: 20px;
 }
 
-.sub_page_p > p > a:nth-child(1) {
-    color: #111;
+.sub_page_p > p {
     margin-bottom: 2px;
 }
 

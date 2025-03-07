@@ -41,29 +41,34 @@
                                     <th>포인트</th>
                                     <th>판매가격</th>
                                 </tr>
-                              <c:forEach var="vegetable" items="${vegetables}">
-	                            <tr class="table_bd1">      
-	                                <td>
-		                                <a href="/farmStory/shopping/productDetail.do">
-		                                	<img src="/farmStory/uploadImg/${vegetable.sName}" class="item_img">
-		                                </a>
-	                                </td>   
-	                                
-	                                <td>${vegetable.types}</td>
-	                                <td>${vegetable.pName}</td>
-	                                <td>${vegetable.discount}%</td>
-	                                <td>${vegetable.point}</td> 
-	                                <td>
-	                                <del>${vegetable.price}</del>
-	                                <strong>${vegetable.price - (vegetable.price / 100) * 10}</strong>
-	                                </td>
-	                                
-                            	</tr>
-                            </c:forEach>
-                              
-                               
+                                <c:if test="${empty vegetables}">
+                               		<td colspan="6" class="emptyProd">현재 등록된 상품이 없습니다.</td>
+                               	</c:if>
+                                <c:if test="${not empty vegetables}">
+                              	<c:forEach var="vegetable" items="${vegetables}">
+		                            <tr class="table_bd1">      
+		                                <td>
+			                                <a href="/farmStory/shopping/productDetail.do">
+			                                	<img src="/farmStory/uploadImg/${vegetable.sName}" class="item_img">
+			                                </a>
+		                                </td>   
+		                                
+		                                <td>${vegetable.types}</td>
+		                                <td>${vegetable.pName}</td>
+		                                <td>${vegetable.discount}%</td>
+		                                <td>${vegetable.point}</td> 
+		                                <td>
+		                                <del>${vegetable.price}</del>
+		                                <strong>${vegetable.price - (vegetable.price / 100) * 10}</strong>
+		                                </td>
+		                                
+	                            	</tr>
+                            	</c:forEach>
+                            	</c:if>
                             </table>
-                            <p style="color: #999; text-align: center; margin-top: 15px;">< <span style="color: #111;">[1]</span> [2] [3] [4] [5] ></p>
+                            <c:if test="${not empty vegetables}">
+                            	<p style="color: #999; text-align: center; margin-top: 15px;">< <span style="color: #111;">[1]</span> [2] [3] [4] [5] ></p>
+                        	</c:if>
                         </div>
                     </article>
                 </section>

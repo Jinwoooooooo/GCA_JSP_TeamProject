@@ -38,7 +38,9 @@ public class AdminProRegister extends HttpServlet{
 		
 		String pid = req.getParameter("pid");
 		String pName = req.getParameter("pName");
+		System.out.println("name: " + pName);
 		String types = req.getParameter("types");
+		System.out.println("types: " + types);
 		String price = req.getParameter("price");
 		String point = req.getParameter("point");		
 		String discount = req.getParameter("discount");

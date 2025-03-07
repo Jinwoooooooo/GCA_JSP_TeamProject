@@ -29,8 +29,8 @@ public enum AdminService {
 	}
 	
 	// 장보기
-	public List<AdminDTO> findAllShopping() {
-		return dao.selectAllShopping();
+	public List<AdminDTO> findAllShopping(String pid) {
+		return dao.selectAllShopping(pid);
 	}
 	
 	// ====================================================
@@ -50,6 +50,10 @@ public enum AdminService {
 		return dao.select_grains(types);
 	}
 	
+	// 상세보기
+	public List<AdminDTO> find_detail(String pid) {
+		return dao.select_detail(pid);
+	}
 	
 	
 	

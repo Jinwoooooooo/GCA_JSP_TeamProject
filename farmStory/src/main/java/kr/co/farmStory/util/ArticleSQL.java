@@ -10,18 +10,17 @@ public class ArticleSQL {
 																+ "`content`=?,"
 																+ "`file`=?,"
 																+ "`nick`=?,"
-																+ "`cate`='cropStory',"
+																+ "`cate`=?,"
 																+ "`regip`=?,"
 																+ "`wdate`=now()";
 	
 	
 
-	public static final String SELECT_ARTICLE = "select * from `post` where `postNo`=? and `cate`='cropStory'";
 	
 	public static final String SELECT_ARTICLE_WITH_FILE = "SELECT p.*, f.* FROM `post` AS p "
 																		+ "left JOIN `file` AS f "
 																		+ "ON p.postNo=f.postNo "
-																		+ "WHERE p.postNo=? and p.cate='cropStory'";
+																		+ "WHERE p.postNo=? and p.cate=?";
 	
 	
 	public static final String SELECT_ALL_ARTICLE = "select * from `post` as p "
@@ -39,8 +38,9 @@ public class ArticleSQL {
 																	+ "where `cate`='cropStory'";
 	
 	
-	public static final String SELECT_COUNT_ARTICLE = "SELECT COUNT(*) FROM `post` where `cate`='cropStory'";
+	public static final String SELECT_COUNT_ARTICLE = "SELECT COUNT(*) FROM `post` where `cate`=?";
 	
+	public static final String WHERE_COUNT_ARTICLE_CATE = " where cate= ?";
 	
 	public static final String SELECT_ALL_ARTICLE_BY_SEARCH = "select p.*, u.nick "
 																			+ "from `post` as p "
@@ -54,6 +54,7 @@ public class ArticleSQL {
 	public final static String WHERE_FOR_SEARCH_NICK  = "WHERE u.nick LIKE ? ";	
 	
 	public final static String AND_FOR_SEARCH_CATE = "and p.cate=? ";
+	
 	
 	public final static String ORDER_FOR_SEARCH  = "order by p.postNo desc ";
 	public final static String LIMIT_FOR_SEARCH  = "LIMIT ?, 10";

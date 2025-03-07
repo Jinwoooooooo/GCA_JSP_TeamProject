@@ -28,16 +28,16 @@
 							<img src="/farmStory/images/sub_aside_cate3_tit.png" alt="농작물이야기">
 						</div>
 						<div>
-							<a href="/farmStory/cropStory/cropStoryList.do?cate=cropStory">
-								<img src="/farmStory/images/sub_cate3_lnb1_ov.png" alt="농작물이야기">
-							</a> 
-							<a href="/farmStory/gardening/gardeningList.do?cate=gardening">
-								<img src="/farmStory/images/sub_cate3_lnb2.png" alt="텃밭가꾸기">
-							</a> 
-							<a href="/farmStory/farmingSchool/farmingSchoolList.do?cate=farmingSchool">
-								<img src="/farmStory/images/sub_cate3_lnb3.png" alt="귀농학교">
-							</a>
-						</div>
+                            <a href="/farmStory/cropStory/cropStoryList.do">
+                                <img src="/farmStory/images/sub_cate3_lnb1.png" alt="농작물이야기">
+                            </a>
+                            <a href="/farmStory/gardening/gardeningList.do">
+                                <img src="/farmStory/images/sub_cate3_lnb2.png" alt="텃밭가꾸기">
+                            </a>
+                            <a href="/farmStory/farmingSchool/farmingSchoolList.do">
+                                <img src="/farmStory/images/sub_cate3_lnb3_ov.png" alt="귀농학교">
+                            </a>
+                        </div>
 					</aside>
 					<article>
 						<div class="nav_bar">
@@ -56,15 +56,15 @@
 								<section>
 									<nav>
 										<p>글목록</p>
-										<form action="/farmStory/cropStory/cropStorySearch.do">
-											<input type="hidden" name="cate" value="cropStory"/>
+										<form action="/farmStory/farmingSchool/farmingSchoolSearch.do">
+											<input type="hidden" name="cate" value="farmingSchool"/>
 											<select name="searchType" style="padding: 6px;">
 					                    		<option value="title">제목</option>
 					                    		<option value="content">내용</option>
 					                    		<option value="nick">글쓴이</option>
 					                    	</select>
-											<input type="text" name="keyword" placeholder="제목 키워드, 글쓴이 검색" class="searchBox">
-											<input type="submit" value="검색" class="searchBtn">
+											<input type="text" name="keyword" placeholder="제목 키워드, 글쓴이 검색">
+											<input type="submit" value="검색">
 										</form>
 									</nav>
 									<table width="100%">
@@ -75,17 +75,12 @@
 											<td width="130px">날짜</td>
 											<td width="60px">조회</td>
 										</tr>
-										<c:if test="${empty articles}">
-											<tr>
-												<td colspan="5" class="emptyArticles">첫 게시글을 등록해주세요!</td>
-											</tr>
-										</c:if>
 										<c:set var="pageStartNum" value="${pageStartNum}" />
 										<c:forEach var="article" items="${requestScope.articles}">
 											<tr id="table_body" height="41px">
 												<td>${pageStartNum}</td>
 												<td>
-													<a href="/farmStory/cropStory/cropStoryView.do?cate=cropStory&postNo=${article.postNo}">${article.title}[${article.comment}]</a>
+													<a href="/farmStory/farmingSchool/farmingSchoolView.do?cate=farmingSchool&postNo=${article.postNo}">${article.title}[${article.comment}]</a>
 												</td>
 												<td>${article.nick}</td>
 												<td>${article.wdate}</td>
@@ -98,22 +93,21 @@
 									<div class="page">
 										<c:if test="${pageGroupDTO.start > 1}">
 											<a
-												href="/farmStory/cropStory/cropStoryList.do?cate=cropStory&pg=${pageGroupDTO.start - 1}"
+												href="/farmStory/farmingSchool/farmingSchoolList.do?cate=farmingSchool&pg=${pageGroupDTO.start - 1}"
 												class="prev">이전</a>
 										</c:if>
 										<c:forEach var="num" begin="${pageGroupDTO.start}"
 											end="${pageGroupDTO.end}">
-											<a href="/farmStory/cropStory/cropStoryList.do?cate=cropStory&pg=${num}"
+											<a href="/farmStory/farmingSchool/farmingSchoolList.do?cate=farmingSchool&pg=${num}"
 												class="num ${currentPage == num ? 'current':''}">${num}</a>
 										</c:forEach>
 										<c:if test="${pageGroupDTO.end < lastPageNum}">
 											<a
-												href="/farmStory/cropStory/cropStoryList.do?cate=cropStory&pg=${pageGroupDTO.end + 1}"
+												href="/farmStory/farmingSchool/farmingSchoolList.do?cate=farmingSchool&pg=${pageGroupDTO.end + 1}"
 												class="next">다음</a>
 										</c:if>
-										<c:if test="${not empty sessUser}">
-											<a href="/farmStory/cropStory/cropStoryWrite.do" class="btn btnWrite">글쓰기</a>
-										</c:if>
+										<a href="/farmStory/farmingSchool/farmingSchoolWrite.do" class="btn btnWrite">글쓰기</a>
+
 									</div>
 
 								</section>

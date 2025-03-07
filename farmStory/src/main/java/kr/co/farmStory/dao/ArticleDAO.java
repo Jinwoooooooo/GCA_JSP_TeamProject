@@ -38,7 +38,8 @@ public class ArticleDAO extends DBHelper {
 			pstmt.setString(3, dto.getContent());
 			pstmt.setInt(4, dto.getFile());
 			pstmt.setString(5, dto.getNick());
-			pstmt.setString(6, dto.getRegip());
+			pstmt.setString(6, dto.getCate());
+			pstmt.setString(7, dto.getRegip());
 			
 			
 			pstmt.executeUpdate();
@@ -61,17 +62,19 @@ public class ArticleDAO extends DBHelper {
 		return postNo;
 	}
 	
-	public ArticleDTO selectArticle(String postNo) {
+	public ArticleDTO selectArticle(String postNo, String cate) {
 		
 		ArticleDTO dto = null;
 		
 		List<FileDTO> files = new ArrayList<>();
+		
 		
 		try {
 			
 			conn = getConnection();
 			pstmt = conn.prepareStatement(ArticleSQL.SELECT_ARTICLE_WITH_FILE);
 			pstmt.setString(1, postNo);
+			pstmt.setString(2, cate);
 			
 			rs = pstmt.executeQuery();
 			
@@ -94,7 +97,6 @@ public class ArticleDAO extends DBHelper {
 				}
 				
 				FileDTO filedto = new FileDTO();
-				filedto = new FileDTO();
 				filedto.setFno(rs.getInt(12));
 				filedto.setPostNo(rs.getInt(13));
 				filedto.setoName(rs.getString(14));
@@ -118,14 +120,19 @@ public class ArticleDAO extends DBHelper {
 		
 	}
 	
-	public int selectCountArticle() {
+	public int selectCountArticle(String cate) {
 		
 		int total = 0;
 		
 		try {
 			conn = getConnection();
-			stmt = conn.createStatement();
-			rs = stmt.executeQuery(ArticleSQL.SELECT_COUNT_ARTICLE);
+			
+			pstmt = conn.prepareStatement(ArticleSQL.SELECT_COUNT_ARTICLE);
+			pstmt.setString(1, cate);
+			
+			rs = pstmt.executeQuery();
+			
+			
 			if(rs.next()) {
 				total = rs.getInt(1);
 			}

@@ -26,7 +26,9 @@ public class CropStoryEditController extends HttpServlet{
 		
 		String postNo = req.getParameter("postNo");
 		
-		ArticleDTO articledto = service.findArticle(postNo);
+		String cate = req.getParameter("cate");
+		
+		ArticleDTO articledto = service.findArticle(postNo, cate);
 		
 		
 		

@@ -46,8 +46,10 @@
                         </div>
                         <div class="sub_page">
                             <h1>글쓰기</h1>
-                            <form action="/farmStory/farmingSchoolWrite.do" method="post"
-                            enctype="multipart/form-data">
+                            <form action="/farmStory/farmingSchool/farmingSchoolWrite.do" method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="uid" value="${sessUser.uid}" readonly="readonly">
+                            	<input type="hidden" name="nick" value="${sessUser.nick}" readonly="readonly">
+                            	<input type="hidden" name="cate" value="farmingSchool"/>
                                 <table>
                                     <tr>
                                         <td>제목</td>

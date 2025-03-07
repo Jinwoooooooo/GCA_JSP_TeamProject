@@ -56,7 +56,7 @@
                               	<c:forEach var="vegetable" items="${vegetables}">
 		                            <tr class="table_bd1">      
 		                                <td>
-			                                <a href="/farmStory/shopping/productDetail.do">
+			                                <a href="/farmStory/shopping/productDetail.do?pid=${vegetable.pid}">
 			                                	<img src="/farmStory/uploadImg/${vegetable.sName}" class="item_img">
 			                                </a>
 		                                </td>   

@@ -12,16 +12,14 @@ public enum AdminService {
 	
 	// 메인 목록 
 	public List<AdminDTO> findAllMainPro() {
-		return dao.selectAllMinPro();
+		return dao.selectAllPro();
 	}
-	
 	
 	// 상품등록
 	public int registerProduct(AdminDTO dto) {
 		return dao.insertAdminPro(dto);
 		
 	}
-	
 	
 	// 상품목록
 	public List<AdminDTO> findAllProduct() {

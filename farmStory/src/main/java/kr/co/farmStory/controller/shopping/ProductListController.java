@@ -28,7 +28,6 @@ public class ProductListController extends HttpServlet {
 		
 		req.setAttribute("dtos", dtos);
 		
-		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/shopping/productList.jsp");
 		dispatcher.forward(req, resp);
 	

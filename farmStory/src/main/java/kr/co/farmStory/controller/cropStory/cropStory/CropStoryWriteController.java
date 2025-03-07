@@ -51,9 +51,10 @@ public class CropStoryWriteController extends HttpServlet {
 	    //String writer = req.getParameter("writer");
 	    String nick = req.getParameter("nick");
 	    String regip = req.getRemoteAddr();
+	    String cate = req.getParameter("cate");
 	    
-	    //logger.debug(writer);
-	    logger.debug(nick);
+	    //logger.debug(writer);    
+	    logger.debug(cate);
 	    
 	    // 파일 업로드 서비스 호출
 	    List<FileDTO> files = fileservice.uploadFile(req); // postNo 전달
@@ -66,6 +67,7 @@ public class CropStoryWriteController extends HttpServlet {
 	    dto.setRegip(regip);
 	    dto.setNick(nick);
 	    dto.setFile(0);
+	    dto.setCate(cate);
 	    
 		// 파일이 없을 경우
 		if(files == null || files.isEmpty()) {
@@ -85,6 +87,7 @@ public class CropStoryWriteController extends HttpServlet {
 			fileservice.registerFile(fileDTO);
 		}
 		
-		resp.sendRedirect("/farmStory/cropStory/cropStoryList.do");
+		
+		resp.sendRedirect("/farmStory/cropStory/cropStoryList.do?cate=cropStory");
 	}
 }

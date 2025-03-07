@@ -29,13 +29,13 @@
 						</div>
 						<div>
 							<a href="/farmStory/cropStory/cropStoryList.do?cate=cropStory">
-								<img src="/farmStory/images/sub_cate3_lnb1_ov.png" alt="농작물이야기">
+								<img src="/farmStory/images/sub_cate3_lnb1.png" alt="농작물이야기">
 							</a> 
 							<a href="/farmStory/gardening/gardeningList.do?cate=gardening">
 								<img src="/farmStory/images/sub_cate3_lnb2.png" alt="텃밭가꾸기">
 							</a> 
 							<a href="/farmStory/farmingSchool/farmingSchoolList.do?cate=farmingSchool">
-								<img src="/farmStory/images/sub_cate3_lnb3.png" alt="귀농학교">
+								<img src="/farmStory/images/sub_cate3_lnb3_ov.png" alt="귀농학교">
 							</a>
 						</div>
 					</aside>
@@ -56,8 +56,8 @@
 								<section>
 									<nav>
 										<p>글목록</p>
-										<form action="/farmStory/cropStory/cropStorySearch.do">
-											<input type="hidden" name="cate" value="cropStory"/>
+										<form action="/farmStory/farmingSchool/farmingSchoolSearch.do">
+											<input type="hidden" name="cate" value="farmingSchool"/>
 											<select name="searchType" style="padding: 6px;">
 					                    		<option value="title">제목</option>
 					                    		<option value="content">내용</option>
@@ -80,7 +80,7 @@
 											<tr id="table_body" height="41px">
 												<td>${pageStartNum}</td>
 												<td>
-													<a href="/farmStory/cropStory/cropStoryView.do?cate=cropStory&postNo=${article.postNo}">${article.title}[${article.comment}]</a>
+													<a href="/farmStory/farmingSchool/farmingSchoolView.do?cate=farmingSchool&postNo=${article.postNo}">${article.title}[${article.comment}]</a>
 												</td>
 												<td>${article.nick}</td>
 												<td>${article.wdate}</td>
@@ -93,20 +93,20 @@
 									<div class="page">
 										<c:if test="${pageGroupDTO.start > 1}">
 											<a
-												href="/farmStory/cropStory/cropStoryList.do?cate=cropStory&pg=${pageGroupDTO.start - 1}"
+												href="/farmStory/farmingSchool/farmingSchoolList.do?cate=farmingSchool&pg=${pageGroupDTO.start - 1}"
 												class="prev">이전</a>
 										</c:if>
 										<c:forEach var="num" begin="${pageGroupDTO.start}"
 											end="${pageGroupDTO.end}">
-											<a href="/farmStory/cropStory/cropStoryList.do?cate=cropStory&pg=${num}"
+											<a href="/farmStory/farmingSchool/farmingSchoolList.do?cate=farmingSchool&pg=${num}"
 												class="num ${currentPage == num ? 'current':''}">${num}</a>
 										</c:forEach>
 										<c:if test="${pageGroupDTO.end < lastPageNum}">
 											<a
-												href="/farmStory/cropStory/cropStoryList.do?cate=cropStory&pg=${pageGroupDTO.end + 1}"
+												href="/farmStory/farmingSchool/farmingSchoolList.do?cate=farmingSchool&pg=${pageGroupDTO.end + 1}"
 												class="next">다음</a>
 										</c:if>
-										<a href="/farmStory/cropStory/cropStoryWrite.do" class="btn btnWrite">글쓰기</a>
+										<a href="/farmStory/farmingSchool/farmingSchoolWrite.do" class="btn btnWrite">글쓰기</a>
 
 									</div>
 

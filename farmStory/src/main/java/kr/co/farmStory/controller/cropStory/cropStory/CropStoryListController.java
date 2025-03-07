@@ -32,9 +32,8 @@ public class CropStoryListController extends HttpServlet {
 		String pg = req.getParameter("pg");
 		String cate = req.getParameter("cate");
 		
-		
 		// 전체 게시물 갯수 구하기
-		int total = service.getCountArticle();
+		int total = service.getCountArticle(cate);
 				
 		// 마지막 페이지 번호 구하기
 		int lastPageNum = service.getLastPageNum(total);

@@ -22,12 +22,11 @@ public class CommentDAO extends DBHelper {
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-	public int insertComment(CommentDTO dto) {
+	public int insertComment(CommentDTO dto, int postNo) {
 		
 		int generatedKey = 0;
 		
 		try {
-			
 			conn = getConnection();
 			pstmt = conn.prepareStatement(CommentSQL.INSERT_COMMENT, Statement.RETURN_GENERATED_KEYS);
 			pstmt.setInt(1, dto.getPostNo());
@@ -36,21 +35,21 @@ public class CommentDAO extends DBHelper {
 			pstmt.setString(4, dto.getRegip());
 			pstmt.executeUpdate();
 			
+			//댓글 수 증가 쿼리
+			pstmt2 = conn.prepareStatement(CommentSQL.COMMENT_COUNT_PLUS);
+			pstmt2.setInt(1, postNo);
+	        pstmt2.executeUpdate();
+			
 			// 자동 생성된 댓글번호 조회
 			rs = pstmt.getGeneratedKeys();
 			if(rs.next()) {
 				generatedKey = rs.getInt(1);
 			}			
 			closeAll();
-
-			
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 		}
-		
 		return generatedKey;
-		
-		
 	}
 	
 	public CommentDTO selectComment(int cno) {
@@ -114,7 +113,6 @@ public class CommentDAO extends DBHelper {
 	public CommentDTO updateComment(CommentDTO dto) {
 		
 		try {
-			
 			conn = getConnection();
 			pstmt = conn.prepareStatement(CommentSQL.UPDATE_COMMENT);
 			pstmt.setString(1, dto.getContent());
@@ -123,18 +121,13 @@ public class CommentDAO extends DBHelper {
 			
 			closeAll();
 			
-			
-			
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 		}
-		
 		return dto;
-		
 	}
 	
-	public void deleteComment(String cno) {
-		
+	public void deleteComment(String cno, int postNo) {
 		
 		try {
 			conn = getConnection();
@@ -142,17 +135,14 @@ public class CommentDAO extends DBHelper {
 			pstmt.setString(1, cno);
 			pstmt.executeUpdate();
 			
-			closeAll();
+			pstmt2 = conn.prepareStatement(CommentSQL.COMMENT_COUNT_MINUS);
+			pstmt2.setInt(1, postNo);
+			pstmt2.executeUpdate();
 			
+			closeAll();
 			
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 		}
-
-		
 	}
-	
-	
-	
-	
 }

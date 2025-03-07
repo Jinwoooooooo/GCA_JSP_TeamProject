@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +25,7 @@
                             <img src="/farmStory/images/sub_aside_cate3_tit.png" alt="텃밭가꾸기">
                         </div>
                         <div>
-                            <a href="/farmStory/cropStory/cropStoryList.do">
+                            <a href="/farmStory/cropStory/cropStoryList.do?cate=cropStory">
                                 <img src="/farmStory/images/sub_cate3_lnb1.png" alt="농작물이야기">
                             </a>
                             <a href="/farmStory/gardening/gardeningList.do">
@@ -50,8 +51,8 @@
                                         <p>글목록</p>
                                         <nav>
                                             <form action="/farmStory/farmingSchoolList.do">
-                                                <input type="text" placeholder="제목 키워드, 글쓴이 검색">
-                                                <input type="submit" value="검색">
+                                                <input type="text" placeholder="제목 키워드, 글쓴이 검색" class="searchBox">
+                                                <input type="submit" value="검색" class="searchBtn">
                                             </form>
                                         </nav>
                                         <table width="100%" >
@@ -76,15 +77,13 @@
                                             <a href="#">2</a>
                                             <a href="#">3</a>
                                             <a href="#">다음</a>
-                                            <a href="/farmStory/farmingSchool/farmingSchoolWrite.do">글쓰기</a>
-                                            
+                                            <c:if test="${not empty sessUser}">
+                                            	<a href="/farmStory/farmingSchool/farmingSchoolWrite.do">글쓰기</a>
+                                            </c:if>
                                         </div>
-                                        
                                     </section>
-                                    
                                 </div>
                             </div>
-                        
                     </article>
                 </section>
             </div> 

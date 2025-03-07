@@ -12,9 +12,9 @@ public enum CommentService {
 	private CommentDAO dao = CommentDAO.getInstance();
 	
 	
-	public CommentDTO registerComment(CommentDTO dto) {
+	public CommentDTO registerComment(CommentDTO dto, int postNo) {
 		
-		int generatedKey = dao.insertComment(dto);
+		int generatedKey = dao.insertComment(dto, postNo);
 		
 		return dao.selectComment(generatedKey);
 		
@@ -33,8 +33,8 @@ public enum CommentService {
 		return dao.updateComment(dto);
 	}
 	
-	public void deleteComment(String cno) {
-		dao.deleteComment(cno);
+	public void deleteComment(String cno, int postNo) {
+		dao.deleteComment(cno, postNo);
 	}
 
 	

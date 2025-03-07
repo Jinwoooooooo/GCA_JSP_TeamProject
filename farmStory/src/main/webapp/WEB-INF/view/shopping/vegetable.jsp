@@ -45,7 +45,7 @@
 	                            <tr class="table_bd1">      
 	                                <td>
 		                                <a href="/farmStory/shopping/productDetail.do">
-		                                	<img src="/farmStory/images/market_item1.jpg" class="item_img">
+		                                	<img src="/farmStory/uploadImg/${vegetable.sName}" class="item_img">
 		                                </a>
 	                                </td>   
 	                                
@@ -55,7 +55,7 @@
 	                                <td>${vegetable.point}</td> 
 	                                <td>
 	                                <del>${vegetable.price}</del>
-	                                <strong>${vegetable.price-(vegetable.price/100)*10}</strong>
+	                                <strong>${vegetable.price - (vegetable.price / 100) * 10}</strong>
 	                                </td>
 	                                
                             	</tr>

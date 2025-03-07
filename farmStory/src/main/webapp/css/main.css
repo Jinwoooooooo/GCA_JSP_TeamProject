@@ -233,7 +233,7 @@ main > div > section > article p:nth-child(2)  {
 }
 
 .main_latest_container > div > table td {
-    display: block;
+    display: flex;
     width: 195px;
     height: 18px;
     padding-bottom: 2px;
@@ -257,9 +257,8 @@ main > div > section > article p:nth-child(2)  {
     content: url(../images/main_latest_icon.gif);
 }
 
-.main_latest_container > div > table td > p {
-    display: inline;
-    width: 40px;
+.main_latest_container > div > table td > span {
+    width: 60px;
     font-size: 10px;
 }
 

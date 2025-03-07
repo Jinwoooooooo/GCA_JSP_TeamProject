@@ -23,7 +23,6 @@ public class ProductListController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		
-		
 		List<AdminDTO> dtos = service.findAllShopping();
 		
 		req.setAttribute("dtos", dtos);

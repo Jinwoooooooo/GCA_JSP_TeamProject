@@ -139,7 +139,7 @@
                             <img src="/farmStory/images/sub_aside_cate3_tit.png" alt="농작물이야기">
                         </div>
                         <div>
-                            <a href="/farmStory/cropStory/cropStoryList.do">
+                            <a href="/farmStory/cropStory/cropStoryList.do?cate=cropStory">
                                 <img src="/farmStory/images/sub_cate3_lnb1_ov.png" alt="농작물이야기">
                             </a>
                             <a href="/farmStory/gardening/gardeningList.do">
@@ -188,15 +188,18 @@
                                     </tr>
                                 </table>
                                </form>
-                                <div class="btnContainer1">
-                               <c:if test="${articledto.uid eq sessUser.uid}">
-                                    <button class="btn2" onclick="location.href='/farmStory/cropStory/cropStoryRemove.do?postNo=${articledto.postNo}'">삭제</button>
-                                    <button class="btn2" onclick="location.href='/farmStory/cropStory/cropStoryEdit.do?postNo=${articledto.postNo}'">수정</button>
-                                    <button class="btn2" onclick="location.href='/farmStory/cropStory/cropStoryList.do'">목록</button>
-                            	</c:if>
+                               <div class="btnContainer1">
+	                               <c:if test="${articledto.uid eq sessUser.uid}">
+	                                    <button class="btn2" onclick="location.href='/farmStory/cropStory/cropStoryRemove.do?postNo=${articledto.postNo}'">삭제</button>
+	                                    <button class="btn2" onclick="location.href='/farmStory/cropStory/cropStoryEdit.do?postNo=${articledto.postNo}'">수정</button>
+	                                    <button class="btn2" onclick="location.href='/farmStory/cropStory/cropStoryList.do'">목록</button>
+	                            	</c:if>
                                 </div>
                                 <section class="commentList">
-                                	<c:if test="${empty comments}">
+                                	<c:if test="${empty sessUser}">
+                                    	<p class="comment_sub_titleIsEmpty">로그인 후 댓글을 작성해주세요!</p>
+                                    </c:if>
+                                	<c:if test="${empty comments and not empty sessUser}">
                                     	<p class="comment_sub_titleIsEmpty">첫 댓글을 작성해주세요!</p>
                                     </c:if>
                                 	<c:if test="${comment.cno > 0}">
@@ -226,19 +229,21 @@
 									    </form>
 									</c:forEach>
                                 </section>
-                                <section class="writeComment">
-                                    <h3 class="comment_sub_title">댓글쓰기</h3>
-                                    <form action="/farmStory/comment/commentWrite.do" method="post" id="commentForm">
-                                    	<input type="hidden" name="postNo" value="${articledto.postNo}">
-                                    	<input type="hidden" name="nick" value="${sessUser.nick}">
-                                        <textarea name="content" maxlength="100" placeholder="댓글 입력" required></textarea>
-                                        <div class="btnContainer2">
-                                            <button class="btn btnCancel" onclick="location.href='/farmStory/cropStory/cropStoryList.do'">취소</button>                                            
-                                            <input type="submit" value="작성완료" class="btn btnComplete"/>
-                                        </div>
-                                    </form>
-                                </section>
-                        </div>
+                                <c:if test="${not empty sessUser}">
+	                                <section class="writeComment">
+	                                    <h3 class="comment_sub_title">댓글쓰기</h3>
+	                                    <form action="/farmStory/comment/commentWrite.do" method="post" id="commentForm">
+	                                    	<input type="hidden" name="postNo" value="${articledto.postNo}">
+	                                    	<input type="hidden" name="nick" value="${sessUser.nick}">
+	                                        <textarea name="content" maxlength="100" placeholder="댓글 입력" required></textarea>
+	                                        <div class="btnContainer2">
+	                                            <button class="btn btnCancel" onclick="location.href='/farmStory/cropStory/cropStoryList.do'">취소</button>                                            
+	                                            <input type="submit" value="작성완료" class="btn btnComplete"/>
+	                                        </div>
+	                                    </form>
+	                                </section>
+                                </c:if>
+                        	</div>
                     </article>
                 </section>
             </div> 

@@ -9,11 +9,28 @@ public class AdminDTO {
 	private String discount;
 	private int charge;
 	private int stock;
-	private String pImage;
 	private String other;
 	private String pDate;
 	
 	
+	private String oName;
+	private String sName;
+	
+	public String getsName() {
+		return sName;
+	}
+	
+	public void setsName(String sName) {
+		this.sName = sName;
+	}
+	
+	public String getoName() {
+		return oName;
+	}
+	
+	public void setoName(String oName) {
+		this.oName = oName;
+	}
 	
 	
 	public int getPid() {
@@ -108,12 +125,6 @@ public class AdminDTO {
 		}
 	}
 	
-	public String getpImage() {
-		return pImage;
-	}
-	public void setpImage(String pImage) {
-		this.pImage = pImage;
-	}
 	public String getOther() {
 		return other;
 	}
@@ -130,8 +141,7 @@ public class AdminDTO {
 	@Override
 	public String toString() {
 		return "AdminDTO [pid=" + pid + ", pName=" + pName + ", types=" + types + ", price=" + price + ", point="
-				+ point + ", discount=" + discount + ", charge=" + charge + ", stock=" + stock + ", pImage=" + pImage
-				+ ", other=" + other + ", pDate=" + pDate + "]";
+				+ point + ", discount=" + discount + ", charge=" + charge + ", stock=" + stock +  ", other=" + other + ", pDate=" + pDate + "]";
 	}
 	
 	

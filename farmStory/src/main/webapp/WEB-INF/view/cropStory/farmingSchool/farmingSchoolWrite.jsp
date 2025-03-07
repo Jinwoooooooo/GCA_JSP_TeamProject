@@ -71,7 +71,7 @@
                                     </tr>
                                 </table>
                                 <div class="btnContainer">
-                                    <button class="btn btnCancel">취소</button>
+                                    <button class="btn btnCancel"><a href="#">취소</a></button>
                                     <button class="btn btnSubmit" type="submit">작성완료</button>
                                 </div>
                             </form>

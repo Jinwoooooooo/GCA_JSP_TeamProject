@@ -72,7 +72,7 @@
                                     </tr>
                                 </table>
                                 <div class="btnContainer">
-                                    <a href="/farmStory/cropStory/cropStoryList.do" class="btn btnCancel">취소</a>
+                                    <button class="btn btnCancel"><a href="/farmStory/cropStory/cropStoryList.do">취소</a></button>
                                     <input type="submit" value="작성완료" class="btn btnSubmit"/>
                                 </div>
                             </form>

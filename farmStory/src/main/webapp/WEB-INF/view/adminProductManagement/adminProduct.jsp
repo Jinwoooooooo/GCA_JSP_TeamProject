@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+	<script src="/farmStory/js/cart.js"></script>
 </head>
 </head>
 <body>
@@ -23,7 +24,7 @@
                 <article class="art1">
                     <table>
                             <tr class="table_hd">
-                                <td class="img"><input type="checkbox"></td>
+                                <td class="img"><input type="checkbox" class="allCheckbtn"></td>
                                 <th>사진</th>
                                 <th>상품번호</th>
                                 <th>상품명</th>
@@ -35,7 +36,7 @@
                             
                              <c:forEach var="dto" items="${dtos}">
 	                            <tr class="table_bd1">
-	                                <td class="img"><input type="checkbox"></td>
+	                                <td class="img"><input type="checkbox" class="checkbtns"></td>
 	                                <td><img src="/farmStory/uploadImg/${dto.sName}"></td>
 	                                <td>${dto.pid}</td>
 	                                <td>${dto.pName}</td>

@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+	<script src="/farmStory/js/calculate.js"></script>
 </head>
 <body>
     <div id="wrapper">
@@ -58,19 +59,18 @@
                                                 </tr>
                                                 <tr>
                                                     <td>판매가격</td>
-                                                    <td>${dto.price}원</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>구매수량</td>
-                                                    <td>
-                                                        <input type="number" value="1" min="1">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>합계</td>
-                                                    <td><span style="color: #C20a0a; font-weight: 700;">4,000원</span></td>
-                                                </tr>
-                                            
+												    <td id="price" data-price="${dto.price}">${dto.price}원</td>
+												</tr>
+												<tr>
+												    <td>구매수량</td>
+												    <td>
+												        <input type="number" id="quantity" value="1" min="1" max="1000" oninput="updateTotal()">
+												    </td>
+												</tr>
+												<tr>
+												    <td>합계</td>
+												    <td><span id="total" style="color: #C20a0a; font-weight: 700;">${dto.price}원</span></td>
+												</tr>
                                             </table>
                                             <div class="btn_container">
                                                 <a href="#">

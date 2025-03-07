@@ -63,8 +63,8 @@
 					                    		<option value="content">내용</option>
 					                    		<option value="nick">글쓴이</option>
 					                    	</select>
-											<input type="text" name="keyword" placeholder="제목 키워드, 글쓴이 검색">
-											<input type="submit" value="검색">
+											<input type="text" name="keyword" placeholder="제목 키워드, 글쓴이 검색" class="searchBox">
+											<input type="submit" value="검색" class="searchBtn">
 										</form>
 									</nav>
 									<table width="100%">
@@ -75,6 +75,11 @@
 											<td width="130px">날짜</td>
 											<td width="60px">조회</td>
 										</tr>
+										<c:if test="${empty articles}">
+											<tr>
+												<td colspan="5" class="emptyArticles">첫 게시글을 등록해주세요!</td>
+											</tr>
+										</c:if>
 										<c:set var="pageStartNum" value="${pageStartNum}" />
 										<c:forEach var="article" items="${requestScope.articles}">
 											<tr id="table_body" height="41px">
@@ -106,8 +111,9 @@
 												href="/farmStory/cropStory/cropStoryList.do?cate=cropStory&pg=${pageGroupDTO.end + 1}"
 												class="next">다음</a>
 										</c:if>
-										<a href="/farmStory/cropStory/cropStoryWrite.do" class="btn btnWrite">글쓰기</a>
-
+										<c:if test="${not empty sessUser}">
+											<a href="/farmStory/cropStory/cropStoryWrite.do" class="btn btnWrite">글쓰기</a>
+										</c:if>
 									</div>
 
 								</section>

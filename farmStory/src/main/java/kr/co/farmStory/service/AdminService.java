@@ -12,15 +12,14 @@ public enum AdminService {
 	
 	// 메인 목록 
 	public List<AdminDTO> findAllMainPro() {
-		return dao.selectAllMinPro();
+		return dao.selectAllPro();
 	}
-	
 	
 	// 상품등록
-	public void registerProduct(AdminDTO dto) {
-		dao.insertAdminPro(dto);
+	public int registerProduct(AdminDTO dto) {
+		return dao.insertAdminPro(dto);
+		
 	}
-	
 	
 	// 상품목록
 	public List<AdminDTO> findAllProduct() {
@@ -28,8 +27,8 @@ public enum AdminService {
 	}
 	
 	// 장보기
-	public List<AdminDTO> findAllShopping() {
-		return dao.selectAllShopping();
+	public List<AdminDTO> findAllShopping(String pid) {
+		return dao.selectAllShopping(pid);
 	}
 	
 	// ====================================================
@@ -49,6 +48,10 @@ public enum AdminService {
 		return dao.select_grains(types);
 	}
 	
+	// 상세보기
+	public List<AdminDTO> find_detail(String pid) {
+		return dao.select_detail(pid);
+	}
 	
 	
 	

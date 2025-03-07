@@ -60,9 +60,9 @@
                         <tr class="table_tr">
                             <td><p>배송비</p></td>
                             <td class="radio">
-                                <label><input type="radio" name="charge" value="2">2,000원</label>
-                                <label><input type="radio" name="charge" value="3">3,000원</label>
-                                <label><input type="radio" name="charge" value="4">5,000원</label>
+                                <label><input type="radio" name="charge" value="2000">2,000원</label>
+                                <label><input type="radio" name="charge" value="3000">3,000원</label>
+                                <label><input type="radio" name="charge" value="4000">5,000원</label>
                                 <label><input type="radio" name="charge" value="0">무료</label>
                             </td>    
 
@@ -76,11 +76,11 @@
                             <td>상품이미지</td>
                             <td class="td_img">
                                 <p>상품목록 이미지(약 120 x 120)</p>
-                                <input type="file" name="pImage"> <br>
+                                <input type="file" name="pImage1"> <br>
                                 <p>기본정보 이미지(약 240 x 240)</p>
-                                <input type="file" name="pImage"> <br>
+                                <input type="file" name="pImage2"> <br>
                                 <p>상품목록 이미지(약 750 x Auto)</p>
-                                <input type="file" name="pImage">
+                                <input type="file" name="pImage3">
                             </td>
                         </tr>
                         <tr class="table_tr3">

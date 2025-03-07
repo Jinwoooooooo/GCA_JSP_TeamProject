@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,29 +30,35 @@
                                 <p>HOME > 장보기 > <span style="color: #91ba23; font-weight: 700;">장보기</span></p>
                             </div>
                         </div>
+                        <c:forEach var="dto" items="${dtos}">
                         <div class="sub_page">
                             <p class="subtitle">기본정보</p>
+                            
+                            
                             <div class="basic_info">
+                            
+                             
                                 <div>
-                                    <img src="/farmStory/images/market_item_thumb.jpg" alt="상품이미지">
+                                    <img src="/farmStory/uploadImg/${dto.sName}" alt="상품이미지">
                                     <div class="form_container">
                                         <form action="#">
                                             <table>
+                                       
                                                 <tr>
                                                     <td>상품명</td>
-                                                    <td>딸기 500g</td>
+                                                    <td>${dto.pName}</td>
                                                 </tr>
                                                 <tr>
                                                     <td>상품코드</td>
-                                                    <td>01</td>
+                                                    <td>${dto.pid}</td>
                                                 </tr>
                                                 <tr>
                                                     <td>배송비</td>
-                                                    <td>5,000원 &nbsp;<span style="color: #777;">3만원 이상 무료배송</span></td>
+                                                    <td>${dto.charge}원 &nbsp;<span style="color: #777;">3만원 이상 무료배송</span></td>
                                                 </tr>
                                                 <tr>
                                                     <td>판매가격</td>
-                                                    <td>4,000원</td>
+                                                    <td>${dto.price}원</td>
                                                 </tr>
                                                 <tr>
                                                     <td>구매수량</td>
@@ -63,6 +70,7 @@
                                                     <td>합계</td>
                                                     <td><span style="color: #C20a0a; font-weight: 700;">4,000원</span></td>
                                                 </tr>
+                                            
                                             </table>
                                             <div class="btn_container">
                                                 <a href="#">
@@ -75,12 +83,14 @@
                                         </form>
                                     </div>
                                 </div>
+                         
                             </div>
-
+                            
                             <p class="subtitle">상품설명</p>
                             <div class="product_desc">
-                                <img src="/images/market_detail_sample.jpg" alt="">
+                                <p>${dto.other}</p>
                             </div>
+                            </c:forEach>
 
                             <p class="subtitle">배송정보</p>
                             <div class="shipping_info">

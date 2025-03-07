@@ -63,8 +63,8 @@
 					                    		<option value="content">내용</option>
 					                    		<option value="nick">글쓴이</option>
 					                    	</select>
-											<input type="text" name="keyword" placeholder="제목 키워드, 글쓴이 검색">
-											<input type="submit" value="검색">
+											<input type="text" name="keyword" placeholder="제목 키워드, 글쓴이 검색" class="searchBox">
+											<input type="submit" value="검색" class="searchBtn">
 										</form>
 									</nav>
 									<table width="100%">

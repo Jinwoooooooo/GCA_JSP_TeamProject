@@ -1,4 +1,4 @@
-package kr.co.farmStory.controller.shopping;
+package kr.co.farmStory.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,31 +9,28 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import kr.co.farmStory.dto.AdminDTO;
-import kr.co.farmStory.service.AdminService;
+import kr.co.farmStory.dto.ArticleDTO;
+import kr.co.farmStory.service.ArticleService;
 
-@WebServlet("/shopping/productDetail.do")
-public class ProductDetail extends HttpServlet{
+@WebServlet("/index.do")
+public class MainController extends HttpServlet {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -1646459705475856481L;
+	private ArticleService service = ArticleService.INSTANCE;
 
-	private AdminService service = AdminService.INSTANCE;
-	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		String pid = req.getParameter("pid");
+		List<ArticleDTO> articles = service.findAllArticle2();
 		
-		List<AdminDTO> dtos = service.find_detail(pid);
+		req.setAttribute("articles", articles);
 		
-		req.setAttribute("dtos", dtos);
-		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/shopping/productDetail.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
 		dispatcher.forward(req, resp);
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+	
 	}
 }

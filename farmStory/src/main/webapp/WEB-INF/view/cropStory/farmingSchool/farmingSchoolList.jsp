@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,20 +12,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-	<div id="wrapper">
-		<%@ include file="/../../../header.jsp"%>
-		<main>
-			<div class="main_container">
-				<div class="sub_top_container">
-					<img src="/farmStory/images/sub_top_tit3.png" alt="인트로">
-				</div>
-				<section>
-					<aside>
-						<div>
-							<img src="/farmStory/images/sub_aside_cate3_tit.png" alt="농작물이야기">
-						</div>
-						<div>
-                            <a href="/farmStory/cropStory/cropStoryList.do">
+    <div id="wrapper">
+    <%@ include file="/../../../header.jsp" %>
+        <main>
+            <div class="main_container">
+                <div class="sub_top_container">
+                    <img src="/farmStory/images/sub_top_tit3.png" alt="인트로">
+                </div>
+                <section>
+                    <aside>
+                        <div>
+                            <img src="/farmStory/images/sub_aside_cate3_tit.png" alt="텃밭가꾸기">
+                        </div>
+                        <div>
+                            <a href="/farmStory/cropStory/cropStoryList.do?cate=cropStory">
                                 <img src="/farmStory/images/sub_cate3_lnb1.png" alt="농작물이야기">
                             </a>
                             <a href="/farmStory/gardening/gardeningList.do">
@@ -102,8 +103,9 @@
 												href="/farmStory/farmingSchool/farmingSchoolList.do?cate=farmingSchool&pg=${pageGroupDTO.end + 1}"
 												class="next">다음</a>
 										</c:if>
-										<a href="/farmStory/farmingSchool/farmingSchoolWrite.do" class="btn btnWrite">글쓰기</a>
-
+                    <c:if test="${not empty sessUser}">
+										  <a href="/farmStory/farmingSchool/farmingSchoolWrite.do" class="btn btnWrite">글쓰기</a>
+                    </c:if>
 									</div>
 
 								</section>
@@ -115,9 +117,7 @@
 				</section>
 			</div>
 		</main>
-
 		<%@ include file="/../../footer.jsp"%>
-
 	</div>
 </body>
 </html>

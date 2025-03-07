@@ -24,16 +24,16 @@
                             <img src="/farmStory/images/sub_aside_cate3_tit.png" alt="농작물이야기">
                         </div>
                         <div>
-							<a href="/farmStory/cropStory/cropStoryList.do?cate=cropStory">
-								<img src="/farmStory/images/sub_cate3_lnb1_ov.png" alt="농작물이야기">
-							</a> 
-							<a href="/farmStory/gardening/gardeningList.do?cate=gardening">
-								<img src="/farmStory/images/sub_cate3_lnb2.png" alt="텃밭가꾸기">
-							</a> 
-							<a href="/farmStory/farmingSchool/farmingSchoolList.do?cate=farmingSchool">
-								<img src="/farmStory/images/sub_cate3_lnb3.png" alt="귀농학교">
-							</a>
-						</div>
+                          <a href="/farmStory/cropStory/cropStoryList.do?cate=cropStory">
+                            <img src="/farmStory/images/sub_cate3_lnb1_ov.png" alt="농작물이야기">
+                          </a> 
+                          <a href="/farmStory/gardening/gardeningList.do?cate=gardening">
+                            <img src="/farmStory/images/sub_cate3_lnb2.png" alt="텃밭가꾸기">
+                          </a> 
+                          <a href="/farmStory/farmingSchool/farmingSchoolList.do?cate=farmingSchool">
+                            <img src="/farmStory/images/sub_cate3_lnb3.png" alt="귀농학교">
+                          </a>
+                        </div>
                     </aside>
                     <article>
                         <div class="nav_bar">

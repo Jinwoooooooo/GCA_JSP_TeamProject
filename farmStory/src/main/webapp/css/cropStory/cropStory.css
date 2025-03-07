@@ -208,14 +208,15 @@ header > div:nth-child(3) > ul > li > a > img {
     height: 31px;
 }
 
-.sub_page_section > section > nav > form > input:nth-child(3){
+.searchBox {
     width: 202px;
     height: 28px;
     border: 1px solid #d7d7d7;
     box-sizing: border-box;
+    padding-left: 5px;
 }
 
-.sub_page_section > section > nav > form > input:nth-child(4){
+.searchBtn {
     width: 38px;
     height: 31px;
     border: 1px solid #d7d7d7;
@@ -230,7 +231,12 @@ header > div:nth-child(3) > ul > li > a > img {
     margin-bottom: 20px;
 }
 
-
+.emptyArticles {
+	text-align: center;
+	color: #4a4a4a;
+	font-size: 14px;
+	padding: 10px 0 10px 0;
+}
 
 .sub_page_section > section > table > tbody > tr td{
     text-align: center;
@@ -246,7 +252,6 @@ header > div:nth-child(3) > ul > li > a > img {
 	width: 50px;
 	font-size: 15px;
 }
-
 
 
 .sub_page_section > section > table > tbody > tr:nth-of-type(1) {
@@ -269,10 +274,6 @@ header > div:nth-child(3) > ul > li > a > img {
     height: 33px;
     border: 1px solid #d7d7d7;
 }
-
-
-
-
 
 .sub_page_section > section > .page > .btnWrite{
 	
@@ -297,14 +298,10 @@ header > div:nth-child(3) > ul > li > a > img {
     border: 1px solid #d7d7d7;
 }
 
-
-
 .main_container > section > article > div:nth-child(2) > div > section{
     width: 762px;
     height: auto;
 }
-
-
 
 .main_container > section > article > .nav_bar > nav > img {
     position: absolute;

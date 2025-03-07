@@ -26,6 +26,9 @@ public enum ArticleService {
 	public List<ArticleDTO> findAllArticle(String cate, int start) {
 		return dao.selectAllArticle(cate, start);
 	}
+	public List<ArticleDTO> findAllArticle2() {
+		return dao.selectAllArticle2();
+	}
 	
 	public List<ArticleDTO> searchAllArticle(ArticleDTO dto, int start, String cate) {
 		return dao.selectAllArticleBySearch(dto, start, cate);

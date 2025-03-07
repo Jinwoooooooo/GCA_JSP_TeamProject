@@ -62,7 +62,7 @@ public class WriteCommentController extends HttpServlet {
 		req.setAttribute("commentdto", dto);
 		
 		// 서비스 호출
-		CommentDTO savedCommentDTO = service.registerComment(dto);
+		CommentDTO savedCommentDTO = service.registerComment(dto, postNoInt);
 		
 		
 		// JSON 출력
@@ -71,12 +71,5 @@ public class WriteCommentController extends HttpServlet {
 		Gson gson = new Gson();
 		String json = gson.toJson(savedCommentDTO);
 		printWriter.println(json);
-		
-		
-		
-		
 	}
-	
-	
-	
 }

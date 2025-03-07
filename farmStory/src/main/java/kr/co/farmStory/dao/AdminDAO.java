@@ -1,5 +1,6 @@
 package kr.co.farmStory.dao;
 
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,8 @@ public class AdminDAO extends DBHelper{
 	
 	private AdminDAO() {}
 	
-	public void insertAdminPro(AdminDTO dto) {
+	public int insertAdminPro(AdminDTO dto) {
+		int pcode = 0;
 		
 		try {
 			
@@ -30,17 +32,24 @@ public class AdminDAO extends DBHelper{
 			pstmt.setString(6, dto.getDiscount());
 			pstmt.setInt(7, dto.getCharge());
 			pstmt.setInt(8, dto.getStock());
-			pstmt.setString(9, dto.getpImage());
-			pstmt.setString(10, dto.getOther());
+			pstmt.setString(9, dto.getOther());
 			
 			pstmt.executeUpdate();
+			
+			// 글 번호 조회 쿼리 실행
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(AdminSQL.SELECT_MAX_PID);
+			if(rs.next()) {
+				pcode = rs.getInt(1);
+			}
+					
 			
 			closeAll();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+		return pcode;
 		
 	}
 	
@@ -56,42 +65,13 @@ public class AdminDAO extends DBHelper{
 			
 			while(rs.next()) {
 				AdminDTO dto = new AdminDTO();
-				dto.setPid(rs.getInt(1));
-				dto.setpName(rs.getString(2));
-				dto.setTypes(rs.getString(3));
-				dto.setPrice(rs.getInt(4));
-				dto.setStock(rs.getInt(5));
-				dto.setpDate(rs.getString(6));
-				Products.add(dto);
-				
-			}
-			
-			closeAll();
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return Products;
-	}
-	
-	public List<AdminDTO> selectAllMinPro() {
-		
-		List<AdminDTO> Products = new ArrayList<AdminDTO>();
-		
-		try {
-			
-			conn = getConnection();
-			stmt = conn.createStatement();
-			rs = stmt.executeQuery(AdminSQL.SELECT_ALL_PRODUCT);
-			
-			while(rs.next()) {
-				AdminDTO dto = new AdminDTO();
-				dto.setPid(rs.getInt(1));
-				dto.setpName(rs.getString(2));
-				dto.setTypes(rs.getString(3));
-				dto.setPrice(rs.getInt(4));
-				dto.setStock(rs.getInt(5));
-				dto.setpDate(rs.getString(6));
+				dto.setsName(rs.getString(1));
+				dto.setPid(rs.getInt(2));
+				dto.setpName(rs.getString(3));
+				dto.setTypes(rs.getString(4));
+				dto.setPrice(rs.getInt(5));
+				dto.setStock(rs.getInt(6));
+				dto.setpDate(rs.getString(7));
 				Products.add(dto);
 				
 			}
@@ -106,7 +86,7 @@ public class AdminDAO extends DBHelper{
 
 	
 	// 장보기 전체 목록
-	public List<AdminDTO> selectAllShopping() {
+	public List<AdminDTO> selectAllShopping(String pid) {
 		
 		List<AdminDTO> Products = new ArrayList<AdminDTO>();
 		
@@ -114,15 +94,19 @@ public class AdminDAO extends DBHelper{
 			
 			conn = getConnection();
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(ShoppingSQL.SELECT_SHOPPING_PRO);
+			rs = stmt.executeQuery(ShoppingSQL.SELECT_ALL_SHOPPING_PRO);
+			
+			
 			
 			while(rs.next()) {
 				AdminDTO dto = new AdminDTO();
-				dto.setTypes(rs.getString(1));
-				dto.setpName(rs.getString(2));
-				dto.setDiscount(rs.getString(3));
-				dto.setPoint(rs.getInt(4));
-				dto.setPrice(rs.getInt(5));
+				dto.setPid(rs.getString(1));
+				dto.setsName(rs.getString(2));
+				dto.setTypes(rs.getString(3));
+				dto.setpName(rs.getString(4));
+				dto.setDiscount(rs.getString(5));
+				dto.setPoint(rs.getInt(6));
+				dto.setPrice(rs.getInt(7));
 				Products.add(dto);
 				
 			}
@@ -143,8 +127,9 @@ public class AdminDAO extends DBHelper{
 		try {
 			
 			conn = getConnection();
-			pstmt = conn.prepareStatement(ShoppingSQL.SELECT_FRUIT);
+			pstmt = conn.prepareStatement(ShoppingSQL.SELECT_ALL_WHERE_PRO);
 			pstmt.setString(1, types);
+			
 			
 		    System.out.println("실행되는 SQL: SELECT * FROM product WHERE types = '" + types + "'");
 			
@@ -152,11 +137,13 @@ public class AdminDAO extends DBHelper{
 			
 			while(rs.next()) {
 				AdminDTO dto = new AdminDTO();
-				dto.setTypes(rs.getString(1));
-				dto.setpName(rs.getString(2));
-				dto.setDiscount(rs.getString(3));
-				dto.setPoint(rs.getInt(4));
-				dto.setPrice(rs.getInt(5));
+				dto.setPid(rs.getString(1));
+				dto.setsName(rs.getString(2));
+				dto.setTypes(rs.getString(3));
+				dto.setpName(rs.getString(4));
+				dto.setDiscount(rs.getString(5));
+				dto.setPoint(rs.getInt(6));
+				dto.setPrice(rs.getInt(7));
 				fruits.add(dto);
 			}
 			
@@ -177,17 +164,19 @@ public class AdminDAO extends DBHelper{
 		try {
 			
 			conn = getConnection();
-			pstmt = conn.prepareStatement(ShoppingSQL.SELECT_VEGETABLE);
+			pstmt = conn.prepareStatement(ShoppingSQL.SELECT_ALL_WHERE_PRO);
 			pstmt.setString(1, types);
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
 				AdminDTO dto = new AdminDTO();
-				dto.setTypes(rs.getString(1));
-				dto.setpName(rs.getString(2));
-				dto.setDiscount(rs.getString(3));
-				dto.setPoint(rs.getInt(4));
-				dto.setPrice(rs.getInt(5));
+				dto.setPid(rs.getString(1));
+				dto.setsName(rs.getString(2));
+				dto.setTypes(rs.getString(3));
+				dto.setpName(rs.getString(4));
+				dto.setDiscount(rs.getString(5));
+				dto.setPoint(rs.getInt(6));
+				dto.setPrice(rs.getInt(7));
 				vegetables.add(dto);
 			}
 			
@@ -207,7 +196,7 @@ public class AdminDAO extends DBHelper{
 		try {
 			
 			conn = getConnection();
-			pstmt = conn.prepareStatement(ShoppingSQL.SELECT_GRAINS);
+			pstmt = conn.prepareStatement(ShoppingSQL.SELECT_ALL_WHERE_PRO);
 			pstmt.setString(1, types);
 			rs = pstmt.executeQuery();
 			
@@ -215,11 +204,13 @@ public class AdminDAO extends DBHelper{
 			
 			while(rs.next()) {
 				AdminDTO dto = new AdminDTO();
-				dto.setTypes(rs.getString(1));
-				dto.setpName(rs.getString(2));
-				dto.setDiscount(rs.getString(3));
-				dto.setPoint(rs.getInt(4));
-				dto.setPrice(rs.getInt(5));
+				dto.setPid(rs.getString(1));
+				dto.setsName(rs.getString(2));
+				dto.setTypes(rs.getString(3));
+				dto.setpName(rs.getString(4));
+				dto.setDiscount(rs.getString(5));
+				dto.setPoint(rs.getInt(6));
+				dto.setPrice(rs.getInt(7));
 				grainss.add(dto);
 			}
 			
@@ -229,6 +220,41 @@ public class AdminDAO extends DBHelper{
 			e.printStackTrace();
 		}
 		return grainss;
+	}
+	
+	// 상품 상세보기
+	
+	public List<AdminDTO> select_detail(String pid) {
+		
+		List<AdminDTO> products = new ArrayList<AdminDTO>();
+		
+		try {
+			
+			conn = getConnection();
+			pstmt = conn.prepareStatement(ShoppingSQL.SELECT_SHOPPING_DETAIL);
+			pstmt.setString(1, pid);
+			rs = pstmt.executeQuery();
+			
+			System.out.println("pid" + pid);
+			
+			if(rs.next()) {
+				AdminDTO dto = new AdminDTO();
+				dto.setsName(rs.getString(1));
+				dto.setpName(rs.getString(2));
+				dto.setPid(rs.getString(3));
+				dto.setCharge(rs.getInt(4));
+				dto.setPrice(rs.getInt(5));
+				dto.setOther(rs.getString(6));
+				products.add(dto);
+			
+			}
+			
+			closeAll();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return products;
 	}
 
 }

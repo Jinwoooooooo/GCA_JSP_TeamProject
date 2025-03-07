@@ -86,8 +86,7 @@ public class CropStoryWriteController extends HttpServlet {
 			fileDTO.setPostNo(postNo);
 			fileservice.registerFile(fileDTO);
 		}
-		
-		
+	
 		resp.sendRedirect("/farmStory/cropStory/cropStoryList.do?cate=cropStory");
 	}
 }

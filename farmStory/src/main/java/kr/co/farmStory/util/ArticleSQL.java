@@ -30,6 +30,10 @@ public class ArticleSQL {
 															+ "order by `postNo` desc "
 															+ "LIMIT ?, 10";
 	
+	public static final String SELECT_ALL_ARTICLE2 = "SELECT * FROM `post` "
+															+ "WHERE `cate`='cropStory' "
+															+ "LIMIT 5";
+	
 	public static final String SELECT_MAX_NO = "SELECT MAX(`postNo`) FROM `post`"
 																	+ "where `cate`='cropStory'";
 	
@@ -62,6 +66,7 @@ public class ArticleSQL {
 														+ "WHERE `postNo`=?";
 	
 	public static final String DELETE_ARTICLE = "delete from `post` where `postNo`=? and `cate`='cropStory'";
+	public static final String DELETE_ARTICLE_IN_COMMENT = "DELETE FROM comment WHERE postNo = ?";
 	
 	
 	

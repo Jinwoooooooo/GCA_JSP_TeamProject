@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+	<script src="/farmStory/js/cart.js"></script>
 </head>
 <body>
     <div id="wrapper">
@@ -53,7 +54,7 @@
                             <table>
                                 <tr>
                                     <th>
-                                        <input type="checkbox">
+                                        <input type="checkbox" class="allCheckbtn">
                                     </th>
                                     <th>이미지</th>
                                     <th>종류</th>
@@ -71,7 +72,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="checkbox">
+                                        <input type="checkbox" class="checkbtn">
                                     </td>
                                     <td>
                                         <a href="#"><img src="/farmStory/images/market_item1.jpg" alt="사과" class="item_img"></a>
@@ -86,7 +87,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="checkbox">
+                                        <input type="checkbox" class="checkbtn">
                                     </td>
                                     <td>
                                         <a href="#"><img src="/farmStory/images/market_item1.jpg" alt="사과" class="item_img"></a>
@@ -101,7 +102,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="checkbox">
+                                        <input type="checkbox" class="checkbtn">
                                     </td>
                                     <td>
                                         <a href="#"><img src="/farmStory/images/market_item1.jpg" alt="사과" class="item_img"></a>

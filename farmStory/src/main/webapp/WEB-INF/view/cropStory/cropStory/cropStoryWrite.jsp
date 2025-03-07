@@ -24,15 +24,15 @@
                             <img src="/farmStory/images/sub_aside_cate3_tit.png" alt="농작물이야기">
                         </div>
                         <div>
-                            <a href="/farmStory/cropStory/cropStoryList.do?cate=cropStory">
-                                <img src="/farmStory/images/sub_cate3_lnb1_ov.png" alt="농작물이야기">
-                            </a>
-                            <a href="/farmStory/gardening/gardeningList.do">
-                                <img src="/farmStory/images/sub_cate3_lnb2.png" alt="텃밭가꾸기">
-                            </a>
-                            <a href="/farmStory/farmingSchool/farmingSchoolList.do">
-                                <img src="/farmStory/images/sub_cate3_lnb3.png" alt="귀농학교">
-                            </a>
+                          <a href="/farmStory/cropStory/cropStoryList.do?cate=cropStory">
+                            <img src="/farmStory/images/sub_cate3_lnb1_ov.png" alt="농작물이야기">
+                          </a> 
+                          <a href="/farmStory/gardening/gardeningList.do?cate=gardening">
+                            <img src="/farmStory/images/sub_cate3_lnb2.png" alt="텃밭가꾸기">
+                          </a> 
+                          <a href="/farmStory/farmingSchool/farmingSchoolList.do?cate=farmingSchool">
+                            <img src="/farmStory/images/sub_cate3_lnb3.png" alt="귀농학교">
+                          </a>
                         </div>
                     </aside>
                     <article>
@@ -47,8 +47,9 @@
                         <div class="sub_page">
                             <h1>글쓰기</h1>
                             <form action="/farmStory/cropStory/cropStoryWrite.do" method="post" enctype="multipart/form-data">
-                            	<input type=hidden name="uid" value="${sessUser.uid}" readonly="readonly">
+                            	<input type="hidden" name="uid" value="${sessUser.uid}" readonly="readonly">
                             	<input type="hidden" name="nick" value="${sessUser.nick}" readonly="readonly">
+                            	<input type="hidden" name="cate" value="cropStory">
                                 <table>
                                     <tr>
                                         <td>제목</td>
@@ -72,7 +73,7 @@
                                     </tr>
                                 </table>
                                 <div class="btnContainer">
-                                    <a href="/farmStory/cropStory/cropStoryList.do" class="btn btnCancel">취소</a>
+                                    <a href="/farmStory/cropStory/cropStorylist.do?cate=cropStory" class="btn btnCancel">취소</a>
                                     <input type="submit" value="작성완료" class="btn btnSubmit"/>
                                 </div>
                             </form>

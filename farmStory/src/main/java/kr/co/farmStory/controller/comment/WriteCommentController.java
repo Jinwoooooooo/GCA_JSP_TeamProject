@@ -43,6 +43,7 @@ public class WriteCommentController extends HttpServlet {
 		String nick = req.getParameter("nick");
 		String uid = req.getParameter("uid");
 		String regip = req.getRemoteAddr();
+		String cate = req.getParameter("cate");
 		
 		int postNoInt = Integer.parseInt(postNo);
 		
@@ -54,9 +55,11 @@ public class WriteCommentController extends HttpServlet {
 		dto.setNick(nick);
 		dto.setUid(uid);
 		dto.setRegip(regip);
+		dto.setCate(cate);
+		
 		logger.debug(dto.toString());
 		
-		req.setAttribute("commentInfo", dto);
+		req.setAttribute("commentdto", dto);
 		
 		// 서비스 호출
 		CommentDTO savedCommentDTO = service.registerComment(dto, postNoInt);

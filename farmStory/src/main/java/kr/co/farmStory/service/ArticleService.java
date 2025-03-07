@@ -19,8 +19,8 @@ public enum ArticleService {
 	}
 	
 	
-	public ArticleDTO findArticle(String postNo) {
-		return dao.selectArticle(postNo);
+	public ArticleDTO findArticle(String postNo, String cate) {
+		return dao.selectArticle(postNo, cate);
 	}
 	
 	public List<ArticleDTO> findAllArticle(String cate, int start) {
@@ -39,8 +39,8 @@ public enum ArticleService {
 	}
 	
 	
-	public int getCountArticle() {
-		return dao.selectCountArticle();
+	public int getCountArticle(String cate) {
+		return dao.selectCountArticle(cate);
 	}
 	
 	public void modifyArticle(ArticleDTO dto) {
@@ -87,7 +87,7 @@ public enum ArticleService {
 	
 	// 페이지 그룹 계산하기
 	public PageGroupDTO getCurrentPageGroup(int currentPage, int lastPageNum) {
-			
+		
 		int currentPageGroup = (int) Math.ceil(currentPage / 10.0);
 		int pageGroupStart = (currentPageGroup - 1) * 10 + 1; 
 		int pageGroupEnd = currentPageGroup * 10;

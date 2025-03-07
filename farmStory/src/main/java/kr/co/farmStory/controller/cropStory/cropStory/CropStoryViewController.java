@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -18,6 +19,7 @@ import kr.co.farmStory.dto.FileDTO;
 import kr.co.farmStory.service.ArticleService;
 import kr.co.farmStory.service.CommentService;
 
+@MultipartConfig
 @WebServlet("/cropStory/cropStoryView.do")
 public class CropStoryViewController extends HttpServlet{
 
@@ -33,9 +35,11 @@ public class CropStoryViewController extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 글번호 수신
         String postNo = req.getParameter("postNo");
-
+        String cate = req.getParameter("cate");
+        
+        
         // 글 조회 서비스 호출
-        ArticleDTO articledto = service.findArticle(postNo);
+        ArticleDTO articledto = service.findArticle(postNo, cate);
         logger.debug("articledto : " + articledto);
 
         List<CommentDTO> comments = commentService.findAllComment(postNo);
@@ -43,7 +47,10 @@ public class CropStoryViewController extends HttpServlet{
 
         req.setAttribute("articledto", articledto);
         req.setAttribute("comments", comments);
-
+        req.setAttribute("postNo", postNo);
+        req.setAttribute("cate", cate);
+        
+        
         RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/cropStory/cropStory/cropStoryView.jsp");
         dispatcher.forward(req, resp);
     }

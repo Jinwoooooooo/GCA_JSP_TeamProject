@@ -9,7 +9,16 @@ public class CommentDTO {
 	private String regip;
 	private String wdate;
 	private String uid;
+	private String cate;
 	
+	
+	
+	public String getCate() {
+		return cate;
+	}
+	public void setCate(String cate) {
+		this.cate = cate;
+	}
 	public String getUid() {
 		return uid;
 	}

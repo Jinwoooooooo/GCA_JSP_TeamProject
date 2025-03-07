@@ -199,7 +199,7 @@ header > div:nth-child(3) > ul > li > a > img {
 
 .sub_page > table {
     width: 762px;
-    height: 564px;
+    height: auto;
     border-collapse: collapse;
     border-top: 1px solid #111;
     border-bottom: 1px solid #111;
@@ -250,6 +250,12 @@ header > div:nth-child(3) > ul > li > a > img {
 .item_img {
     width: 80px;
     height: 80px;
+}
+.emptyProd {
+	text-align: center;
+	font-size: 14px;
+	padding: 10px 0 10px 0;
+	color: #4a4a4a;
 }
 
 footer {

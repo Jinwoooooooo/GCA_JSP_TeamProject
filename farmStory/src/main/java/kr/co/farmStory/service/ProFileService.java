@@ -39,7 +39,9 @@ public enum ProFileService {
 		
 		// 파일 업로드 디렉터리가 존재하지 않으면 디렉터리 생성
 		//String uploadPath =  "C:/Users/lotte06/Desktop/workspace/GCA_JSP_TeamProject/farmStory/src/main/webapp/uploadImg";
-		String uploadPath = "C:/Users/ksm/Desktop/workspace/GCA_JSP_TeamProject/farmStory/src/main/webapp/uploadImg";
+		
+		//!주의! 본인 PC 이름 넣어줄 것
+		String uploadPath = "C:/Users/lotte06/Desktop/workspace/GCA_JSP_TeamProject/farmStory/src/main/webapp/uploadImg";
 		File uploadDir = new File(uploadPath); 
 		
 		if(!uploadDir.exists()) {

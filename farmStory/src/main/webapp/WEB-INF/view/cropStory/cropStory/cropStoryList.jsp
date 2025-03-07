@@ -73,6 +73,11 @@
 											<td width="130px">날짜</td>
 											<td width="60px">조회</td>
 										</tr>
+										<c:if test="${empty articles}">
+											<tr>
+												<td colspan="5" class="emptyArticles">첫 게시글을 등록해주세요!</td>
+											</tr>
+										</c:if>
 										<c:set var="pageStartNum" value="${pageStartNum}" />
 										<c:forEach var="article" items="${requestScope.articles}">
 											<tr id="table_body" height="41px">

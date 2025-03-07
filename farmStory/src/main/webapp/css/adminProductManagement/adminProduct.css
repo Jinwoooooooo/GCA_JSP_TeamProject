@@ -136,7 +136,7 @@ article {
 
 table {
     width: 784px;
-    height: 133px;
+    height: auto;
     border-top: 1px solid #333333;
     border-collapse: collapse; /*셀 합치기*/
     box-sizing: border-box;

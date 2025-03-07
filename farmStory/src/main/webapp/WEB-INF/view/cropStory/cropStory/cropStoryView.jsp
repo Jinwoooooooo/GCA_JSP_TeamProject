@@ -239,7 +239,6 @@
 	                                    	<input type="hidden" name="nick" value="${sessUser.nick}">
 	                                        <textarea name="content" maxlength="100" placeholder="댓글 입력" required></textarea>
 	                                        <div class="btnContainer2">
-	                                            <button class="btn btnCancel" onclick="location.href='/farmStory/cropStory/cropStoryList.do'">취소</button>                                            
 	                                            <input type="submit" value="작성완료" class="btn btnComplete"/>
 	                                        </div>
 	                                    </form>

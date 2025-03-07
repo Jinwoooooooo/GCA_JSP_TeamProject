@@ -237,8 +237,7 @@
                                     	
                                         <textarea name="content" maxlength="100" placeholder="댓글 입력" required></textarea>
                                         <div class="btnContainer2">
-                                            <button class="btn btnCancel" onclick="location.href='/farmStory/farmingSchool/farmingSchoolList.do'">취소</button>                                            
-                                            <input type="submit" value="작성완료" class="btn btnComplete"/>
+                                            <button class="btn btnSubmit" type="submit">작성완료</button>
                                         </div>
                                     </form>
                                 </section>

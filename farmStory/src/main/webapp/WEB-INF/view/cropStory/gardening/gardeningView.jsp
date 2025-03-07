@@ -107,7 +107,6 @@
                                     <div>
                                         <textarea name="comment" maxlength="100" placeholder="댓글 입력" required></textarea>
                                         <div class="btnContainer2">
-                                            <button class="btn btnCancel">취소</button>
                                             <button class="btn btnSubmit" type="submit">작성완료</button>
                                         </div>
                                     </div>

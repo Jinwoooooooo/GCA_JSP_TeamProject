@@ -116,7 +116,7 @@ public class AdminDAO extends DBHelper{
 
 	
 	// 장보기 전체 목록
-	public List<AdminDTO> selectAllShopping() {
+	public List<AdminDTO> selectAllShopping(String pid) {
 		
 		List<AdminDTO> Products = new ArrayList<AdminDTO>();
 		
@@ -126,9 +126,11 @@ public class AdminDAO extends DBHelper{
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(ShoppingSQL.SELECT_ALL_SHOPPING_PRO);
 			
+			
+			
 			while(rs.next()) {
 				AdminDTO dto = new AdminDTO();
-				dto.setPid(rs.getInt(1));
+				dto.setPid(rs.getString(1));
 				dto.setsName(rs.getString(2));
 				dto.setTypes(rs.getString(3));
 				dto.setpName(rs.getString(4));
@@ -158,13 +160,14 @@ public class AdminDAO extends DBHelper{
 			pstmt = conn.prepareStatement(ShoppingSQL.SELECT_ALL_WHERE_PRO);
 			pstmt.setString(1, types);
 			
+			
 		    System.out.println("실행되는 SQL: SELECT * FROM product WHERE types = '" + types + "'");
 			
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
 				AdminDTO dto = new AdminDTO();
-				dto.setPid(rs.getInt(1));
+				dto.setPid(rs.getString(1));
 				dto.setsName(rs.getString(2));
 				dto.setTypes(rs.getString(3));
 				dto.setpName(rs.getString(4));
@@ -247,6 +250,41 @@ public class AdminDAO extends DBHelper{
 			e.printStackTrace();
 		}
 		return grainss;
+	}
+	
+	// 상품 상세보기
+	
+	public List<AdminDTO> select_detail(String pid) {
+		
+		List<AdminDTO> products = new ArrayList<AdminDTO>();
+		
+		try {
+			
+			conn = getConnection();
+			pstmt = conn.prepareStatement(ShoppingSQL.SELECT_SHOPPING_DETAIL);
+			pstmt.setString(1, pid);
+			rs = pstmt.executeQuery();
+			
+			System.out.println("pid" + pid);
+			
+			if(rs.next()) {
+				AdminDTO dto = new AdminDTO();
+				dto.setsName(rs.getString(1));
+				dto.setpName(rs.getString(2));
+				dto.setPid(rs.getString(3));
+				dto.setCharge(rs.getInt(4));
+				dto.setPrice(rs.getInt(5));
+				dto.setOther(rs.getString(6));
+				products.add(dto);
+			
+			}
+			
+			closeAll();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return products;
 	}
 
 }

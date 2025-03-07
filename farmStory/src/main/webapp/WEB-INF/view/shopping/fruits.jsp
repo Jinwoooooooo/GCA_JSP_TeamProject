@@ -71,12 +71,12 @@
 		                                </td>
 		                                
 	                            	</tr>
-                            	</c:forEach>
-                            	</c:if>
+                            	  </c:forEach>
+                            	  </c:if>
                             </table>
                             <c:if test="${not empty fruits}">
                            		<p style="color: #999; text-align: center; margin-top: 15px;">< <span style="color: #111;">[1]</span> [2] [3] [4] [5] ></p>
-                        	</c:if>
+                        	  </c:if>
                         </div>
                     </article>
                 </section>

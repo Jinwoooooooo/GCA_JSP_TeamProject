@@ -73,6 +73,11 @@
 											<td width="130px">날짜</td>
 											<td width="60px">조회</td>
 										</tr>
+										<c:if test="${empty articles}">
+											<tr>
+												<td colspan="5" class="emptyArticles">첫 게시글을 등록해주세요!</td>
+											</tr>
+										</c:if>
 										<c:set var="pageStartNum" value="${pageStartNum}" />
 										<c:forEach var="article" items="${requestScope.articles}">
 											<tr id="table_body" height="41px">
@@ -91,17 +96,17 @@
 									<div class="page">
 										<c:if test="${pageGroupDTO.start > 1}">
 											<a
-												href="/farmStory/cropStory/cropStoryList.do?pg=${pageGroupDTO.start - 1}"
+												href="/farmStory/cropStory/cropStoryList.do?cate=cropStory&pg=${pageGroupDTO.start - 1}"
 												class="prev">이전</a>
 										</c:if>
 										<c:forEach var="num" begin="${pageGroupDTO.start}"
 											end="${pageGroupDTO.end}">
-											<a href="/farmStory/cropStory/cropStoryList.do?pg=${num}"
+											<a href="/farmStory/cropStory/cropStoryList.do?cate=cropStory&pg=${num}"
 												class="num ${currentPage == num ? 'current':''}">${num}</a>
 										</c:forEach>
 										<c:if test="${pageGroupDTO.end < lastPageNum}">
 											<a
-												href="/farmStory/cropStory/cropStoryList.do?pg=${pageGroupDTO.end + 1}"
+												href="/farmStory/cropStory/cropStoryList.do?cate=cropStory&pg=${pageGroupDTO.end + 1}"
 												class="next">다음</a>
 										</c:if>
 										<c:if test="${not empty sessUser}">

@@ -31,6 +31,7 @@ public class CropStorySearchController extends HttpServlet {
 		ArticleDTO dto = new ArticleDTO();
 		dto.setSearchType(searchType);
 		dto.setKeyword(keyword);
+		dto.setCate(cate);
 		
 		int total = service.getCountArticleBySearch(dto);
 		int lastPageNum = service.getLastPageNum(total);

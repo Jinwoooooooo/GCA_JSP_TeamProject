@@ -45,13 +45,13 @@ public class ArticleSQL {
 	
 	public final static String SELECT_COUNT_POST_FOR_SEARCH = "select count(*) from `post` as p ";
 	public final static String JOIN_FOR_SEARCH_NICK  = "JOIN `user` as u ON p.uid = u.uid ";
-	public final static String WHERE_FOR_SEARCH_TITLE   = "WHERE `title` LIKE ? ";
-	public final static String WHERE_FOR_SEARCH_CONTENT = "WHERE `content` LIKE ? ";
+	public final static String WHERE_FOR_SEARCH_TITLE   = "WHERE p.title LIKE ? ";
+	public final static String WHERE_FOR_SEARCH_CONTENT = "WHERE p.content LIKE ? ";
 	public final static String WHERE_FOR_SEARCH_NICK  = "WHERE u.nick LIKE ? ";	
 	
-	public final static String AND_FOR_SEARCH_CATE = "and `cate`=?";
+	public final static String AND_FOR_SEARCH_CATE = "and p.cate=? ";
 	
-	public final static String ORDER_FOR_SEARCH  = "ORDER BY `postNo` DESC ";
+	public final static String ORDER_FOR_SEARCH  = "order by p.postNo desc ";
 	public final static String LIMIT_FOR_SEARCH  = "LIMIT ?, 10";
 	
 	

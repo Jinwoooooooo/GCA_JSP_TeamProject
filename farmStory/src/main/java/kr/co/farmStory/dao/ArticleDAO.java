@@ -245,8 +245,9 @@ public class ArticleDAO extends DBHelper {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql.toString());
 			pstmt.setString(1, "%"+articleDTO.getKeyword()+"%");
-			pstmt.setInt(2, start);
-			pstmt.setString(3, cate);
+			pstmt.setString(2, cate);
+			pstmt.setInt(3, start);
+			
 			
 			logger.debug(pstmt.toString());
 			

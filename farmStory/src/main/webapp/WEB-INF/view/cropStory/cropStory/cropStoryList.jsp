@@ -28,7 +28,7 @@
 							<img src="/farmStory/images/sub_aside_cate3_tit.png" alt="농작물이야기">
 						</div>
 						<div>
-							<a href="/farmStory/cropStory/cropStoryList.do?searchType=cropStory"> <img
+							<a href="/farmStory/cropStory/cropStoryList.do?cate=cropStory"> <img
 								src="/farmStory/images/sub_cate3_lnb1_ov.png" alt="농작물이야기">
 							</a> <a href="/farmStory/gardening/gardeningList.do"> <img
 								src="/farmStory/images/sub_cate3_lnb2.png" alt="텃밭가꾸기">
@@ -91,17 +91,17 @@
 									<div class="page">
 										<c:if test="${pageGroupDTO.start > 1}">
 											<a
-												href="/farmStory/cropStory/cropStoryList.do?pg=${pageGroupDTO.start - 1}"
+												href="/farmStory/cropStory/cropStoryList.do?cate=cropStory&pg=${pageGroupDTO.start - 1}"
 												class="prev">이전</a>
 										</c:if>
 										<c:forEach var="num" begin="${pageGroupDTO.start}"
 											end="${pageGroupDTO.end}">
-											<a href="/farmStory/cropStory/cropStoryList.do?pg=${num}"
+											<a href="/farmStory/cropStory/cropStoryList.do?cate=cropStory&pg=${num}"
 												class="num ${currentPage == num ? 'current':''}">${num}</a>
 										</c:forEach>
 										<c:if test="${pageGroupDTO.end < lastPageNum}">
 											<a
-												href="/farmStory/cropStory/cropStoryList.do?pg=${pageGroupDTO.end + 1}"
+												href="/farmStory/cropStory/cropStoryList.do?cate=cropStory&pg=${pageGroupDTO.end + 1}"
 												class="next">다음</a>
 										</c:if>
 										<a href="/farmStory/cropStory/cropStoryWrite.do" class="btn btnWrite">글쓰기</a>

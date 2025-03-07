@@ -36,7 +36,7 @@
                             
                              <c:forEach var="dto" items="${dtos}">
 	                            <tr class="table_bd1">
-	                                <td class="img"><input type="checkbox" class="checkbtns"></td>
+	                                <td class="img"><input type="checkbox" class="checkbtn"></td>
 	                                <td><img src="/farmStory/uploadImg/${dto.sName}"></td>
 	                                <td>${dto.pid}</td>
 	                                <td>${dto.pName}</td>

@@ -41,6 +41,7 @@
                                     <th>포인트</th>
                                     <th>판매가격</th>
                                 </tr>
+
                                 <c:if test="${empty grainss}">
                                		<td colspan="6" class="emptyProd">현재 등록된 상품이 없습니다.</td>
                                	</c:if>
@@ -68,7 +69,7 @@
                             </table>
                             <c:if test="${not empty grainss}">
                             	<p style="color: #999; text-align: center; margin-top: 15px;">< <span style="color: #111;">[1]</span> [2] [3] [4] [5] ></p>
-                        	</c:if>
+                        	  </c:if>
                         </div>
                     </article>
                 </section>

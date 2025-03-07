@@ -60,9 +60,9 @@
                         <tr class="table_tr">
                             <td><p>배송비</p></td>
                             <td class="radio">
-                                <label><input type="radio" name="charge" value="2">2,000원</label>
-                                <label><input type="radio" name="charge" value="3">3,000원</label>
-                                <label><input type="radio" name="charge" value="4">5,000원</label>
+                                <label><input type="radio" name="charge" value="2000">2,000원</label>
+                                <label><input type="radio" name="charge" value="3000">3,000원</label>
+                                <label><input type="radio" name="charge" value="4000">5,000원</label>
                                 <label><input type="radio" name="charge" value="0">무료</label>
                             </td>    
 

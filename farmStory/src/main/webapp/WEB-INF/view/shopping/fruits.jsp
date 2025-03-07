@@ -45,7 +45,7 @@
                                		<td colspan="6" class="emptyProd">현재 등록된 상품이 없습니다.</td>
                                	</c:if>
                                	<c:if test="${not empty friuts}">
-                             	<c:forEach var="fruit" items="${fruits}">
+                             	  <c:forEach var="fruit" items="${fruits}">
 		                            <tr class="table_bd1">      
 		                                <td>
 			                                <a href="/farmStory/shopping/productDetail.do">
@@ -63,12 +63,12 @@
 		                                </td>
 		                                
 	                            	</tr>
-                            	</c:forEach>
-                            	</c:if>
+                            	  </c:forEach>
+                            	  </c:if>
                             </table>
                             <c:if test="${not empty friuts}">
                            		<p style="color: #999; text-align: center; margin-top: 15px;">< <span style="color: #111;">[1]</span> [2] [3] [4] [5] ></p>
-                        	</c:if>
+                        	  </c:if>
                         </div>
                     </article>
                 </section>

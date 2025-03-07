@@ -128,12 +128,13 @@ public class AdminDAO extends DBHelper{
 			
 			while(rs.next()) {
 				AdminDTO dto = new AdminDTO();
-				dto.setsName(rs.getString(1));
-				dto.setTypes(rs.getString(2));
-				dto.setpName(rs.getString(3));
-				dto.setDiscount(rs.getString(4));
-				dto.setPoint(rs.getInt(5));
-				dto.setPrice(rs.getInt(6));
+				dto.setPid(rs.getInt(1));
+				dto.setsName(rs.getString(2));
+				dto.setTypes(rs.getString(3));
+				dto.setpName(rs.getString(4));
+				dto.setDiscount(rs.getString(5));
+				dto.setPoint(rs.getInt(6));
+				dto.setPrice(rs.getInt(7));
 				Products.add(dto);
 				
 			}
@@ -163,12 +164,13 @@ public class AdminDAO extends DBHelper{
 			
 			while(rs.next()) {
 				AdminDTO dto = new AdminDTO();
-				dto.setsName(rs.getString(1));
-				dto.setTypes(rs.getString(2));
-				dto.setpName(rs.getString(3));
-				dto.setDiscount(rs.getString(4));
-				dto.setPoint(rs.getInt(5));
-				dto.setPrice(rs.getInt(6));
+				dto.setPid(rs.getInt(1));
+				dto.setsName(rs.getString(2));
+				dto.setTypes(rs.getString(3));
+				dto.setpName(rs.getString(4));
+				dto.setDiscount(rs.getString(5));
+				dto.setPoint(rs.getInt(6));
+				dto.setPrice(rs.getInt(7));
 				fruits.add(dto);
 			}
 			
@@ -195,12 +197,13 @@ public class AdminDAO extends DBHelper{
 			
 			while(rs.next()) {
 				AdminDTO dto = new AdminDTO();
-				dto.setsName(rs.getString(1));
-				dto.setTypes(rs.getString(2));
-				dto.setpName(rs.getString(3));
-				dto.setDiscount(rs.getString(4));
-				dto.setPoint(rs.getInt(5));
-				dto.setPrice(rs.getInt(6));
+				dto.setPid(rs.getString(1));
+				dto.setsName(rs.getString(2));
+				dto.setTypes(rs.getString(3));
+				dto.setpName(rs.getString(4));
+				dto.setDiscount(rs.getString(5));
+				dto.setPoint(rs.getInt(6));
+				dto.setPrice(rs.getInt(7));
 				vegetables.add(dto);
 			}
 			
@@ -228,12 +231,13 @@ public class AdminDAO extends DBHelper{
 			
 			while(rs.next()) {
 				AdminDTO dto = new AdminDTO();
-				dto.setsName(rs.getString(1));
-				dto.setTypes(rs.getString(2));
-				dto.setpName(rs.getString(3));
-				dto.setDiscount(rs.getString(4));
-				dto.setPoint(rs.getInt(5));
-				dto.setPrice(rs.getInt(6));
+				dto.setPid(rs.getString(1));
+				dto.setsName(rs.getString(2));
+				dto.setTypes(rs.getString(3));
+				dto.setpName(rs.getString(4));
+				dto.setDiscount(rs.getString(5));
+				dto.setPoint(rs.getInt(6));
+				dto.setPrice(rs.getInt(7));
 				grainss.add(dto);
 			}
 			

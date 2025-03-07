@@ -11,7 +11,15 @@
                 <a href="/farmStory/inquiry/inquiryList.do">고객센터</a>
             </div>
             </c:if>
-            <c:if test="${not empty sessionScope.sessUser}">
+            <c:if test="${not empty sessionScope.sessUser and (sessUser.role == 'USER')}">
+            <div>
+                <a href="/farmStory/index.do">HOME |</a>
+                <a href="/farmStory/view/user/logout.do">로그아웃 |</a>
+                <a href="/farmStory/myInfo/myCart.do">나의정보 |</a>
+                <a href="/farmStory/inquiry/inquiryList.do">고객센터</a>
+            </div>
+            </c:if>
+            <c:if test="${not empty sessionScope.sessUser and (sessUser.role == 'ADMIN')}">
             <div>
                 <a href="/farmStory/index.do">HOME |</a>
                 <a href="/farmStory/view/user/logout.do">로그아웃 |</a>

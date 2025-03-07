@@ -8,7 +8,7 @@
 	<ul>
 	    <li><a href="/farmStory/index.do" class="link">HOME&nbsp;|&nbsp;</a></li>
 	    <li><a href="/farmStory/view/user/logout.do" class="link">로그아웃&nbsp;|&nbsp;</a></li>
-	    <li><a href="/farmStory/view/community/notice/noticeList.do" class="link">고객센터</a></li>
+	    <li><a href="/farmStory/notice/noticeList.do" class="link">고객센터</a></li>
 	</ul>
 	</c:if>
 </header>

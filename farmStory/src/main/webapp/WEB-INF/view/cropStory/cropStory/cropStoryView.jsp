@@ -162,8 +162,8 @@
                         <div class="sub_page">
                             <h1>글보기</h1>
                             <form action="/farmStory/cropStory/cropStoryView.do">
-                            	<input type="text" name="postNo" value="${articledto.postNo}"/>
-                            	<input type="text" name="cate" value="cropStory"/>
+                            	<input type="hidden" name="postNo" value="${articledto.postNo}"/>
+                            	<input type="hidden" name="cate" value="cropStory"/>
                                 <table>
                                     <tr>
                                         <td>제목</td>

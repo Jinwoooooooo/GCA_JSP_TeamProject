@@ -106,8 +106,9 @@
 												href="/farmStory/cropStory/cropStoryList.do?cate=cropStory&pg=${pageGroupDTO.end + 1}"
 												class="next">다음</a>
 										</c:if>
-										<a href="/farmStory/cropStory/cropStoryWrite.do" class="btn btnWrite">글쓰기</a>
-
+										<c:if test="${not empty sessUser}">
+											<a href="/farmStory/cropStory/cropStoryWrite.do" class="btn btnWrite">글쓰기</a>
+										</c:if>
 									</div>
 
 								</section>
